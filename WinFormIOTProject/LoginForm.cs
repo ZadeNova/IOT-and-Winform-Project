@@ -37,7 +37,7 @@ namespace WinFormIOTProject
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             // Add logic to check if user exist in database
-            // Add validators too
+            // Add validators too 
             string Username = UsernameTxtbox.Text;
             string Password = PasswordTxtBox.Text;
             MessageBox.Show(Username + Password);
