@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormIOTProject
 {
-    public partial class Profile : Form
+    public partial class ManageUserForm : Form
     {
-        public Profile()
+        public ManageUserForm()
         {
             InitializeComponent();
         }

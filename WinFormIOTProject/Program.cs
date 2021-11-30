@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormIOTProject
 {
     static class Program
@@ -15,9 +16,30 @@ namespace WinFormIOTProject
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new SignUpForm());
+            //Application.Run(new SignUpForm());
+            //Application.Run(new Home_Admin_());
+            Application.Run(new AdminDashboard());
+            //Application.Run(new DataVisualisationForm());
         }
+
     }
+
+
+
+    // Session 
+    static class User
+    {
+        public static string Username;
+        public static string Role;
+        
+    }
+
+
+    
+
+
+
+
 }

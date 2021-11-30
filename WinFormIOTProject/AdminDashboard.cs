@@ -15,6 +15,109 @@ namespace WinFormIOTProject
         public AdminDashboard()
         {
             InitializeComponent();
+            CustomizeDesign();
+        }
+
+        // Copy this for every admin page [submenu code]
+        private void CustomizeDesign()
+        {
+            SubmenuData.Visible = false;
+
+        }
+
+        private void Hidesubmenu()
+        {
+            if (SubmenuData.Visible == true)
+                SubmenuData.Visible = false;
+            
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                //Hidesubmenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+
+        }
+        //end of submenu code
+
+        private void Data_Click(object sender, EventArgs e)
+        {
+            showSubMenu(SubmenuData);
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForms.Controls.Add(childForm);
+            panelChildForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+
+        }
+
+        
+
+        
+
+        
+
+       
+
+        
+
+       
+
+        
+
+        private void Settings_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new Settings());
+        }
+
+        private void Notification_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new Notification());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GenerateReport());
+        }
+
+        private void Createuser_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new CreateUserForm());
+        }
+
+        private void ManageUserBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ManageUserForm());
+        }
+
+        private void ProfileBtn_Click(object sender, EventArgs e)
+        {
+            ProfilePage ProfileForm = new ProfilePage();
+            this.Hide();
+            ProfileForm.ShowDialog();
+        }
+
+        private void DataGraphBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DataVisualisationForm());
         }
     }
 }

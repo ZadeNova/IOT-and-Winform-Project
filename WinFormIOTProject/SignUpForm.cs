@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-
+using System.Security.Cryptography;
 
 
 
@@ -21,13 +21,15 @@ namespace WinFormIOTProject
 
         // SQL variable
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
-
+        EncryptionClass EncryptionAlgo = new EncryptionClass();
 
 
         public SignUpForm()
         {
             // Form SQL connection at the start of the form
             InitializeComponent();
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace WinFormIOTProject
             // Check if all empty (not for whitespace)
             if (string.IsNullOrWhiteSpace(NewUsertxt.Text) || string.IsNullOrWhiteSpace(NewEmailTxt.Text) || string.IsNullOrWhiteSpace(NewPasswordTxt.Text) || string.IsNullOrWhiteSpace(CfmPassTxtBox.Text))
             {
-                // Extra validators
+                
                 MessageBox.Show("Fill in the empty textboxes!");
                 
             }
@@ -51,30 +53,78 @@ namespace WinFormIOTProject
                 {
                     MessageBox.Show("Password is the same!");
 
-                    //string SymmKey = "Key";
-                    //string Role = "User";
-                    //string Status = "Active";
 
-                    //SqlConnection myConnect = new SqlConnection(strConnectionString);
-                    //myConnect.Open();
-                    //string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,SymmetricKey,Role,Status) VALUES (@Name,@Email,@Password,@SymmetricKey,@Role,@Status)";
 
-                    //SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-                    //cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                    //cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
-                    //cmd.Parameters.AddWithValue("@Password", NewPasswordTxt.Text);
-                    //cmd.Parameters.AddWithValue("@SymmetricKey", SymmKey);
-                    //cmd.Parameters.AddWithValue("@Role", Role);
-                    //cmd.Parameters.AddWithValue("@Status", Status);
 
-                    //cmd.ExecuteNonQuery(); // It executes the sql command
+                    var key = KeyGen();
+                    // key uses 32 bits
+                    
+                    
+                    
+                    
 
-                    //myConnect.Close();
+                    AESOperation encryptt = new AESOperation();
+                    var encryptedemail = encryptt.EncryptString(key, NewEmailTxt.Text);
+                    Console.WriteLine(encryptedemail);
+                    
+
+                    string Role = "User";
+                    string Status = "Active";
+
+                    SqlConnection myConnect = new SqlConnection(strConnectionString);
+                    myConnect.Open();
+                    string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,Role,Status,SymmetricKey) VALUES (@Name,@Email,@Password,@Role,@Status,@SymmetricKey)";
+
+                    SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+
+
+
+
+
+
+
+
+
+
+                    //Hash the password
+
+                    
+
+                    cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                    cmd.Parameters.AddWithValue("@Email", encryptedemail);
+                    cmd.Parameters.AddWithValue("@Password", NewPasswordTxt.Text);
+                    cmd.Parameters.AddWithValue("@SymmetricKey",key);
+                    cmd.Parameters.AddWithValue("@Role", Role);
+                    cmd.Parameters.AddWithValue("@Status", Status);
+
+
+                    cmd.ExecuteNonQuery(); // It executes the sql command
+
+                    myConnect.Close();
+
+
                     ////string Username = NewUsertxt.Text;
                     ////string Email = NewEmailTxt.Text;
                     ////string Password = NewPasswordTxt.Text;
                     //MessageBox.Show("lolol");
                     ////// Validate if information is correct
+
+                    //if user or admin
+
+                    User.Username = NewUsertxt.Text; // User session
+                    AdminDashboard AdminForm = new AdminDashboard();
+                    this.Hide();
+                    AdminForm.ShowDialog();
+                    //string aa = EncryptionAlgo.Encrypt(NewUsertxt.Text);
+
+                    //string bb = EncryptionAlgo.Decrypt(aa);
+
+
+
+
+
+
+
 
                 }
                 else
@@ -121,17 +171,36 @@ namespace WinFormIOTProject
 
         private void NewUsertxt_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NewUsertxt.Text))
+            //if (string.IsNullOrWhiteSpace(NewUsertxt.Text))
+            //{
+            //    e.Cancel = true;
+            //    NewUsertxt.Focus();
+            //    UserError.SetError(NewUsertxt, "Please enter your username!");
+            //}
+            //else
+            //{
+            //    e.Cancel = true;
+            //    UserError.SetError(NewUsertxt, null);
+            //}
+
+        }
+
+
+        public string KeyGen()
+        {
+            Random rnd = new Random();
+            string Charpool = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            string key = "";
+            for (int i = 0; i < 32; i++)
             {
-                e.Cancel = true;
-                NewUsertxt.Focus();
-                UserError.SetError(NewUsertxt, "Please enter your username!");
+
+                key = key + Charpool[rnd.Next(0, 46)];
+
+
+
             }
-            else
-            {
-                e.Cancel = true;
-                UserError.SetError(NewUsertxt, null);
-            }
+            return key;
+
         }
     }
 }
