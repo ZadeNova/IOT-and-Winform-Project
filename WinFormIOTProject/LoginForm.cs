@@ -47,7 +47,7 @@ namespace WinFormIOTProject
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             myConnect.Open();
             //
-            //string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,Role,Status) VALUES (@Name,@Email,@Password,@Role,@Status)";
+            //string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,Role,Status,RFID_ID) VALUES (@Name,@Email,@Password,@Role,@Status,@RFID_ID)";
 
             //SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
@@ -128,7 +128,7 @@ namespace WinFormIOTProject
 
         private void Login_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using System.Configuration;
 
 using System.Data.SqlClient;
-
+using System.Net.Sockets;
 
 namespace WinFormIOTProject
 {
+
     public partial class RFIDLoginForm : Form
     {
+
+
         public RFIDLoginForm()
         {
             InitializeComponent();
@@ -26,9 +29,9 @@ namespace WinFormIOTProject
             InitComms();
         }
 
-
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataComms dataComms;
+
 
         public delegate void myprocessDataDelegate(String strData);
         // To save your sensor data to DB you need to change to suite your project needs
@@ -66,9 +69,10 @@ namespace WinFormIOTProject
         }
         public void HandleRFIDdata(string strData,string strTime , string ID)
         {
-            string strlightValue = extractStringValue(strData, ID);
+            string strRFIDValue = extractStringValue(strData, ID);
             //Update GUI data
-            // tbLightValue.Text = strLightValue;
+             RFIDtxt.Text = strRFIDValue;
+            Console.WriteLine("THIS FUNC EXECUTE");
 
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
@@ -78,11 +82,11 @@ namespace WinFormIOTProject
             
         }
 
-        private void handleButtonData(string strData, string strTime , string ID)
-        {
-            string strButtonValue = extractStringValue(strData, ID);
-            // Update the GUI for windows form
-        }
+        //private void handleButtonData(string strData, string strTime , string ID)
+        //{
+        //    string strButtonValue = extractStringValue(strData, ID);
+        //    // Update the GUI for windows form
+        //}
 
         private void extractSensorData(string strData, string strTime)
         {
@@ -90,30 +94,34 @@ namespace WinFormIOTProject
             // so you need to always check what data is received
             // before extracting the information
             // check whether the sensor data is sending form hardware
-            if (strData.IndexOf("LIGHT=") != -1)
+
+            Console.WriteLine(strData);
+            Console.WriteLine(strTime);
+            if (strData.IndexOf("RFID=") != -1)
             {
-                HandleRFIDdata(strData, strData, "LIGHT=");
+                HandleRFIDdata(strData, strData, "RFID=");
             }
             else if (strData.IndexOf("BUTTON=") != -1)
             {
 
-                handleButtonData(strData, strTime, "BUTTON=");
+                //handleButtonData(strData, strTime, "BUTTON=");
 
             }//Check button status
 
 
 
-
+            
 
         }
 
+        // Zade create register time for all users.
 
         // Raw data received from hardware comes here
         public void handleSensorData(String strData)
         {
             string dt = DateTime.Now.ToString("s"); //Get current time
             extractSensorData(strData, dt); //Get sensor values out
-
+            Console.WriteLine("Handle sensordata");
             // Update raw data received to listbox
             string strMessage = dt + ":" + strData;
             //lbDataComms.Items.Insert(0, strMessage);
@@ -124,7 +132,7 @@ namespace WinFormIOTProject
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
             //lbDataComms.Invoke(d,new object[] { strData });
-
+            Console.WriteLine("Process data receive");
         }
 
         // This method is automatically called when data is received
@@ -133,7 +141,7 @@ namespace WinFormIOTProject
             processDataReceive(dataReceived);
         }
         // This method is automatically called when there is error
-        public void comsSendError(string errMsg)
+        public void commsSendError(string errMsg)
         {
             MessageBox.Show(errMsg);
             processDataReceive(errMsg);
@@ -145,8 +153,18 @@ namespace WinFormIOTProject
         {
             dataComms = new DataComms();
             dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsDataReceive);
+            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+            
+        }
 
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void RFIDLoginFormLabel_Click(object sender, EventArgs e)
+        {
+            
         }
 
         // Write the code to send data from windows form to raspberry pi

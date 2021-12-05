@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RFIDLoginFormLabel = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.RFIDtxt = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +47,7 @@
             this.RFIDLoginFormLabel.Size = new System.Drawing.Size(127, 27);
             this.RFIDLoginFormLabel.TabIndex = 0;
             this.RFIDLoginFormLabel.Text = "RFID Login ";
+            this.RFIDLoginFormLabel.Click += new System.EventHandler(this.RFIDLoginFormLabel_Click);
             // 
             // iconPictureBox1
             // 
@@ -52,7 +56,6 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Aquamarine;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 36;
             this.iconPictureBox1.Location = new System.Drawing.Point(195, 25);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(40, 32);
@@ -70,12 +73,26 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Please Scan your RFID card";
             // 
+            // RFIDtxt
+            // 
+            this.RFIDtxt.Location = new System.Drawing.Point(173, 195);
+            this.RFIDtxt.Name = "RFIDtxt";
+            this.RFIDtxt.Size = new System.Drawing.Size(266, 20);
+            this.RFIDtxt.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
             // RFIDLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(647, 440);
+            this.Controls.Add(this.RFIDtxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.RFIDLoginFormLabel);
@@ -94,5 +111,7 @@
         private System.Windows.Forms.Label RFIDLoginFormLabel;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox RFIDtxt;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -141,6 +141,12 @@
     <Compile Include="RFIDLoginForm.Designer.cs">
       <DependentUpon>RFIDLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RFIDTEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDTEST.Designer.cs">
+      <DependentUpon>RFIDTEST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </Compile>
     <EmbeddedResource Include="RFIDLoginForm.resx">
       <DependentUpon>RFIDLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDTEST.resx">
+      <DependentUpon>RFIDTEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
