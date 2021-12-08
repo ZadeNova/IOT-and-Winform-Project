@@ -28,7 +28,7 @@ namespace WinFormIOTProject
             myConnect.Open();
             string strCommandText = "SELECT * FROM UserAccounts WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-            cmd.Parameters.AddWithValue("@uname", User.Username);
+            cmd.Parameters.AddWithValue("@uname", User.AccountUsername);
             SqlDataReader reader = cmd.ExecuteReader();
             try
             {
@@ -78,6 +78,11 @@ namespace WinFormIOTProject
         }
 
         private void UsernameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmailTxt_TextChanged(object sender, EventArgs e)
         {
 
         }

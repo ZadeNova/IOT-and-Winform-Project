@@ -111,7 +111,7 @@ namespace WinFormIOTProject
 
                     //if user or admin
 
-                    User.Username = NewUsertxt.Text; // User session
+                    User.AccountUsername = NewUsertxt.Text; // User session
                     AdminDashboard AdminForm = new AdminDashboard();
                     this.Hide();
                     AdminForm.ShowDialog();

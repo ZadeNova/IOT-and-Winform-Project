@@ -66,10 +66,11 @@
             this.Email.AutoSize = true;
             this.Email.Location = new System.Drawing.Point(647, 122);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(107, 17);
+            this.Email.Size = new System.Drawing.Size(112, 17);
             this.Email.TabIndex = 2;
-            this.Email.Text = "Email Notification";
+            this.Email.Text = "Email Notifications";
             this.Email.UseVisualStyleBackColor = true;
+            this.Email.CheckedChanged += new System.EventHandler(this.Email_CheckedChanged);
             // 
             // MobileNotif
             // 

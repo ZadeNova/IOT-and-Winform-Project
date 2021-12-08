@@ -72,12 +72,15 @@ namespace WinFormIOTProject
                     if (reader.Read())
                     {
                         // Enter into admin form
+
                         MessageBox.Show("Login Successful");
                         this.Hide();
-                        User.Username = UsernameTxtbox.Text;
-                        
+                        User.AccountUsername = UsernameTxtbox.Text;
+                        User.AccountEmail = reader["Email"].ToString();
+                        User.AccountRole = reader["Role"].ToString();
                         AdminDashboard form2 = new AdminDashboard();
                         form2.ShowDialog();
+
                     }
                     else
                     {

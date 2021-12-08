@@ -113,7 +113,7 @@
             this.RFIDLoginBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.RFIDLoginBtn.IconSize = 30;
             this.RFIDLoginBtn.Location = new System.Drawing.Point(370, 248);
-            this.RFIDLoginBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RFIDLoginBtn.Margin = new System.Windows.Forms.Padding(2);
             this.RFIDLoginBtn.Name = "RFIDLoginBtn";
             this.RFIDLoginBtn.Size = new System.Drawing.Size(111, 41);
             this.RFIDLoginBtn.TabIndex = 9;
@@ -136,6 +136,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;

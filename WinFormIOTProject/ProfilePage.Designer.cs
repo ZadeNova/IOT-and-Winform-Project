@@ -56,7 +56,7 @@
             this.UserProfile.Controls.Add(this.label3);
             this.UserProfile.Controls.Add(this.label2);
             this.UserProfile.Controls.Add(this.label1);
-            this.UserProfile.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserProfile.Location = new System.Drawing.Point(36, 69);
             this.UserProfile.Name = "UserProfile";
             this.UserProfile.Size = new System.Drawing.Size(450, 431);
@@ -79,6 +79,7 @@
             this.RoleTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoleTxt.Location = new System.Drawing.Point(219, 358);
             this.RoleTxt.Name = "RoleTxt";
+            this.RoleTxt.ReadOnly = true;
             this.RoleTxt.Size = new System.Drawing.Size(143, 23);
             this.RoleTxt.TabIndex = 7;
             // 
@@ -87,6 +88,7 @@
             this.PasswordTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordTxt.Location = new System.Drawing.Point(219, 305);
             this.PasswordTxt.Name = "PasswordTxt";
+            this.PasswordTxt.ReadOnly = true;
             this.PasswordTxt.Size = new System.Drawing.Size(143, 23);
             this.PasswordTxt.TabIndex = 6;
             // 
@@ -95,14 +97,17 @@
             this.EmailTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailTxt.Location = new System.Drawing.Point(219, 262);
             this.EmailTxt.Name = "EmailTxt";
+            this.EmailTxt.ReadOnly = true;
             this.EmailTxt.Size = new System.Drawing.Size(143, 23);
             this.EmailTxt.TabIndex = 5;
+            this.EmailTxt.TextChanged += new System.EventHandler(this.EmailTxt_TextChanged);
             // 
             // UsernameTxt
             // 
             this.UsernameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameTxt.Location = new System.Drawing.Point(219, 212);
             this.UsernameTxt.Name = "UsernameTxt";
+            this.UsernameTxt.ReadOnly = true;
             this.UsernameTxt.Size = new System.Drawing.Size(143, 23);
             this.UsernameTxt.TabIndex = 4;
             this.UsernameTxt.TextChanged += new System.EventHandler(this.UsernameTxt_TextChanged);
@@ -160,7 +165,7 @@
             // 
             // DataStats
             // 
-            this.DataStats.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataStats.Location = new System.Drawing.Point(529, 69);
             this.DataStats.Name = "DataStats";
             this.DataStats.Size = new System.Drawing.Size(450, 431);
