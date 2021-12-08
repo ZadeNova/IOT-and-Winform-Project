@@ -121,6 +121,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Notification";
             this.Text = "Notification";
+            this.Load += new System.EventHandler(this.Notification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);

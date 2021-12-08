@@ -16,5 +16,19 @@ namespace WinFormIOTProject
         {
             InitializeComponent();
         }
+
+        private void ForgotPasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        // 
+
+
+
+
+
     }
 }

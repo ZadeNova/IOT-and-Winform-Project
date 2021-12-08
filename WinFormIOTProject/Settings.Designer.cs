@@ -32,6 +32,7 @@
             this.Home = new System.Windows.Forms.Button();
             this.RaspBoxGrp = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Emailtestbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -81,12 +82,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // Emailtestbtn
+            // 
+            this.Emailtestbtn.Location = new System.Drawing.Point(385, 420);
+            this.Emailtestbtn.Name = "Emailtestbtn";
+            this.Emailtestbtn.Size = new System.Drawing.Size(75, 23);
+            this.Emailtestbtn.TabIndex = 5;
+            this.Emailtestbtn.Text = "Send email";
+            this.Emailtestbtn.UseVisualStyleBackColor = true;
+            this.Emailtestbtn.Click += new System.EventHandler(this.Emailtestbtn_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(896, 531);
+            this.Controls.Add(this.Emailtestbtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.RaspBoxGrp);
             this.Controls.Add(this.Home);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.GroupBox RaspBoxGrp;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Emailtestbtn;
     }
 }

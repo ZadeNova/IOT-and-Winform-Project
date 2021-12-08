@@ -22,7 +22,8 @@ namespace WinFormIOTProject
             //Application.Run(new Home_Admin_());
             //Application.Run(new AdminDashboard());
             //Application.Run(new DataVisualisationForm());
-            Application.Run(new RFIDLoginForm());
+            //Application.Run(new RFIDLoginForm());
+            Application.Run(new Settings());
         }
 
     }

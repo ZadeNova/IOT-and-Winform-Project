@@ -24,5 +24,10 @@ namespace WinFormIOTProject
             
             //AdminDash.ShowDialog();
         }
+
+        private void Notification_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

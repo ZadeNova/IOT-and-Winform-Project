@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(784, 448);
             this.Name = "ForgotPasswordForm";
             this.Text = "ForgotPasswordForm";
+            this.Load += new System.EventHandler(this.ForgotPasswordForm_Load);
             this.ResumeLayout(false);
 
         }

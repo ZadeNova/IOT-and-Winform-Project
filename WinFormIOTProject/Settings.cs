@@ -36,40 +36,35 @@ namespace WinFormIOTProject
 
         private void sendemail()
         {
-            //login = new NetworkCredential(Username,Password);
-            //client = new SmtpClient(txtsmtp.text);
-            //client.Port = Convert.ToInt32(text);
-            //client.EnableSsl = chkSSL.Checked;
-            //client.Credentials = login;
-            //msg = new MailMessage { From = new MailAddress(Username + txtsmtp.text.replace("smtp.", "@"), "Name", Encoding.UTF8) };
-            //msg.To.Add(new MailAddress(txtTo.Text));
-            //if (!string.IsNullOrEmpty(txtCC.Text))
-            //msg.To.Add(new MailAddress(txtCC.Text));
-            //msg.Subject = txtSubject.Text;
-            //msg.Body = txtMessage.Text;
-            //msg.BodyEncoding = Encoding.UTF8;
-            //msg.IsBodyHtml = true;
-            //msg.Priority = MailPriority.Normal;
-            //msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-            client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
-            string userstate = "Sending...";
-            client.SendAsync(msg, userstate);
+           
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+
+            smtpClient.Credentials = new System.Net.NetworkCredential("OzymandiasNovaLux@gmail.com", "GamestoptotheMoon42069");
+            // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            MailMessage mail = new MailMessage();
+
+            //Setting From , To and CC
+            mail.From = new MailAddress("OzymandiasNovaLux@gmail.com", "MyWeb Site");
+            mail.To.Add(new MailAddress("lunasolprimenova@gmail.com"));
+            //mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
+            mail.Subject = "Testing email";
+            mail.Body = "Hello motherfucker";
+            mail.IsBodyHtml = true;
+
+            smtpClient.Send(mail);
 
 
 
         }
 
-        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+     
+        private void Emailtestbtn_Click(object sender, EventArgs e)
         {
-            if (e.Cancelled)
-                MessageBox.Show(String.Format("{0} send canceled", e.UserState), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (e.Error != null)
-                MessageBox.Show(string.Format("{0} {1}", e.UserState, e.Error), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Your message has been successfully sent.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            sendemail();
+            MessageBox.Show("Email sent!");
         }
-
-
-
     }
 }
