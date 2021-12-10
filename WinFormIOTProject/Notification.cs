@@ -64,6 +64,7 @@ namespace WinFormIOTProject
                 cmd.Parameters.AddWithValue("@uName", User.AccountUsername);
                 cmd.ExecuteNonQuery();
                 myConnect.Close();
+                //lol
 
             }
             else

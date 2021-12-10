@@ -36,6 +36,7 @@
             this.ForgetPassBtn = new FontAwesome.Sharp.IconButton();
             this.RFIDLoginBtn = new FontAwesome.Sharp.IconButton();
             this.Login = new System.Windows.Forms.Label();
+            this.SignupLbl = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // UsernameTxtbox
@@ -134,6 +135,17 @@
             this.Login.Text = "Login";
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
+            // SignupLbl
+            // 
+            this.SignupLbl.AutoSize = true;
+            this.SignupLbl.Location = new System.Drawing.Point(266, 370);
+            this.SignupLbl.Name = "SignupLbl";
+            this.SignupLbl.Size = new System.Drawing.Size(105, 13);
+            this.SignupLbl.TabIndex = 11;
+            this.SignupLbl.TabStop = true;
+            this.SignupLbl.Text = "No account?Sign up";
+            this.SignupLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignupLbl_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginBtn;
@@ -141,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(647, 440);
+            this.Controls.Add(this.SignupLbl);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.RFIDLoginBtn);
             this.Controls.Add(this.ForgetPassBtn);
@@ -166,6 +179,7 @@
         private FontAwesome.Sharp.IconButton ForgetPassBtn;
         private FontAwesome.Sharp.IconButton RFIDLoginBtn;
         private System.Windows.Forms.Label Login;
+        private System.Windows.Forms.LinkLabel SignupLbl;
     }
 }
 

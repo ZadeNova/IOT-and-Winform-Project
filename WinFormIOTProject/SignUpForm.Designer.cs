@@ -42,6 +42,10 @@
             this.EmailError = new System.Windows.Forms.ErrorProvider(this.components);
             this.PassError = new System.Windows.Forms.ErrorProvider(this.components);
             this.CfmPassError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SignupformLbl = new System.Windows.Forms.Label();
+            this.PhoneNumTxt = new System.Windows.Forms.TextBox();
+            this.PhnNoLbl = new System.Windows.Forms.Label();
+            this.Loginformlbl = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.UserError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PassError)).BeginInit();
@@ -50,7 +54,7 @@
             // 
             // Registerbtn
             // 
-            this.Registerbtn.Location = new System.Drawing.Point(192, 229);
+            this.Registerbtn.Location = new System.Drawing.Point(247, 298);
             this.Registerbtn.Name = "Registerbtn";
             this.Registerbtn.Size = new System.Drawing.Size(75, 23);
             this.Registerbtn.TabIndex = 0;
@@ -60,7 +64,7 @@
             // 
             // NewUsertxt
             // 
-            this.NewUsertxt.Location = new System.Drawing.Point(167, 82);
+            this.NewUsertxt.Location = new System.Drawing.Point(205, 102);
             this.NewUsertxt.Name = "NewUsertxt";
             this.NewUsertxt.Size = new System.Drawing.Size(166, 20);
             this.NewUsertxt.TabIndex = 1;
@@ -70,7 +74,7 @@
             // NewUserlabel
             // 
             this.NewUserlabel.AutoSize = true;
-            this.NewUserlabel.Location = new System.Drawing.Point(66, 82);
+            this.NewUserlabel.Location = new System.Drawing.Point(104, 102);
             this.NewUserlabel.Name = "NewUserlabel";
             this.NewUserlabel.Size = new System.Drawing.Size(55, 13);
             this.NewUserlabel.TabIndex = 2;
@@ -80,7 +84,7 @@
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(69, 116);
+            this.EmailLabel.Location = new System.Drawing.Point(107, 136);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(32, 13);
             this.EmailLabel.TabIndex = 3;
@@ -89,7 +93,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(69, 150);
+            this.PasswordLabel.Location = new System.Drawing.Point(107, 214);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 4;
@@ -97,7 +101,7 @@
             // 
             // NewEmailTxt
             // 
-            this.NewEmailTxt.Location = new System.Drawing.Point(167, 113);
+            this.NewEmailTxt.Location = new System.Drawing.Point(205, 133);
             this.NewEmailTxt.Name = "NewEmailTxt";
             this.NewEmailTxt.Size = new System.Drawing.Size(166, 20);
             this.NewEmailTxt.TabIndex = 5;
@@ -105,7 +109,7 @@
             // 
             // NewPasswordTxt
             // 
-            this.NewPasswordTxt.Location = new System.Drawing.Point(167, 150);
+            this.NewPasswordTxt.Location = new System.Drawing.Point(205, 211);
             this.NewPasswordTxt.Name = "NewPasswordTxt";
             this.NewPasswordTxt.Size = new System.Drawing.Size(166, 20);
             this.NewPasswordTxt.TabIndex = 6;
@@ -114,7 +118,7 @@
             // CfmpassReg
             // 
             this.CfmpassReg.AutoSize = true;
-            this.CfmpassReg.Location = new System.Drawing.Point(69, 194);
+            this.CfmpassReg.Location = new System.Drawing.Point(104, 255);
             this.CfmpassReg.Name = "CfmpassReg";
             this.CfmpassReg.Size = new System.Drawing.Size(91, 13);
             this.CfmpassReg.TabIndex = 7;
@@ -122,7 +126,7 @@
             // 
             // CfmPassTxtBox
             // 
-            this.CfmPassTxtBox.Location = new System.Drawing.Point(167, 191);
+            this.CfmPassTxtBox.Location = new System.Drawing.Point(205, 252);
             this.CfmPassTxtBox.Name = "CfmPassTxtBox";
             this.CfmPassTxtBox.Size = new System.Drawing.Size(166, 20);
             this.CfmPassTxtBox.TabIndex = 8;
@@ -144,11 +148,54 @@
             // 
             this.CfmPassError.ContainerControl = this;
             // 
+            // SignupformLbl
+            // 
+            this.SignupformLbl.AutoSize = true;
+            this.SignupformLbl.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignupformLbl.ForeColor = System.Drawing.Color.Cyan;
+            this.SignupformLbl.Location = new System.Drawing.Point(203, 32);
+            this.SignupformLbl.Name = "SignupformLbl";
+            this.SignupformLbl.Size = new System.Drawing.Size(168, 25);
+            this.SignupformLbl.TabIndex = 9;
+            this.SignupformLbl.Text = "SmartHomeIOT";
+            // 
+            // PhoneNumTxt
+            // 
+            this.PhoneNumTxt.Location = new System.Drawing.Point(205, 173);
+            this.PhoneNumTxt.Name = "PhoneNumTxt";
+            this.PhoneNumTxt.Size = new System.Drawing.Size(166, 20);
+            this.PhoneNumTxt.TabIndex = 10;
+            // 
+            // PhnNoLbl
+            // 
+            this.PhnNoLbl.AutoSize = true;
+            this.PhnNoLbl.Location = new System.Drawing.Point(104, 176);
+            this.PhnNoLbl.Name = "PhnNoLbl";
+            this.PhnNoLbl.Size = new System.Drawing.Size(78, 13);
+            this.PhnNoLbl.TabIndex = 11;
+            this.PhnNoLbl.Text = "Phone Number";
+            // 
+            // Loginformlbl
+            // 
+            this.Loginformlbl.AutoSize = true;
+            this.Loginformlbl.Location = new System.Drawing.Point(205, 364);
+            this.Loginformlbl.Name = "Loginformlbl";
+            this.Loginformlbl.Size = new System.Drawing.Size(149, 13);
+            this.Loginformlbl.TabIndex = 12;
+            this.Loginformlbl.TabStop = true;
+            this.Loginformlbl.Text = "Have an account? Login here";
+            this.Loginformlbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Loginformlbl_LinkClicked);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(569, 424);
+            this.Controls.Add(this.Loginformlbl);
+            this.Controls.Add(this.PhnNoLbl);
+            this.Controls.Add(this.PhoneNumTxt);
+            this.Controls.Add(this.SignupformLbl);
             this.Controls.Add(this.CfmPassTxtBox);
             this.Controls.Add(this.CfmpassReg);
             this.Controls.Add(this.NewPasswordTxt);
@@ -158,6 +205,7 @@
             this.Controls.Add(this.NewUserlabel);
             this.Controls.Add(this.NewUsertxt);
             this.Controls.Add(this.Registerbtn);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
             this.Load += new System.EventHandler(this.SignUpForm_Load);
@@ -185,5 +233,9 @@
         private System.Windows.Forms.ErrorProvider EmailError;
         private System.Windows.Forms.ErrorProvider PassError;
         private System.Windows.Forms.ErrorProvider CfmPassError;
+        private System.Windows.Forms.Label SignupformLbl;
+        private System.Windows.Forms.Label PhnNoLbl;
+        private System.Windows.Forms.TextBox PhoneNumTxt;
+        private System.Windows.Forms.LinkLabel Loginformlbl;
     }
 }

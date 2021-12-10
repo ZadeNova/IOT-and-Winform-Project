@@ -26,7 +26,7 @@ namespace WinFormIOTProject
             InitializeComponent();
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             myConnect.Open();
-            string strCommandText = "SELECT * FROM UserAccounts WHERE Name=@uname";
+            string strCommandText = "SELECT * FROM UserAccount WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@uname", User.AccountUsername);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -35,19 +35,22 @@ namespace WinFormIOTProject
                 if (reader.Read())
                 {
                     AESOperation Encryption = new AESOperation(); // Encryption
-                    string Name, Email, Password, Role,Key;
+                    string Name, Email, Password, Role,Key , Phone_Number;
                     Name = reader["Name"].ToString();
                     Email = reader["Email"].ToString();
                     Password = reader["Password"].ToString();
                     Role = reader["Role"].ToString();
                     Key = reader["SymmetricKey"].ToString();
+                    Phone_Number = reader["Phone_Number"].ToString();
                     
-                    Email = Encryption.DecryptString(Key, Email);  //Decryption
+                    Phone_Number = Encryption.DecryptString(Key, Phone_Number);  //Decryption
                     UsernameTxt.Text = Name;
                     EmailTxt.Text = Email;
                     PasswordTxt.Text = Password;
                     RoleTxt.Text = Role;
+                    PhnNumberTxt.Text = Phone_Number;
                     
+
                 }
 
             }
@@ -83,6 +86,11 @@ namespace WinFormIOTProject
         }
 
         private void EmailTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProfilePage_Load(object sender, EventArgs e)
         {
 
         }

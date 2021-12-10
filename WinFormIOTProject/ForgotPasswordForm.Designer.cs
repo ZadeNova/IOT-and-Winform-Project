@@ -32,6 +32,7 @@
             this.Forgetpasslabel = new System.Windows.Forms.Label();
             this.EnteremailLabel = new System.Windows.Forms.Label();
             this.ResetPassBtn = new FontAwesome.Sharp.IconButton();
+            this.bckLogFormLbl = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // EmailBoxTxt
@@ -76,12 +77,24 @@
             this.ResetPassBtn.UseVisualStyleBackColor = true;
             this.ResetPassBtn.Click += new System.EventHandler(this.ResetPassBtn_Click);
             // 
+            // bckLogFormLbl
+            // 
+            this.bckLogFormLbl.AutoSize = true;
+            this.bckLogFormLbl.Location = new System.Drawing.Point(377, 421);
+            this.bckLogFormLbl.Name = "bckLogFormLbl";
+            this.bckLogFormLbl.Size = new System.Drawing.Size(92, 13);
+            this.bckLogFormLbl.TabIndex = 5;
+            this.bckLogFormLbl.TabStop = true;
+            this.bckLogFormLbl.Text = "Back to login form";
+            this.bckLogFormLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.bckLogFormLbl_LinkClicked);
+            // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(896, 531);
+            this.Controls.Add(this.bckLogFormLbl);
             this.Controls.Add(this.ResetPassBtn);
             this.Controls.Add(this.EnteremailLabel);
             this.Controls.Add(this.Forgetpasslabel);
@@ -100,5 +113,6 @@
         private System.Windows.Forms.Label Forgetpasslabel;
         private System.Windows.Forms.Label EnteremailLabel;
         private FontAwesome.Sharp.IconButton ResetPassBtn;
+        private System.Windows.Forms.LinkLabel bckLogFormLbl;
     }
 }

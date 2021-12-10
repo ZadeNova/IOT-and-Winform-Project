@@ -61,7 +61,7 @@ namespace WinFormIOTProject
                 MessageBox.Show("Not Empty");
 
                 // Check if user and password exists in database
-                string strCommandText = "SELECT * FROM UserAccounts WHERE Name=@uName AND Password=@pass";
+                string strCommandText = "SELECT * FROM UserAccount WHERE Name=@uName AND Password=@pass";
                 SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
                 cmd.Parameters.AddWithValue("@uName",UsernameTxtbox.Text);
                 cmd.Parameters.AddWithValue("@pass", PasswordTxtBox.Text);
@@ -132,6 +132,14 @@ namespace WinFormIOTProject
         private void Login_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void SignupLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            SignUpForm signupform = new SignUpForm();
+            signupform.Show();
+
         }
     }
 }

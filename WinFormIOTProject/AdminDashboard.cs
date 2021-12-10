@@ -119,5 +119,12 @@ namespace WinFormIOTProject
         {
             openChildForm(new DataVisualisationForm());
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm logform = new LoginForm();
+            logform.ShowDialog();
+        }
     }
 }

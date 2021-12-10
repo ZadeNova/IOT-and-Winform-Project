@@ -41,12 +41,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
             this.DataStats = new System.Windows.Forms.GroupBox();
+            this.PhnNoLbl = new System.Windows.Forms.Label();
+            this.PhnNumberTxt = new System.Windows.Forms.TextBox();
             this.UserProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // UserProfile
             // 
+            this.UserProfile.Controls.Add(this.PhnNumberTxt);
+            this.UserProfile.Controls.Add(this.PhnNoLbl);
             this.UserProfile.Controls.Add(this.pictureBox1);
             this.UserProfile.Controls.Add(this.RoleTxt);
             this.UserProfile.Controls.Add(this.PasswordTxt);
@@ -59,7 +63,7 @@
             this.UserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserProfile.Location = new System.Drawing.Point(36, 69);
             this.UserProfile.Name = "UserProfile";
-            this.UserProfile.Size = new System.Drawing.Size(450, 431);
+            this.UserProfile.Size = new System.Drawing.Size(450, 463);
             this.UserProfile.TabIndex = 0;
             this.UserProfile.TabStop = false;
             this.UserProfile.Text = "UserProfile";
@@ -168,10 +172,29 @@
             this.DataStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataStats.Location = new System.Drawing.Point(529, 69);
             this.DataStats.Name = "DataStats";
-            this.DataStats.Size = new System.Drawing.Size(450, 431);
+            this.DataStats.Size = new System.Drawing.Size(450, 463);
             this.DataStats.TabIndex = 2;
             this.DataStats.TabStop = false;
             this.DataStats.Text = "Statistics";
+            // 
+            // PhnNoLbl
+            // 
+            this.PhnNoLbl.AutoSize = true;
+            this.PhnNoLbl.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhnNoLbl.Location = new System.Drawing.Point(105, 408);
+            this.PhnNoLbl.Name = "PhnNoLbl";
+            this.PhnNoLbl.Size = new System.Drawing.Size(104, 17);
+            this.PhnNoLbl.TabIndex = 9;
+            this.PhnNoLbl.Text = "Phone Number";
+            // 
+            // PhnNumberTxt
+            // 
+            this.PhnNumberTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhnNumberTxt.Location = new System.Drawing.Point(220, 408);
+            this.PhnNumberTxt.Name = "PhnNumberTxt";
+            this.PhnNumberTxt.ReadOnly = true;
+            this.PhnNumberTxt.Size = new System.Drawing.Size(143, 23);
+            this.PhnNumberTxt.TabIndex = 10;
             // 
             // ProfilePage
             // 
@@ -184,6 +207,7 @@
             this.Controls.Add(this.UserProfile);
             this.Name = "ProfilePage";
             this.Text = "Profile";
+            this.Load += new System.EventHandler(this.ProfilePage_Load);
             this.UserProfile.ResumeLayout(false);
             this.UserProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -205,5 +229,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.GroupBox DataStats;
+        private System.Windows.Forms.TextBox PhnNumberTxt;
+        private System.Windows.Forms.Label PhnNoLbl;
     }
 }

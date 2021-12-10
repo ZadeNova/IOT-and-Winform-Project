@@ -132,6 +132,7 @@ namespace WinFormIOTProject
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
             //lbDataComms.Invoke(d,new object[] { strData });
+            
             Console.WriteLine("Process data receive");
         }
 
@@ -167,9 +168,23 @@ namespace WinFormIOTProject
             
         }
 
+        private void RFIDtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         // Write the code to send data from windows form to raspberry pi
         // Check 5B first
         // Check 5A for Raspberry pi codes.
 
+        private void Changer()
+        {
+            RFIDtxt.Text = "LOL";
+        }
+
+        private void Testingbtn_Click(object sender, EventArgs e)
+        {
+            Changer();
+        }
     }
 }

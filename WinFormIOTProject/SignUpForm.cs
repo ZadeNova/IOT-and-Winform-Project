@@ -64,8 +64,8 @@ namespace WinFormIOTProject
                     
 
                     AESOperation encryptt = new AESOperation();
-                    var encryptedemail = encryptt.EncryptString(key, NewEmailTxt.Text);
-                    Console.WriteLine(encryptedemail);
+                    var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumTxt.Text);
+                    
                     
 
                     string Role = "User";
@@ -73,7 +73,7 @@ namespace WinFormIOTProject
 
                     SqlConnection myConnect = new SqlConnection(strConnectionString);
                     myConnect.Open();
-                    string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,Role,Status,SymmetricKey) VALUES (@Name,@Email,@Password,@Role,@Status,@SymmetricKey)";
+                    string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
 
                     SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
@@ -88,11 +88,16 @@ namespace WinFormIOTProject
 
                     //Hash the password
 
-                    
+                    Console.WriteLine(NewUsertxt.Text.Length);
+                    Console.WriteLine(NewEmailTxt.Text.Length);
+                    Console.WriteLine(NewPasswordTxt.Text.Length);
+                    Console.WriteLine(encryptedPhoneNo.Length);
+                    Console.WriteLine(key.Length);
 
                     cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                    cmd.Parameters.AddWithValue("@Email", encryptedemail);
+                    cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
                     cmd.Parameters.AddWithValue("@Password", NewPasswordTxt.Text);
+                    cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
                     cmd.Parameters.AddWithValue("@SymmetricKey",key);
                     cmd.Parameters.AddWithValue("@Role", Role);
                     cmd.Parameters.AddWithValue("@Status", Status);
@@ -200,6 +205,17 @@ namespace WinFormIOTProject
 
             }
             return key;
+
+        }
+
+        private void Loginformlbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm logform = new LoginForm();
+            logform.ShowDialog();
+            User.AccountEmail = "";
+            User.AccountEmail = "";
+            User.AccountUsername = "";
 
         }
     }

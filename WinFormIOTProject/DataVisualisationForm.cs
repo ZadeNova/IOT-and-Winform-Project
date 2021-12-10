@@ -28,8 +28,8 @@ namespace WinFormIOTProject
         {
             timer1.Tick += timer1_Tick;
             timer1.Interval = 50;
-            ChartTempProperties();
-            AddDataChart();
+            //ChartTempProperties();
+            //AddDataChart();
 
         }
 
@@ -55,7 +55,7 @@ namespace WinFormIOTProject
 
             //cht.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             //cht.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
-            cht.Series[0].IsXValueIndexed = false; // this must be false for AxisX max and min to work
+            //cht.Series[0].IsXValueIndexed = false; // this must be false for AxisX max and min to work
         } //End of setXAxisDisplayRange
 
         private void ChartTempProperties()

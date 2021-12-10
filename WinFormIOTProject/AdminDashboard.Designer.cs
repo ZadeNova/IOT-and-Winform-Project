@@ -44,6 +44,7 @@
             this.AdminLogo = new System.Windows.Forms.Panel();
             this.panelChildForms = new System.Windows.Forms.Panel();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.Logout = new FontAwesome.Sharp.IconButton();
             this.panelAdminMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
@@ -307,6 +308,7 @@
             // panelChildForms
             // 
             this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.panelChildForms.Controls.Add(this.Logout);
             this.panelChildForms.Controls.Add(this.ProfileBtn);
             this.panelChildForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForms.Location = new System.Drawing.Point(200, 0);
@@ -321,12 +323,25 @@
             this.ProfileBtn.IconColor = System.Drawing.Color.LightSeaGreen;
             this.ProfileBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ProfileBtn.IconSize = 40;
-            this.ProfileBtn.Location = new System.Drawing.Point(1036, 0);
+            this.ProfileBtn.Location = new System.Drawing.Point(984, 0);
             this.ProfileBtn.Name = "ProfileBtn";
             this.ProfileBtn.Size = new System.Drawing.Size(44, 46);
             this.ProfileBtn.TabIndex = 1;
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
+            // 
+            // Logout
+            // 
+            this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout.IconSize = 40;
+            this.Logout.Location = new System.Drawing.Point(1034, 0);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(46, 46);
+            this.Logout.TabIndex = 2;
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // AdminDashboard
             // 
@@ -363,5 +378,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Button Data;
         private FontAwesome.Sharp.IconButton ProfileBtn;
+        private FontAwesome.Sharp.IconButton Logout;
     }
 }

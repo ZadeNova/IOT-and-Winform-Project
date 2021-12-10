@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RFIDtxt = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Testingbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             this.RFIDtxt.Name = "RFIDtxt";
             this.RFIDtxt.Size = new System.Drawing.Size(266, 20);
             this.RFIDtxt.TabIndex = 3;
+            this.RFIDtxt.TextChanged += new System.EventHandler(this.RFIDtxt_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -86,12 +88,24 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
+            // Testingbtn
+            // 
+            this.Testingbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Testingbtn.Location = new System.Drawing.Point(373, 288);
+            this.Testingbtn.Name = "Testingbtn";
+            this.Testingbtn.Size = new System.Drawing.Size(75, 23);
+            this.Testingbtn.TabIndex = 4;
+            this.Testingbtn.Text = "Click me";
+            this.Testingbtn.UseVisualStyleBackColor = true;
+            this.Testingbtn.Click += new System.EventHandler(this.Testingbtn_Click);
+            // 
             // RFIDLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(647, 440);
+            this.Controls.Add(this.Testingbtn);
             this.Controls.Add(this.RFIDtxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
@@ -113,5 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox RFIDtxt;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button Testingbtn;
     }
 }

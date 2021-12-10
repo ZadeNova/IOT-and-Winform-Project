@@ -20,6 +20,8 @@ namespace WinFormIOTProject
 
         string NewPass = "";
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
+        EncryptionClass EncryptionAlgo = new EncryptionClass();
+
 
         public ForgotPasswordForm()
         {
@@ -45,26 +47,61 @@ namespace WinFormIOTProject
         {
 
 
+            EncryptionClass EncryptionAlgo = new EncryptionClass();
 
-            SendEmail();
 
             // Update User password in database with new Password
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             myConnect.Open();
-            string strCommandText = "UPDATE UserAccounts SET Password = @uPassword WHERE Email = @uEmail";
 
 
-            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-            cmd.Parameters.AddWithValue("@uPassword", NewPass);
-            cmd.Parameters.AddWithValue("@uEmail", EmailBoxTxt.Text);
+            //Email = Encryption.DecryptString(Key, Email);
+            string checkifuserexist = "SELECT * FROM UserAccount WHERE Email = @uEmail";
+            SqlCommand cmd2 = new SqlCommand(checkifuserexist, myConnect);
+
+            cmd2.Parameters.AddWithValue("@uEmail", EmailBoxTxt.Text);
+            
+            SqlDataReader reader = cmd2.ExecuteReader();
+            
+
+            if (reader.Read())
+            {
+                myConnect.Close();
+                myConnect.Open();
+                // if true send email pass reset
+                MessageBox.Show("True");
+                string strCommandText = "UPDATE UserAccount SET Password = @uPassword WHERE Email = @uEmail";
+                NewPass = PassGenerator();
+
+                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+                cmd.Parameters.AddWithValue("@uPassword", NewPass);
+                cmd.Parameters.AddWithValue("@uEmail", EmailBoxTxt.Text);
 
 
-            cmd.ExecuteNonQuery();
-            myConnect.Close();
+                cmd.ExecuteNonQuery();
+                myConnect.Close();
 
-            LoginForm loginform = new LoginForm();
-            this.Hide();
-            loginform.ShowDialog();
+
+
+                SendEmail(EmailBoxTxt.Text);
+                LoginForm loginform = new LoginForm();
+                this.Hide();
+                loginform.ShowDialog();
+
+
+
+
+
+            }
+            else
+            {
+
+                MessageBox.Show("wrong");
+
+            }
+
+
+            
 
 
 
@@ -76,7 +113,7 @@ namespace WinFormIOTProject
 
 
 
-        private void SendEmail()
+        private void SendEmail(string Email)
         {
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
 
@@ -92,7 +129,7 @@ namespace WinFormIOTProject
 
             //Setting From , To and CC
             mail.From = new MailAddress("OzymandiasNovaLux@gmail.com", "MyWeb Site");
-            mail.To.Add(new MailAddress("lunasolprimenova@gmail.com"));
+            mail.To.Add(new MailAddress(Email));
             //mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
 
             mail.Subject = "Testing email";
@@ -104,7 +141,7 @@ namespace WinFormIOTProject
 
         // 
 
-        private void PassGenerator()
+        private string PassGenerator()
         {
 
             // Password 8 characters in length 
@@ -121,10 +158,15 @@ namespace WinFormIOTProject
             }
             NewPass = NewPass + characterpool[rand.Next(36, 46)];
 
-            
+            return NewPass;
+
         }
-        
 
-
+        private void bckLogFormLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm logform = new LoginForm();
+            logform.ShowDialog();
+        }
     }
 }
