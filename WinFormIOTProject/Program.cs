@@ -17,11 +17,11 @@ namespace WinFormIOTProject
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
+            Application.Run(new LoginForm());
             //Application.Run(new SignUpForm());
             //Application.Run(new Home_Admin_());
             //Application.Run(new AdminDashboard());
-            Application.Run(new DataVisualisationForm());
+            //Application.Run(new DataVisualisationForm());
             //Application.Run(new RFIDLoginForm());
             //Application.Run(new Settings());
             //Application.Run(new Notification());
@@ -40,7 +40,7 @@ namespace WinFormIOTProject
         public static string AccountUsername;
         public static string AccountRole;
         public static string AccountEmail;
-        
+        public static int AccountID;
     }
 
 

@@ -63,23 +63,30 @@ namespace WinFormIOTProject
         }
 
         //Dont edit
-        public float extractFloatValue(string strData , string ID)
+        public float extractFloatValue(string strData, string ID)
         {
             return (float.Parse(extractStringValue(strData, ID)));
         }
-        public void HandleRFIDdata(string strData,string strTime , string ID)
+        public void HandleRFIDdata(string strData, string strTime, string ID)
         {
             string strRFIDValue = extractStringValue(strData, ID);
             //Update GUI data
-             RFIDtxt.Text = strRFIDValue;
-            Console.WriteLine("THIS FUNC EXECUTE");
 
+            Console.WriteLine(strRFIDValue);
+            //RFIDtxt.Text= strRFIDValue;
+            Console.WriteLine("THIS FUNC EXECUTE");
+            string newText = strRFIDValue;
+            RFIDtxt.Invoke((MethodInvoker)delegate
+            {
+                // Running on the UI thread
+                RFIDtxt.Text = newText;
+            });
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
 
             //RFIDSensorDataToDB();
 
-            
+
         }
 
         //private void handleButtonData(string strData, string strTime , string ID)
@@ -97,9 +104,10 @@ namespace WinFormIOTProject
 
             Console.WriteLine(strData);
             Console.WriteLine(strTime);
+            Console.WriteLine("im here lol");
             if (strData.IndexOf("RFID=") != -1)
             {
-                HandleRFIDdata(strData, strData, "RFID=");
+                HandleRFIDdata(strData, strTime, "RFID=");
             }
             else if (strData.IndexOf("BUTTON=") != -1)
             {
@@ -110,7 +118,7 @@ namespace WinFormIOTProject
 
 
 
-            
+
 
         }
 
@@ -124,15 +132,18 @@ namespace WinFormIOTProject
             Console.WriteLine("Handle sensordata");
             // Update raw data received to listbox
             string strMessage = dt + ":" + strData;
-            //lbDataComms.Items.Insert(0, strMessage);
+            ////lbDataComms.Items.Insert(0, strMessage);
+            Console.WriteLine(strData + "ste data from handle sensor data ");
         }
 
         // This method is automatically called when data is received
         public void processDataReceive(String strData)
         {
+            //handleSensorData(strData);
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-            //lbDataComms.Invoke(d,new object[] { strData });
-            
+            d.Invoke(strData);
+            Console.WriteLine(d + "this d ");
+            ////lbDataComms.Invoke(d,new object[] { strData });
             Console.WriteLine("Process data receive");
         }
 
@@ -155,7 +166,7 @@ namespace WinFormIOTProject
             dataComms = new DataComms();
             dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
             dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
-            
+
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -165,7 +176,7 @@ namespace WinFormIOTProject
 
         private void RFIDLoginFormLabel_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void RFIDtxt_TextChanged(object sender, EventArgs e)
@@ -177,14 +188,84 @@ namespace WinFormIOTProject
         // Check 5B first
         // Check 5A for Raspberry pi codes.
 
-        private void Changer()
-        {
-            RFIDtxt.Text = "LOL";
-        }
 
         private void Testingbtn_Click(object sender, EventArgs e)
         {
-            Changer();
+
+
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            myConnect.Open();
+            //
+            //string strCommandText = "INSERT INTO UserAccounts(Name,Email,Password,Role,Status,RFID_ID) VALUES (@Name,@Email,@Password,@Role,@Status,@RFID_ID)";
+
+            //SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+
+            //Check if empty
+            if (string.IsNullOrWhiteSpace(RFIDtxt.Text))
+            {
+                MessageBox.Show("IsEmpty");
+            }
+            else
+            {
+                MessageBox.Show("Not Empty");
+
+                // Check if user and password exists in database
+                string strCommandText = "SELECT * FROM UserAccount WHERE RFID_ID=@RFID ";
+                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+                cmd.Parameters.AddWithValue("@RFID", RFIDtxt.Text);
+
+
+                try
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        // Enter into admin form
+                        MessageBox.Show("Login Successful");
+                        dataComms.sendData("RFIDSUCC");
+                        this.Hide();
+                        User.AccountUsername = reader["NAME"].ToString();
+                        User.AccountEmail = reader["Email"].ToString();
+                        User.AccountRole = reader["Role"].ToString();
+                        AdminDashboard form2 = new AdminDashboard();
+                        form2.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login Unsuccessful");
+                        dataComms.sendData("RFIDFAIL");
+
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message.ToString());
+                }
+                finally
+                {
+                    myConnect.Close();
+                }
+
+
+
+
+
+
+            }
+
+
         }
+
+
+
+
+
+
+
     }
+
+
+
+
+
 }

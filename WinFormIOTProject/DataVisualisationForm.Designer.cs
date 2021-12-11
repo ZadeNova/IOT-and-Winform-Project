@@ -28,27 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControlData = new System.Windows.Forms.TabControl();
             this.Temperature = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.SoundTab = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Clearbtn2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Status2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Roomtemptxt = new System.Windows.Forms.TextBox();
+            this.Status2txt = new System.Windows.Forms.TextBox();
+            this.Lighttab = new System.Windows.Forms.TabPage();
+            this.Statustxt = new System.Windows.Forms.TextBox();
+            this.Roomlighttxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbDataComms = new System.Windows.Forms.ListBox();
+            this.Clearbtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControlData.SuspendLayout();
             this.Temperature.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.Lighttab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlData
             // 
             this.tabControlData.Controls.Add(this.Temperature);
-            this.tabControlData.Controls.Add(this.SoundTab);
+            this.tabControlData.Controls.Add(this.Lighttab);
             this.tabControlData.Location = new System.Drawing.Point(12, 24);
             this.tabControlData.Name = "tabControlData";
             this.tabControlData.SelectedIndex = 0;
@@ -57,7 +61,12 @@
             // 
             // Temperature
             // 
-            this.Temperature.Controls.Add(this.panel1);
+            this.Temperature.Controls.Add(this.Clearbtn2);
+            this.Temperature.Controls.Add(this.listBox1);
+            this.Temperature.Controls.Add(this.Status2);
+            this.Temperature.Controls.Add(this.label3);
+            this.Temperature.Controls.Add(this.Roomtemptxt);
+            this.Temperature.Controls.Add(this.Status2txt);
             this.Temperature.Location = new System.Drawing.Point(4, 22);
             this.Temperature.Name = "Temperature";
             this.Temperature.Padding = new System.Windows.Forms.Padding(3);
@@ -66,45 +75,125 @@
             this.Temperature.Text = "Temperature";
             this.Temperature.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // Clearbtn2
             // 
-            this.panel1.Controls.Add(this.chart1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 222);
-            this.panel1.TabIndex = 0;
+            this.Clearbtn2.Location = new System.Drawing.Point(334, 34);
+            this.Clearbtn2.Name = "Clearbtn2";
+            this.Clearbtn2.Size = new System.Drawing.Size(123, 42);
+            this.Clearbtn2.TabIndex = 5;
+            this.Clearbtn2.Text = "Clear";
+            this.Clearbtn2.UseVisualStyleBackColor = true;
+            this.Clearbtn2.Click += new System.EventHandler(this.Clearbtn2_Click);
             // 
-            // chart1
+            // listBox1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Salary";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(479, 222);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(18, 117);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(449, 134);
+            this.listBox1.TabIndex = 4;
             // 
-            // SoundTab
+            // Status2
             // 
-            this.SoundTab.Location = new System.Drawing.Point(4, 22);
-            this.SoundTab.Name = "SoundTab";
-            this.SoundTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SoundTab.Size = new System.Drawing.Size(485, 292);
-            this.SoundTab.TabIndex = 1;
-            this.SoundTab.Text = "Sound";
-            this.SoundTab.UseVisualStyleBackColor = true;
+            this.Status2.AutoSize = true;
+            this.Status2.Location = new System.Drawing.Point(15, 72);
+            this.Status2.Name = "Status2";
+            this.Status2.Size = new System.Drawing.Size(37, 13);
+            this.Status2.TabIndex = 3;
+            this.Status2.Text = "Status";
             // 
-            // timer1
+            // label3
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Room Temperature";
+            // 
+            // Roomtemptxt
+            // 
+            this.Roomtemptxt.BackColor = System.Drawing.SystemColors.Control;
+            this.Roomtemptxt.Location = new System.Drawing.Point(128, 20);
+            this.Roomtemptxt.Name = "Roomtemptxt";
+            this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
+            this.Roomtemptxt.TabIndex = 1;
+            // 
+            // Status2txt
+            // 
+            this.Status2txt.BackColor = System.Drawing.SystemColors.Control;
+            this.Status2txt.Location = new System.Drawing.Point(128, 72);
+            this.Status2txt.Name = "Status2txt";
+            this.Status2txt.Size = new System.Drawing.Size(145, 20);
+            this.Status2txt.TabIndex = 0;
+            // 
+            // Lighttab
+            // 
+            this.Lighttab.Controls.Add(this.Statustxt);
+            this.Lighttab.Controls.Add(this.Roomlighttxt);
+            this.Lighttab.Controls.Add(this.label2);
+            this.Lighttab.Controls.Add(this.label1);
+            this.Lighttab.Controls.Add(this.lbDataComms);
+            this.Lighttab.Controls.Add(this.Clearbtn);
+            this.Lighttab.Location = new System.Drawing.Point(4, 22);
+            this.Lighttab.Name = "Lighttab";
+            this.Lighttab.Padding = new System.Windows.Forms.Padding(3);
+            this.Lighttab.Size = new System.Drawing.Size(485, 292);
+            this.Lighttab.TabIndex = 1;
+            this.Lighttab.Text = "Light";
+            this.Lighttab.UseVisualStyleBackColor = true;
+            // 
+            // Statustxt
+            // 
+            this.Statustxt.BackColor = System.Drawing.SystemColors.Control;
+            this.Statustxt.Location = new System.Drawing.Point(107, 80);
+            this.Statustxt.Name = "Statustxt";
+            this.Statustxt.Size = new System.Drawing.Size(161, 20);
+            this.Statustxt.TabIndex = 5;
+            // 
+            // Roomlighttxt
+            // 
+            this.Roomlighttxt.BackColor = System.Drawing.SystemColors.Control;
+            this.Roomlighttxt.Location = new System.Drawing.Point(107, 26);
+            this.Roomlighttxt.Name = "Roomlighttxt";
+            this.Roomlighttxt.Size = new System.Drawing.Size(161, 20);
+            this.Roomlighttxt.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Status";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Room Light";
+            // 
+            // lbDataComms
+            // 
+            this.lbDataComms.FormattingEnabled = true;
+            this.lbDataComms.Location = new System.Drawing.Point(6, 120);
+            this.lbDataComms.Name = "lbDataComms";
+            this.lbDataComms.Size = new System.Drawing.Size(473, 134);
+            this.lbDataComms.TabIndex = 1;
+            // 
+            // Clearbtn
+            // 
+            this.Clearbtn.Location = new System.Drawing.Point(333, 33);
+            this.Clearbtn.Name = "Clearbtn";
+            this.Clearbtn.Size = new System.Drawing.Size(116, 44);
+            this.Clearbtn.TabIndex = 0;
+            this.Clearbtn.Text = "Clear";
+            this.Clearbtn.UseVisualStyleBackColor = true;
+            this.Clearbtn.Click += new System.EventHandler(this.Clearbtn_Click);
             // 
             // button1
             // 
@@ -129,8 +218,9 @@
             this.Load += new System.EventHandler(this.DataVisualisationForm_Load);
             this.tabControlData.ResumeLayout(false);
             this.Temperature.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.Temperature.PerformLayout();
+            this.Lighttab.ResumeLayout(false);
+            this.Lighttab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -139,10 +229,19 @@
 
         private System.Windows.Forms.TabControl tabControlData;
         private System.Windows.Forms.TabPage Temperature;
-        private System.Windows.Forms.TabPage SoundTab;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TabPage Lighttab;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Clearbtn2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label Status2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Roomtemptxt;
+        private System.Windows.Forms.TextBox Status2txt;
+        private System.Windows.Forms.TextBox Statustxt;
+        private System.Windows.Forms.TextBox Roomlighttxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbDataComms;
+        private System.Windows.Forms.Button Clearbtn;
     }
 }

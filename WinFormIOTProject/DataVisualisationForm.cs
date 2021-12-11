@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Configuration;
+using System.Data.SqlClient;
+
+
+
 
 namespace WinFormIOTProject
 {
@@ -26,8 +31,7 @@ namespace WinFormIOTProject
 
         private void DataVisualisationForm_Load(object sender, EventArgs e)
         {
-            timer1.Tick += timer1_Tick;
-            timer1.Interval = 50;
+           
             //ChartTempProperties();
             //AddDataChart();
 
@@ -147,30 +151,212 @@ namespace WinFormIOTProject
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            chart1.Series[0].Points.Add(x, 3 * Math.Sin(5 * x) + 5 * Math.Cos(3 * x));
-            if (chart1.Series[0].Points.Count > 100)
-                chart1.Series[0].Points.RemoveAt(0);
-            chart1.ChartAreas[0].AxisX.Minimum = chart1.Series[0].Points[0].XValue;
-            chart1.ChartAreas[0].AxisX.Maximum = x;
-            x += 0.1;
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled)
-            {
-                timer1.Stop();
-                button1.Text = "Stop";
-            }
-               
-            else
-            {
-                timer1.Start();
-                button1.Text = "Stop";
-            }
+           
                
         }
+
+        string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
+        DataComms dataComms;
+        public delegate void myprocessDataDelegate(string strData);
+        private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
+        {
+            SqlConnection myconnect = new SqlConnection(strConnectionString);
+            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@time, @value, @status)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
+            updateCmd.Parameters.AddWithValue("@time", strTime);
+            updateCmd.Parameters.AddWithValue("@value", strlightValue);
+            updateCmd.Parameters.AddWithValue("@status", strStatus);
+
+            myconnect.Open();
+
+            // int result = updateCmd.ExecuteNonQuery();
+            myconnect.Close();
+        }
+
+        private string extractStringValue(string strData, string ID)
+        {
+            string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+            return result;
+        }
+
+        private float extractFloatValue(string strData, string ID)
+        {
+            return (float.Parse(extractStringValue(strData, ID)));
+        }
+
+        private void handleLightSensorData(string strData, string strTime, string ID)
+        {
+            string strlightValue = extractStringValue(strData, ID);
+            Roomlighttxt.Text = strlightValue;
+            Roomlighttxt.Text = strlightValue;
+
+            float flightValue = extractFloatValue(strData, ID);
+            string status = "";
+            if (flightValue <= 500)
+                status = "Dark";
+            else
+                status = "Bright";
+            Statustxt.Text = status;
+            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+        }
+
+        private void handleButtonData(string strData, string strTime, string ID)
+        {
+            string strbuttonValue = extractStringValue(strData, ID);
+            //tbButtonValue.Text = strbuttonValue;
+            //tbDoorBell.Text = strbuttonValue;
+        }
+
+        private void extractSensorData(string strData, string strTime)
+        {
+            if (strData.IndexOf("LIGHT=") != -1)
+                handleLightSensorData(strData, strTime, "LIGHT=");
+
+        }
+
+        public void handleSensorData(string strData)
+        {
+            string dt = DateTime.Now.ToString("s");
+            extractSensorData(strData, dt);
+            string strMessage = dt + ":" + strData;
+            lbDataComms.Items.Insert(0, strMessage);
+        }
+
+        public void processDataReceive(string strData)
+        {
+            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
+            lbDataComms.Invoke(d, new object[] { strData });
+        }
+
+        public void commsDataRecieve(string dataReceived)
+        {
+            processDataReceive(dataReceived);
+        }
+
+        public void commsSendError(string errMsg)
+        {
+            MessageBox.Show(errMsg);
+            processDataReceive(errMsg);
+        }
+        private void InitComms()
+        {
+            dataComms = new DataComms();
+            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve);
+            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+        }
+        // end of light sensor
+
+        // start of tem sensor
+
+
+        public delegate void myprocessDataDelegate1(string strData1);
+        private void savetempSensorDataToDB(string strTime1, string strlightValue1, string strStatus1)
+        {
+            SqlConnection myconnect = new SqlConnection(strConnectionString);
+            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@timetem, @valuetem, @statustem)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
+            updateCmd.Parameters.AddWithValue("@timetem", strTime1);
+            updateCmd.Parameters.AddWithValue("@valuetem", strlightValue1);
+            updateCmd.Parameters.AddWithValue("@statustem", strStatus1);
+
+            myconnect.Open();
+
+            // int result = updateCmd.ExecuteNonQuery();
+            myconnect.Close();
+        }
+
+        private string extractStringValue1(string strData1, string ID1)
+        {
+            string result1 = strData1.Substring(strData1.IndexOf(ID1) + ID1.Length);
+            return result1;
+        }
+
+        private float extractFloatValue1(string strData1, string ID1)
+        {
+            return (float.Parse(extractStringValue1(strData1, ID1)));
+        }
+
+        private void handletempSensorData(string strData1, string strTime1, string ID1)
+        {
+            string strlightValue1 = extractStringValue1(strData1, ID1);
+            Roomtemptxt.Text = strlightValue1;
+            Roomtemptxt.Text = strlightValue1;
+
+            float flightValue1 = extractFloatValue1(strData1, ID1);
+            string status1 = "";
+            if (flightValue1 >= 30)
+                status1 = "too hot";
+            else if (flightValue1 <= 20)
+                status1 = "too cool";
+            else
+                status1 = "normal";
+            Status2.Text = status1;
+            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+        }
+
+        private void handleButtonData1(string strData1, string strTime1, string ID1)
+        {
+            string strbuttonValue1 = extractStringValue1(strData1, ID1);
+            //tbButtonValue.Text = strbuttonValue;
+            //tbDoorBell.Text = strbuttonValue;
+        }
+
+        private void extractSensorData1(string strData1, string strTime1)
+        {
+            if (strData1.IndexOf("Temp=") != -1)
+                handletempSensorData(strData1, strTime1, "Temp=");
+
+        }
+
+        public void handleSensorData1(string strData1)
+        {
+            string dt = DateTime.Now.ToString("s");
+            extractSensorData1(strData1, dt);
+            string strMessage1 = dt + ":" + strData1;
+            listBox1.Items.Insert(0, strMessage1);
+        }
+
+        public void processDataReceive1(string strData1)
+        {
+            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData1);
+            listBox1.Invoke(d, new object[] { strData1 });
+        }
+
+        public void commsDataRecieve1(string dataReceived1)
+        {
+            processDataReceive1(dataReceived1);
+        }
+
+        public void commsSendError1(string errMsg1)
+        {
+            MessageBox.Show(errMsg1);
+            processDataReceive(errMsg1);
+        }
+        private void InitComms1()
+        {
+
+            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve1);
+            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError1);
+        }
+
+        private void Clearbtn2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            Console.WriteLine("clearing data");
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+            lbDataComms.Items.Clear();
+            Console.WriteLine("clearing data");
+        }
+        // end of tem sensor 
+
+
+
     }
 }

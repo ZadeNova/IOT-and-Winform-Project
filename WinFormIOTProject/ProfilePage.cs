@@ -18,7 +18,7 @@ namespace WinFormIOTProject
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         EncryptionClass EncryptionAlgo = new EncryptionClass();
-        
+        string Key;
 
         public ProfilePage()
         {
@@ -35,21 +35,28 @@ namespace WinFormIOTProject
                 if (reader.Read())
                 {
                     AESOperation Encryption = new AESOperation(); // Encryption
-                    string Name, Email, Password, Role,Key , Phone_Number;
+                    string Name, Email, Password, Role, Phone_Number;
                     Name = reader["Name"].ToString();
                     Email = reader["Email"].ToString();
                     Password = reader["Password"].ToString();
                     Role = reader["Role"].ToString();
                     Key = reader["SymmetricKey"].ToString();
                     Phone_Number = reader["Phone_Number"].ToString();
+
                     
+
+                    User.AccountID = Convert.ToInt32(reader["ID"]);
                     Phone_Number = Encryption.DecryptString(Key, Phone_Number);  //Decryption
                     UsernameTxt.Text = Name;
                     EmailTxt.Text = Email;
                     PasswordTxt.Text = Password;
                     RoleTxt.Text = Role;
                     PhnNumberTxt.Text = Phone_Number;
-                    
+                    Updateusernametxt.Text = Name;
+                    UpdateEmailTxt.Text = Email;
+                    UpdatePasstxt.Text = Password;
+                    UpdatePhoneTxt.Text = Phone_Number;
+                    UpdateRoletxt.Text = Role;
 
                 }
 
@@ -94,5 +101,67 @@ namespace WinFormIOTProject
         {
 
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+              
+
+
+                AESOperation Encryption = new AESOperation();
+                SqlConnection myConnect = new SqlConnection(strConnectionString);
+              
+
+                myConnect.Open();
+                string strCommandText = "UPDATE UserAccount SET Name = @Name , Password = @Password ,Email = @Email ,Phone_Number = @Phone_No  WHERE ID = @ID ";
+                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+
+                string encryptphoneno = Encryption.EncryptString(Key, UpdatePhoneTxt.Text);
+
+                cmd.Parameters.AddWithValue("@Name", Updateusernametxt.Text);
+                cmd.Parameters.AddWithValue("@Email", UpdateEmailTxt.Text);
+                cmd.Parameters.AddWithValue("@Password", UpdatePasstxt.Text);
+                cmd.Parameters.AddWithValue("@Phone_No", encryptphoneno);
+                cmd.Parameters.AddWithValue("@ID", User.AccountID);
+
+                cmd.ExecuteNonQuery();
+                myConnect.Close();
+                MessageBox.Show("Your user profile has been updated!");
+                updateprofiletxtbox(Updateusernametxt.Text, UpdateEmailTxt.Text, UpdatePasstxt.Text, UpdatePhoneTxt.Text);
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void updateprofiletxtbox(string user , string email , string password , string phone_no)
+        {
+
+            UsernameTxt.Text = user;
+            EmailTxt.Text = email;
+            PasswordTxt.Text = password;
+            PhnNumberTxt.Text = phone_no;
+            Updateusernametxt.Text = user;
+            UpdateEmailTxt.Text = email;
+            UpdatePasstxt.Text = password;
+            UpdatePhoneTxt.Text = phone_no;
+
+
+
+        
+        }
+
+
+
+
+
     }
 }

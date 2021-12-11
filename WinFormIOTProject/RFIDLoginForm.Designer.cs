@@ -91,7 +91,7 @@
             // Testingbtn
             // 
             this.Testingbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Testingbtn.Location = new System.Drawing.Point(373, 288);
+            this.Testingbtn.Location = new System.Drawing.Point(267, 309);
             this.Testingbtn.Name = "Testingbtn";
             this.Testingbtn.Size = new System.Drawing.Size(75, 23);
             this.Testingbtn.TabIndex = 4;
