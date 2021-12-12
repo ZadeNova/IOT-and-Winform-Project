@@ -45,6 +45,7 @@
             this.panelChildForms = new System.Windows.Forms.Panel();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.panelAdminMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
@@ -308,6 +309,7 @@
             // panelChildForms
             // 
             this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.panelChildForms.Controls.Add(this.UserSettingsbtn);
             this.panelChildForms.Controls.Add(this.Logout);
             this.panelChildForms.Controls.Add(this.ProfileBtn);
             this.panelChildForms.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -318,6 +320,9 @@
             // 
             // Logout
             // 
+            this.Logout.FlatAppearance.BorderSize = 0;
+            this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
             this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -332,6 +337,8 @@
             // ProfileBtn
             // 
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
+            this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileBtn.IconChar = FontAwesome.Sharp.IconChar.UserAstronaut;
             this.ProfileBtn.IconColor = System.Drawing.Color.LightSeaGreen;
             this.ProfileBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -342,6 +349,22 @@
             this.ProfileBtn.TabIndex = 1;
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
+            // 
+            // UserSettingsbtn
+            // 
+            this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
+            this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsbtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.UserSettingsbtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.UserSettingsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserSettingsbtn.IconSize = 40;
+            this.UserSettingsbtn.Location = new System.Drawing.Point(931, 2);
+            this.UserSettingsbtn.Name = "UserSettingsbtn";
+            this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
+            this.UserSettingsbtn.TabIndex = 3;
+            this.UserSettingsbtn.UseVisualStyleBackColor = true;
+            this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
             // 
             // AdminDashboard
             // 
@@ -380,5 +403,6 @@
         private System.Windows.Forms.Button Data;
         private FontAwesome.Sharp.IconButton ProfileBtn;
         private FontAwesome.Sharp.IconButton Logout;
+        private FontAwesome.Sharp.IconButton UserSettingsbtn;
     }
 }

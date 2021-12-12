@@ -250,6 +250,8 @@
             this.Homebtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Homebtn.FlatAppearance.BorderSize = 0;
+            this.Homebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.Homebtn.IconColor = System.Drawing.Color.LightSeaGreen;
             this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;

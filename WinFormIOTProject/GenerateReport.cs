@@ -17,7 +17,14 @@ namespace WinFormIOTProject
             InitializeComponent();
         }
 
-        private void Home_Click(object sender, EventArgs e)
+       
+
+        private void GenerateReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Homebtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

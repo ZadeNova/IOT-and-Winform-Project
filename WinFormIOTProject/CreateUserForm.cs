@@ -138,6 +138,15 @@ namespace WinFormIOTProject
                                 cmd.ExecuteNonQuery(); // It executes the sql command
 
                                 myConnect.Close();
+                                myConnect.Open();
+                                string anothercommand = "INSERT INTO TwoFactorAuthenticationTable (Name,Email) VALUES (@Name , @Email)";
+                                SqlCommand anothercommand2 = new SqlCommand(anothercommand, myConnect);
+                                anothercommand2.Parameters.AddWithValue("@Name", UserNametxt.Text);
+                                anothercommand2.Parameters.AddWithValue("@Email", EmailTxt.Text);
+                                anothercommand2.ExecuteNonQuery();
+
+
+                                myConnect.Close();
 
                                 MessageBox.Show($"{Role} {UserNametxt.Text} has been created!");
 

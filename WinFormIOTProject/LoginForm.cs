@@ -58,7 +58,7 @@ namespace WinFormIOTProject
             }
             else
             {
-                MessageBox.Show("Not Empty");
+                
 
 
 
@@ -77,14 +77,46 @@ namespace WinFormIOTProject
                         bool flag = Hash.VerifyHash(PasswordTxtBox.Text, "SHA512", reader["Password"].ToString());
                         if (flag)
                         {
+                            
                             // Enter into admin form
-                            MessageBox.Show("Login Successful");
+                            //MessageBox.Show("Login Successful");
                             this.Hide();
                             User.AccountUsername = UsernameTxtbox.Text;
                             User.AccountEmail = reader["Email"].ToString();
                             User.AccountRole = reader["Role"].ToString();
-                            AdminDashboard form2 = new AdminDashboard();
-                            form2.ShowDialog();
+
+
+                            myConnect.Close();
+                            myConnect.Open();
+                            string commandss = "SELECT * FROM TwoFactorAuthenticationTable WHERE Name = @Name AND Email2FA = @Email2fa";
+                            SqlCommand twofacommand = new SqlCommand(commandss, myConnect);
+                            twofacommand.Parameters.AddWithValue("@Name", UsernameTxtbox.Text);
+                            twofacommand.Parameters.AddWithValue("@Email2fa", "True");
+                            SqlDataReader readerfa = twofacommand.ExecuteReader();
+                           
+
+                            if (readerfa.Read())
+                            {
+                                // IF the user has 2FA email enabled.
+
+                                MessageBox.Show("Works1");
+                                Email2FAafterLogin emailfaform = new Email2FAafterLogin();
+                                emailfaform.ShowDialog();
+
+
+                            }
+
+                            else
+                            {
+
+                                AdminDashboard form2 = new AdminDashboard();
+                                form2.ShowDialog();
+
+                                MessageBox.Show("Not working");
+                            }
+
+
+
                         }
                         else
                         {

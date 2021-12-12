@@ -136,5 +136,16 @@ namespace WinFormIOTProject
         {
 
         }
+
+        private void UserSettingsbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UserSettingsForm usersettingform = new UserSettingsForm();
+            usersettingform.ShowDialog();
+
+
+
+
+        }
     }
 }

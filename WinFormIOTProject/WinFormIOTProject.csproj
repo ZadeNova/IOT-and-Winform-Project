@@ -91,6 +91,12 @@
     <Compile Include="DataVisualisationForm.Designer.cs">
       <DependentUpon>DataVisualisationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Email2FAafterLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Email2FAafterLogin.Designer.cs">
+      <DependentUpon>Email2FAafterLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncryptionClass.cs" />
     <Compile Include="ForgotPasswordForm.cs">
       <SubType>Form</SubType>
@@ -167,6 +173,12 @@
     <Compile Include="UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettingsForm.Designer.cs">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataVisualisationForm.resx">
       <DependentUpon>DataVisualisationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email2FAafterLogin.resx">
+      <DependentUpon>Email2FAafterLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
@@ -220,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettingsForm.resx">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

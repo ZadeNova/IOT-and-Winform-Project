@@ -93,7 +93,7 @@ namespace WinFormIOTProject
                             string Role = "User";
                             string Status = "Active";
 
-                            myConnect.Open();
+                            
                             string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
 
                             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
@@ -117,6 +117,17 @@ namespace WinFormIOTProject
                             cmd.ExecuteNonQuery(); // It executes the sql command
 
                             myConnect.Close();
+
+                            myConnect.Open();
+                            string anothercommand = "INSERT INTO TwoFactorAuthenticationTable (Name,Email) VALUES (@Name , @Email)";
+                            SqlCommand anothercommand2 = new SqlCommand(anothercommand, myConnect);
+                            anothercommand2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                            anothercommand2.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
+                            anothercommand2.ExecuteNonQuery();
+
+
+                            myConnect.Close();
+
                             User.AccountUsername = NewUsertxt.Text; // User session
                             AdminDashboard AdminForm = new AdminDashboard();
                             this.Hide();
