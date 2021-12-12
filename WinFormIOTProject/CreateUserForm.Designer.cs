@@ -31,22 +31,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Userpicicon = new FontAwesome.Sharp.IconPictureBox();
             this.Usercreategrpbox = new System.Windows.Forms.GroupBox();
-            this.Homebtn = new FontAwesome.Sharp.IconButton();
-            this.UserNametxt = new System.Windows.Forms.TextBox();
-            this.EmailTxt = new System.Windows.Forms.TextBox();
-            this.PhoneNumtxt = new System.Windows.Forms.TextBox();
-            this.UserNamelbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.PasswordTxt = new System.Windows.Forms.TextBox();
-            this.CfmPassTxt = new System.Windows.Forms.TextBox();
-            this.AdminBtn = new System.Windows.Forms.RadioButton();
+            this.AddUserbtn = new FontAwesome.Sharp.IconButton();
             this.GrpSetting = new System.Windows.Forms.GroupBox();
             this.UserBtn = new System.Windows.Forms.RadioButton();
-            this.AddUserbtn = new FontAwesome.Sharp.IconButton();
+            this.AdminBtn = new System.Windows.Forms.RadioButton();
+            this.CfmPassTxt = new System.Windows.Forms.TextBox();
+            this.PasswordTxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.UserNamelbl = new System.Windows.Forms.Label();
+            this.PhoneNumtxt = new System.Windows.Forms.TextBox();
+            this.EmailTxt = new System.Windows.Forms.TextBox();
+            this.UserNametxt = new System.Windows.Forms.TextBox();
+            this.Homebtn = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.Userpicicon)).BeginInit();
             this.Usercreategrpbox.SuspendLayout();
             this.GrpSetting.SuspendLayout();
@@ -101,126 +101,22 @@
             this.Usercreategrpbox.TabStop = false;
             this.Usercreategrpbox.Text = "User Creation";
             // 
-            // Homebtn
+            // AddUserbtn
             // 
-            this.Homebtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Homebtn.FlatAppearance.BorderSize = 0;
-            this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.Homebtn.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Homebtn.IconSize = 40;
-            this.Homebtn.Location = new System.Drawing.Point(43, 12);
-            this.Homebtn.Name = "Homebtn";
-            this.Homebtn.Size = new System.Drawing.Size(75, 41);
-            this.Homebtn.TabIndex = 3;
-            this.Homebtn.UseVisualStyleBackColor = false;
-            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
-            // 
-            // UserNametxt
-            // 
-            this.UserNametxt.Location = new System.Drawing.Point(245, 75);
-            this.UserNametxt.Name = "UserNametxt";
-            this.UserNametxt.Size = new System.Drawing.Size(275, 27);
-            this.UserNametxt.TabIndex = 0;
-            // 
-            // EmailTxt
-            // 
-            this.EmailTxt.Location = new System.Drawing.Point(245, 147);
-            this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(275, 27);
-            this.EmailTxt.TabIndex = 1;
-            // 
-            // PhoneNumtxt
-            // 
-            this.PhoneNumtxt.Location = new System.Drawing.Point(245, 218);
-            this.PhoneNumtxt.Name = "PhoneNumtxt";
-            this.PhoneNumtxt.Size = new System.Drawing.Size(275, 27);
-            this.PhoneNumtxt.TabIndex = 2;
-            // 
-            // UserNamelbl
-            // 
-            this.UserNamelbl.AutoSize = true;
-            this.UserNamelbl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNamelbl.Location = new System.Drawing.Point(91, 81);
-            this.UserNamelbl.Name = "UserNamelbl";
-            this.UserNamelbl.Size = new System.Drawing.Size(71, 15);
-            this.UserNamelbl.TabIndex = 3;
-            this.UserNamelbl.Text = "Username";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(89, 307);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Password";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(91, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 224);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Phone Number";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(85, 313);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 15);
-            this.label5.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(85, 376);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Confirm Password";
-            // 
-            // PasswordTxt
-            // 
-            this.PasswordTxt.Location = new System.Drawing.Point(245, 301);
-            this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.Size = new System.Drawing.Size(275, 27);
-            this.PasswordTxt.TabIndex = 9;
-            // 
-            // CfmPassTxt
-            // 
-            this.CfmPassTxt.Location = new System.Drawing.Point(245, 370);
-            this.CfmPassTxt.Name = "CfmPassTxt";
-            this.CfmPassTxt.Size = new System.Drawing.Size(275, 27);
-            this.CfmPassTxt.TabIndex = 10;
-            // 
-            // AdminBtn
-            // 
-            this.AdminBtn.AutoSize = true;
-            this.AdminBtn.Location = new System.Drawing.Point(69, 70);
-            this.AdminBtn.Name = "AdminBtn";
-            this.AdminBtn.Size = new System.Drawing.Size(77, 23);
-            this.AdminBtn.TabIndex = 11;
-            this.AdminBtn.TabStop = true;
-            this.AdminBtn.Text = "Admin";
-            this.AdminBtn.UseVisualStyleBackColor = true;
+            this.AddUserbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.AddUserbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddUserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddUserbtn.FlatAppearance.BorderSize = 0;
+            this.AddUserbtn.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.AddUserbtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.AddUserbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.AddUserbtn.IconSize = 40;
+            this.AddUserbtn.Location = new System.Drawing.Point(819, 403);
+            this.AddUserbtn.Name = "AddUserbtn";
+            this.AddUserbtn.Size = new System.Drawing.Size(75, 48);
+            this.AddUserbtn.TabIndex = 13;
+            this.AddUserbtn.UseVisualStyleBackColor = false;
+            this.AddUserbtn.Click += new System.EventHandler(this.AddUserbtn_Click);
             // 
             // GrpSetting
             // 
@@ -244,22 +140,126 @@
             this.UserBtn.Text = "User";
             this.UserBtn.UseVisualStyleBackColor = true;
             // 
-            // AddUserbtn
+            // AdminBtn
             // 
-            this.AddUserbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.AddUserbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.AddUserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddUserbtn.FlatAppearance.BorderSize = 0;
-            this.AddUserbtn.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.AddUserbtn.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.AddUserbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddUserbtn.IconSize = 40;
-            this.AddUserbtn.Location = new System.Drawing.Point(819, 403);
-            this.AddUserbtn.Name = "AddUserbtn";
-            this.AddUserbtn.Size = new System.Drawing.Size(75, 48);
-            this.AddUserbtn.TabIndex = 13;
-            this.AddUserbtn.UseVisualStyleBackColor = false;
-            this.AddUserbtn.Click += new System.EventHandler(this.AddUserbtn_Click);
+            this.AdminBtn.AutoSize = true;
+            this.AdminBtn.Location = new System.Drawing.Point(69, 70);
+            this.AdminBtn.Name = "AdminBtn";
+            this.AdminBtn.Size = new System.Drawing.Size(77, 23);
+            this.AdminBtn.TabIndex = 11;
+            this.AdminBtn.TabStop = true;
+            this.AdminBtn.Text = "Admin";
+            this.AdminBtn.UseVisualStyleBackColor = true;
+            // 
+            // CfmPassTxt
+            // 
+            this.CfmPassTxt.Location = new System.Drawing.Point(245, 370);
+            this.CfmPassTxt.Name = "CfmPassTxt";
+            this.CfmPassTxt.Size = new System.Drawing.Size(275, 27);
+            this.CfmPassTxt.TabIndex = 10;
+            // 
+            // PasswordTxt
+            // 
+            this.PasswordTxt.Location = new System.Drawing.Point(245, 301);
+            this.PasswordTxt.Name = "PasswordTxt";
+            this.PasswordTxt.Size = new System.Drawing.Size(275, 27);
+            this.PasswordTxt.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(85, 376);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Confirm Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(85, 313);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 15);
+            this.label5.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(89, 224);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Phone Number";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(91, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(89, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Password";
+            // 
+            // UserNamelbl
+            // 
+            this.UserNamelbl.AutoSize = true;
+            this.UserNamelbl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNamelbl.Location = new System.Drawing.Point(91, 81);
+            this.UserNamelbl.Name = "UserNamelbl";
+            this.UserNamelbl.Size = new System.Drawing.Size(71, 15);
+            this.UserNamelbl.TabIndex = 3;
+            this.UserNamelbl.Text = "Username";
+            // 
+            // PhoneNumtxt
+            // 
+            this.PhoneNumtxt.Location = new System.Drawing.Point(245, 218);
+            this.PhoneNumtxt.Name = "PhoneNumtxt";
+            this.PhoneNumtxt.Size = new System.Drawing.Size(275, 27);
+            this.PhoneNumtxt.TabIndex = 2;
+            // 
+            // EmailTxt
+            // 
+            this.EmailTxt.Location = new System.Drawing.Point(245, 147);
+            this.EmailTxt.Name = "EmailTxt";
+            this.EmailTxt.Size = new System.Drawing.Size(275, 27);
+            this.EmailTxt.TabIndex = 1;
+            // 
+            // UserNametxt
+            // 
+            this.UserNametxt.Location = new System.Drawing.Point(245, 75);
+            this.UserNametxt.Name = "UserNametxt";
+            this.UserNametxt.Size = new System.Drawing.Size(275, 27);
+            this.UserNametxt.TabIndex = 0;
+            // 
+            // Homebtn
+            // 
+            this.Homebtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Homebtn.FlatAppearance.BorderSize = 0;
+            this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Homebtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Homebtn.IconSize = 40;
+            this.Homebtn.Location = new System.Drawing.Point(43, 12);
+            this.Homebtn.Name = "Homebtn";
+            this.Homebtn.Size = new System.Drawing.Size(75, 41);
+            this.Homebtn.TabIndex = 3;
+            this.Homebtn.UseVisualStyleBackColor = false;
+            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
             // 
             // CreateUserForm
             // 

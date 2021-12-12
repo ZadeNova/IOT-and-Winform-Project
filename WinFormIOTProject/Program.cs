@@ -28,6 +28,7 @@ namespace WinFormIOTProject
             //Application.Run(new ForgotPasswordForm());
             //Application.Run(new RFIDLoginForm());
             //Application.Run(new CreateUserForm());
+            //Application.Run(new UpdatePassword());
         }
 
     }

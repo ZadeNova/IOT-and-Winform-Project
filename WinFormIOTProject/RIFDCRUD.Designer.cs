@@ -37,30 +37,30 @@
             this.Checknowbtn = new System.Windows.Forms.Button();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.Checkerpage = new System.Windows.Forms.TabPage();
-            this.DeletePage = new System.Windows.Forms.TabPage();
             this.idcardpic = new FontAwesome.Sharp.IconPictureBox();
-            this.UpdatePage = new System.Windows.Forms.TabPage();
-            this.StatusPage = new System.Windows.Forms.TabPage();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.RFIDdeletetxt = new System.Windows.Forms.TextBox();
+            this.DeletePage = new System.Windows.Forms.TabPage();
             this.Deletebtn = new System.Windows.Forms.Button();
-            this.Updatebtn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.Userupdatetxt = new System.Windows.Forms.TextBox();
+            this.RFIDdeletetxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.UpdatePage = new System.Windows.Forms.TabPage();
             this.RFIDupdatetxt = new System.Windows.Forms.TextBox();
+            this.Userupdatetxt = new System.Windows.Forms.TextBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Updatebtn = new System.Windows.Forms.Button();
+            this.StatusPage = new System.Windows.Forms.TabPage();
             this.tabcontrol.SuspendLayout();
             this.Checkerpage.SuspendLayout();
-            this.DeletePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idcardpic)).BeginInit();
-            this.UpdatePage.SuspendLayout();
+            this.DeletePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.UpdatePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +117,7 @@
             this.RFIDtxtCheck.Name = "RFIDtxtCheck";
             this.RFIDtxtCheck.Size = new System.Drawing.Size(216, 20);
             this.RFIDtxtCheck.TabIndex = 5;
+            this.RFIDtxtCheck.TextChanged += new System.EventHandler(this.RFIDtxtCheck_TextChanged);
             // 
             // Checknowbtn
             // 
@@ -158,6 +159,19 @@
             this.Checkerpage.TabIndex = 0;
             this.Checkerpage.Text = "Checker";
             // 
+            // idcardpic
+            // 
+            this.idcardpic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.idcardpic.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.idcardpic.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            this.idcardpic.IconColor = System.Drawing.SystemColors.ControlText;
+            this.idcardpic.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.idcardpic.Location = new System.Drawing.Point(268, 29);
+            this.idcardpic.Name = "idcardpic";
+            this.idcardpic.Size = new System.Drawing.Size(32, 32);
+            this.idcardpic.TabIndex = 7;
+            this.idcardpic.TabStop = false;
+            // 
             // DeletePage
             // 
             this.DeletePage.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -174,18 +188,65 @@
             this.DeletePage.TabIndex = 1;
             this.DeletePage.Text = "Delete";
             // 
-            // idcardpic
+            // Deletebtn
             // 
-            this.idcardpic.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.idcardpic.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.idcardpic.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.idcardpic.IconColor = System.Drawing.SystemColors.ControlText;
-            this.idcardpic.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.idcardpic.Location = new System.Drawing.Point(268, 29);
-            this.idcardpic.Name = "idcardpic";
-            this.idcardpic.Size = new System.Drawing.Size(32, 32);
-            this.idcardpic.TabIndex = 7;
-            this.idcardpic.TabStop = false;
+            this.Deletebtn.Location = new System.Drawing.Point(624, 145);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(108, 39);
+            this.Deletebtn.TabIndex = 5;
+            this.Deletebtn.Text = "Delete";
+            this.Deletebtn.UseVisualStyleBackColor = true;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
+            // RFIDdeletetxt
+            // 
+            this.RFIDdeletetxt.Location = new System.Drawing.Point(262, 164);
+            this.RFIDdeletetxt.Name = "RFIDdeletetxt";
+            this.RFIDdeletetxt.Size = new System.Drawing.Size(319, 20);
+            this.RFIDdeletetxt.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tempus Sans ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(325, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 27);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Delete RFID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(160, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "RFID";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(273, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Please scan your RFID card";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(277, 47);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
             // 
             // UpdatePage
             // 
@@ -205,125 +266,19 @@
             this.UpdatePage.TabIndex = 2;
             this.UpdatePage.Text = "Update";
             // 
-            // StatusPage
+            // RFIDupdatetxt
             // 
-            this.StatusPage.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.StatusPage.Location = new System.Drawing.Point(4, 22);
-            this.StatusPage.Name = "StatusPage";
-            this.StatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.StatusPage.Size = new System.Drawing.Size(761, 359);
-            this.StatusPage.TabIndex = 3;
-            this.StatusPage.Text = "Status";
+            this.RFIDupdatetxt.Location = new System.Drawing.Point(290, 215);
+            this.RFIDupdatetxt.Name = "RFIDupdatetxt";
+            this.RFIDupdatetxt.Size = new System.Drawing.Size(247, 20);
+            this.RFIDupdatetxt.TabIndex = 7;
             // 
-            // iconPictureBox1
+            // Userupdatetxt
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(277, 47);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(273, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Please scan your RFID card";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(160, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "RFID";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tempus Sans ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(325, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 27);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Delete RFID";
-            // 
-            // RFIDdeletetxt
-            // 
-            this.RFIDdeletetxt.Location = new System.Drawing.Point(262, 164);
-            this.RFIDdeletetxt.Name = "RFIDdeletetxt";
-            this.RFIDdeletetxt.Size = new System.Drawing.Size(319, 20);
-            this.RFIDdeletetxt.TabIndex = 4;
-            // 
-            // Deletebtn
-            // 
-            this.Deletebtn.Location = new System.Drawing.Point(624, 145);
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(108, 39);
-            this.Deletebtn.TabIndex = 5;
-            this.Deletebtn.Text = "Delete";
-            this.Deletebtn.UseVisualStyleBackColor = true;
-            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
-            // 
-            // Updatebtn
-            // 
-            this.Updatebtn.Location = new System.Drawing.Point(625, 161);
-            this.Updatebtn.Name = "Updatebtn";
-            this.Updatebtn.Size = new System.Drawing.Size(92, 41);
-            this.Updatebtn.TabIndex = 0;
-            this.Updatebtn.Text = "Add";
-            this.Updatebtn.UseVisualStyleBackColor = true;
-            this.Updatebtn.Click += new System.EventHandler(this.Updatebtn_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(337, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 24);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Add RFID";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(132, 159);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 24);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Username";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(132, 215);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 24);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "RFID";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(286, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 20);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Please scan your RFID card";
+            this.Userupdatetxt.Location = new System.Drawing.Point(290, 159);
+            this.Userupdatetxt.Name = "Userupdatetxt";
+            this.Userupdatetxt.Size = new System.Drawing.Size(247, 20);
+            this.Userupdatetxt.TabIndex = 6;
             // 
             // iconPictureBox2
             // 
@@ -338,19 +293,65 @@
             this.iconPictureBox2.TabIndex = 5;
             this.iconPictureBox2.TabStop = false;
             // 
-            // Userupdatetxt
+            // label11
             // 
-            this.Userupdatetxt.Location = new System.Drawing.Point(290, 159);
-            this.Userupdatetxt.Name = "Userupdatetxt";
-            this.Userupdatetxt.Size = new System.Drawing.Size(247, 20);
-            this.Userupdatetxt.TabIndex = 6;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(286, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(210, 20);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Please scan your RFID card";
             // 
-            // RFIDupdatetxt
+            // label10
             // 
-            this.RFIDupdatetxt.Location = new System.Drawing.Point(290, 215);
-            this.RFIDupdatetxt.Name = "RFIDupdatetxt";
-            this.RFIDupdatetxt.Size = new System.Drawing.Size(247, 20);
-            this.RFIDupdatetxt.TabIndex = 7;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(132, 215);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 24);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "RFID";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(132, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 24);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Username";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(337, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 24);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Add RFID";
+            // 
+            // Updatebtn
+            // 
+            this.Updatebtn.Location = new System.Drawing.Point(625, 161);
+            this.Updatebtn.Name = "Updatebtn";
+            this.Updatebtn.Size = new System.Drawing.Size(92, 41);
+            this.Updatebtn.TabIndex = 0;
+            this.Updatebtn.Text = "Add";
+            this.Updatebtn.UseVisualStyleBackColor = true;
+            this.Updatebtn.Click += new System.EventHandler(this.Updatebtn_Click);
+            // 
+            // StatusPage
+            // 
+            this.StatusPage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.StatusPage.Location = new System.Drawing.Point(4, 22);
+            this.StatusPage.Name = "StatusPage";
+            this.StatusPage.Padding = new System.Windows.Forms.Padding(3);
+            this.StatusPage.Size = new System.Drawing.Size(761, 359);
+            this.StatusPage.TabIndex = 3;
+            this.StatusPage.Text = "Status";
             // 
             // RIFDCRUD
             // 
@@ -365,12 +366,12 @@
             this.tabcontrol.ResumeLayout(false);
             this.Checkerpage.ResumeLayout(false);
             this.Checkerpage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idcardpic)).EndInit();
             this.DeletePage.ResumeLayout(false);
             this.DeletePage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.idcardpic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.UpdatePage.ResumeLayout(false);
             this.UpdatePage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 

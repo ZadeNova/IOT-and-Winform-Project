@@ -29,9 +29,10 @@ namespace WinFormIOTProject
 
         private void Homebtn_Click(object sender, EventArgs e)
         {
+            
+           
             this.Hide();
-            AdminDashboard admdash = new AdminDashboard();
-            admdash.ShowDialog();
+            
 
         }
 
@@ -79,38 +80,90 @@ namespace WinFormIOTProject
 
                         }
 
-                        //var key = KeyGen();
-                        //AESOperation encryptt = new AESOperation();
+                        SqlConnection myConnect = new SqlConnection(strConnectionString);
+                        myConnect.Open();
+
+                        string strcommandtext2 = "SELECT * FROM UserAccount WHERE Name = @Name";
+                        SqlCommand cmd2 = new SqlCommand(strcommandtext2, myConnect);
+                        cmd2.Parameters.AddWithValue("@Name", UserNametxt.Text);
+                        SqlDataReader reader = cmd2.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            myConnect.Close();
+                            // account exists
+                            MessageBox.Show("Username has been taken");
 
 
-                        //SqlConnection myConnect = new SqlConnection(strConnectionString);
-                        //myConnect.Open();
-                        //string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@SymmetricKey)";
+                        }
+                        else
+                        {
+                            myConnect.Close();
+                            myConnect.Open();
+                            string strcommandtext3 = "SELECT * FROM UserAccount WHERE Email = @Email";
+                            SqlCommand cmd3 = new SqlCommand(strcommandtext3, myConnect);
+                            cmd3.Parameters.AddWithValue("@Email",EmailTxt.Text);
+                            SqlDataReader reader2 = cmd3.ExecuteReader();
+                            if (reader2.Read())
+                            {
+                                myConnect.Close();
+                                MessageBox.Show("Email has already been taken!");
 
-                        ////encrypt phone no
-                        //var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumtxt.Text);
+                            }
+                            else
+                            {
+                                myConnect.Close();
+                                myConnect.Open();
 
-                        //SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-                        //cmd.Parameters.AddWithValue("@Name", UserNametxt.Text);
-                        //cmd.Parameters.AddWithValue("@Password", PasswordTxt.Text);
-                        //cmd.Parameters.AddWithValue("@Email", EmailTxt.Text);
-                        //cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
-                        //cmd.Parameters.AddWithValue("@Role", Role);
-                        //cmd.Parameters.AddWithValue("@SymmetricKey", key);
-                        //cmd.ExecuteNonQuery(); // It executes the sql command
 
-                        //myConnect.Close();
+                                var key = KeyGen();
+                                AESOperation encryptt = new AESOperation();
 
-                        MessageBox.Show($"{Role} {UserNametxt.Text} has been created!");
 
-                        UserNametxt.Text = "";
-                        PasswordTxt.Text = "";
-                        EmailTxt.Text = "";
-                        CfmPassTxt.Text = "";
-                        PhoneNumtxt.Text = "";
-                        AdminBtn.Checked = false;
-                        UserBtn.Checked = false;
 
+                                string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@SymmetricKey)";
+
+                                //encrypt phone no
+                                var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumtxt.Text);
+
+                                string hashedpass = Hash.ComputeHash(PasswordTxt.Text, "SHA512", null);
+
+
+                                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+                                cmd.Parameters.AddWithValue("@Name", UserNametxt.Text);
+                                cmd.Parameters.AddWithValue("@Password", hashedpass);
+                                cmd.Parameters.AddWithValue("@Email", EmailTxt.Text);
+                                cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
+                                cmd.Parameters.AddWithValue("@Role", Role);
+                                cmd.Parameters.AddWithValue("@SymmetricKey", key);
+                                cmd.ExecuteNonQuery(); // It executes the sql command
+
+                                myConnect.Close();
+
+                                MessageBox.Show($"{Role} {UserNametxt.Text} has been created!");
+
+                                UserNametxt.Text = "";
+                                PasswordTxt.Text = "";
+                                EmailTxt.Text = "";
+                                CfmPassTxt.Text = "";
+                                PhoneNumtxt.Text = "";
+                                AdminBtn.Checked = false;
+                                UserBtn.Checked = false;
+
+
+
+
+
+                            }
+
+
+
+
+                        }
+
+                        
+
+
+                  
 
                     }
                    
@@ -152,7 +205,12 @@ namespace WinFormIOTProject
 
         }
 
+        private void Homee_Click(object sender, EventArgs e)
+        {
+            AdminDashboard AdminForm = new AdminDashboard();
+            this.Hide();
+            AdminForm.ShowDialog();
 
-
+        }
     }
 }

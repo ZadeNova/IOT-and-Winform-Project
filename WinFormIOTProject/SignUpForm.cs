@@ -51,85 +51,82 @@ namespace WinFormIOTProject
             {
                 if (NewPasswordTxt.Text.Equals(CfmPassTxtBox.Text))
                 {
+
                     MessageBox.Show("Password is the same!");
-
-
-
-
-                    var key = KeyGen();
-                    // key uses 32 bits
-                    
-                    
-                    
-                    
-
-                    AESOperation encryptt = new AESOperation();
-                    var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumTxt.Text);
-                    
-                    
-
-                    string Role = "User";
-                    string Status = "Active";
-
+                    // check if username exist in database
                     SqlConnection myConnect = new SqlConnection(strConnectionString);
                     myConnect.Open();
-                    string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
+                    string strCommandText2 = "SELECT * FROM UserAccount WHERE Name = @Name";
 
-                    SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+                    SqlCommand cmd2 = new SqlCommand(strCommandText2, myConnect);
+                    cmd2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                    SqlDataReader reader = cmd2.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        myConnect.Close();
+                        MessageBox.Show("Username has already been registered");
+                    }
+                    else
+                    {
+                        myConnect.Close();
+                        myConnect.Open();
+                        
+                        string sqlcommand = "SELECT * FROM UserAccount WHERE Email = @Email";
+                        SqlCommand cmd3 = new SqlCommand(sqlcommand, myConnect);
+                        cmd3.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
+                        SqlDataReader reader2 = cmd3.ExecuteReader();
+                        if (reader2.Read())
+                        {
+                            myConnect.Close();
+                            MessageBox.Show("Email address has been registered");
+                        }
+                        else
+                        {
+                            myConnect.Close();
+                            myConnect.Open();
+                            var key = KeyGen();
+                            // key uses 32 bits
 
+                            AESOperation encryptt = new AESOperation();
+                            var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumTxt.Text);
 
+                            string Role = "User";
+                            string Status = "Active";
 
+                            myConnect.Open();
+                            string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
 
-
-
-
-
-
-
-                    //Hash the password
-
-                    Console.WriteLine(NewUsertxt.Text.Length);
-                    Console.WriteLine(NewEmailTxt.Text.Length);
-                    Console.WriteLine(NewPasswordTxt.Text.Length);
-                    Console.WriteLine(encryptedPhoneNo.Length);
-                    Console.WriteLine(key.Length);
-
-                    cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                    cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
-                    cmd.Parameters.AddWithValue("@Password", NewPasswordTxt.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
-                    cmd.Parameters.AddWithValue("@SymmetricKey",key);
-                    cmd.Parameters.AddWithValue("@Role", Role);
-                    cmd.Parameters.AddWithValue("@Status", Status);
-
-
-                    cmd.ExecuteNonQuery(); // It executes the sql command
-
-                    myConnect.Close();
-
-
-                    ////string Username = NewUsertxt.Text;
-                    ////string Email = NewEmailTxt.Text;
-                    ////string Password = NewPasswordTxt.Text;
-                    //MessageBox.Show("lolol");
-                    ////// Validate if information is correct
-
-                    //if user or admin
-
-                    User.AccountUsername = NewUsertxt.Text; // User session
-                    AdminDashboard AdminForm = new AdminDashboard();
-                    this.Hide();
-                    AdminForm.ShowDialog();
-                    //string aa = EncryptionAlgo.Encrypt(NewUsertxt.Text);
-
-                    //string bb = EncryptionAlgo.Decrypt(aa);
+                            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
 
+                            //Hash the password
+
+                            string hashedpass = Hash.ComputeHash(NewPasswordTxt.Text, "SHA512", null);
+                            Console.WriteLine(hashedpass);
+
+
+                            cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                            cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
+                            cmd.Parameters.AddWithValue("@Password", hashedpass);
+                            cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
+                            cmd.Parameters.AddWithValue("@SymmetricKey", key);
+                            cmd.Parameters.AddWithValue("@Role", Role);
+                            cmd.Parameters.AddWithValue("@Status", Status);
+
+
+                            cmd.ExecuteNonQuery(); // It executes the sql command
+
+                            myConnect.Close();
+                            User.AccountUsername = NewUsertxt.Text; // User session
+                            AdminDashboard AdminForm = new AdminDashboard();
+                            this.Hide();
+                            AdminForm.ShowDialog();
+                        }
 
 
 
-
-
+                    }
+                    
 
                 }
                 else

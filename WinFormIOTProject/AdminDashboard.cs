@@ -125,6 +125,16 @@ namespace WinFormIOTProject
             this.Hide();
             LoginForm logform = new LoginForm();
             logform.ShowDialog();
+            User.AccountEmail = "";
+            User.AccountID = 0;
+            User.AccountRole = "";
+            User.AccountRole = "";
+
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -401,5 +401,10 @@ namespace WinFormIOTProject
                 }
             }
         }
+
+        private void RFIDtxtCheck_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,11 @@ namespace WinFormIOTProject
         {
             InitializeComponent();
         }
+
+        private void Homebtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

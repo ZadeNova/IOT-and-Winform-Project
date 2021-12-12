@@ -43,8 +43,8 @@
             this.Data = new System.Windows.Forms.Button();
             this.AdminLogo = new System.Windows.Forms.Panel();
             this.panelChildForms = new System.Windows.Forms.Panel();
-            this.ProfileBtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
+            this.ProfileBtn = new FontAwesome.Sharp.IconButton();
             this.panelAdminMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
@@ -316,6 +316,19 @@
             this.panelChildForms.Size = new System.Drawing.Size(1080, 633);
             this.panelChildForms.TabIndex = 1;
             // 
+            // Logout
+            // 
+            this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout.IconSize = 40;
+            this.Logout.Location = new System.Drawing.Point(1034, 0);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(46, 46);
+            this.Logout.TabIndex = 2;
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // ProfileBtn
             // 
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
@@ -330,19 +343,6 @@
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
-            // Logout
-            // 
-            this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Logout.IconSize = 40;
-            this.Logout.Location = new System.Drawing.Point(1034, 0);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(46, 46);
-            this.Logout.TabIndex = 2;
-            this.Logout.UseVisualStyleBackColor = true;
-            this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +352,7 @@
             this.Controls.Add(this.panelAdminMenu);
             this.Name = "AdminDashboard";
             this.Text = "AdminDashboard";
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panelAdminMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.SubmenuData.ResumeLayout(false);

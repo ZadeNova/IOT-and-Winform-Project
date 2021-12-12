@@ -38,7 +38,7 @@
             this.textBox1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(356, 12);
+            this.textBox1.Location = new System.Drawing.Point(335, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 25);
             this.textBox1.TabIndex = 1;
@@ -48,7 +48,7 @@
             // Home
             // 
             this.Home.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.Location = new System.Drawing.Point(12, 14);
+            this.Home.Location = new System.Drawing.Point(22, 16);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(75, 23);
             this.Home.TabIndex = 2;
@@ -58,9 +58,9 @@
             // 
             // Genreport
             // 
-            this.Genreport.Location = new System.Drawing.Point(384, 309);
+            this.Genreport.Location = new System.Drawing.Point(352, 458);
             this.Genreport.Name = "Genreport";
-            this.Genreport.Size = new System.Drawing.Size(144, 23);
+            this.Genreport.Size = new System.Drawing.Size(197, 23);
             this.Genreport.TabIndex = 3;
             this.Genreport.Text = "Generate Report";
             this.Genreport.UseVisualStyleBackColor = true;

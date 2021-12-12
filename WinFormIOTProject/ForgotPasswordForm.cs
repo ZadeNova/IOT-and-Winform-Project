@@ -128,11 +128,11 @@ namespace WinFormIOTProject
             
 
             //Setting From , To and CC
-            mail.From = new MailAddress("OzymandiasNovaLux@gmail.com", "MyWeb Site");
+            mail.From = new MailAddress("OzymandiasNovaLux@gmail.com", "Windows Form IOT");
             mail.To.Add(new MailAddress(Email));
             //mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
 
-            mail.Subject = "Testing email";
+            mail.Subject = "Password reset Email";
             mail.Body = $"Hello it appears that you have asked for a password reset.Here is your new password: {NewPass}";
             mail.IsBodyHtml = true;
 

@@ -60,26 +60,42 @@ namespace WinFormIOTProject
             {
                 MessageBox.Show("Not Empty");
 
+
+
+
                 // Check if user and password exists in database
-                string strCommandText = "SELECT * FROM UserAccount WHERE Name=@uName AND Password=@pass";
+                string strCommandText = "SELECT * FROM UserAccount WHERE Name=@uName";
                 SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
                 cmd.Parameters.AddWithValue("@uName",UsernameTxtbox.Text);
-                cmd.Parameters.AddWithValue("@pass", PasswordTxtBox.Text);
+                
 
                 try
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        // Enter into admin form
+                        bool flag = Hash.VerifyHash(PasswordTxtBox.Text, "SHA512", reader["Password"].ToString());
+                        if (flag)
+                        {
+                            // Enter into admin form
+                            MessageBox.Show("Login Successful");
+                            this.Hide();
+                            User.AccountUsername = UsernameTxtbox.Text;
+                            User.AccountEmail = reader["Email"].ToString();
+                            User.AccountRole = reader["Role"].ToString();
+                            AdminDashboard form2 = new AdminDashboard();
+                            form2.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username and password unknown!");
+                        }
 
-                        MessageBox.Show("Login Successful");
-                        this.Hide();
-                        User.AccountUsername = UsernameTxtbox.Text;
-                        User.AccountEmail = reader["Email"].ToString();
-                        User.AccountRole = reader["Role"].ToString();
-                        AdminDashboard form2 = new AdminDashboard();
-                        form2.ShowDialog();
+
+
+
+
+                       
 
                     }
                     else
