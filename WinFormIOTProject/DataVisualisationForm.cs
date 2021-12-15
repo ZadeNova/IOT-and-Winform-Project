@@ -21,17 +21,19 @@ namespace WinFormIOTProject
     {
 
         double x;
-
-
+       
 
         public DataVisualisationForm()
         {
             InitializeComponent();
         }
-
+       
+            
         private void DataVisualisationForm_Load(object sender, EventArgs e)
         {
-           
+            InitComms();
+            InitComms1();
+
             //ChartTempProperties();
             //AddDataChart();
 
@@ -161,6 +163,8 @@ namespace WinFormIOTProject
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataComms dataComms;
+       
+       
         public delegate void myprocessDataDelegate(string strData);
         private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
         {
@@ -215,21 +219,24 @@ namespace WinFormIOTProject
         {
             if (strData.IndexOf("LIGHT=") != -1)
                 handleLightSensorData(strData, strTime, "LIGHT=");
-
         }
 
         public void handleSensorData(string strData)
         {
             string dt = DateTime.Now.ToString("s");
             extractSensorData(strData, dt);
+
             string strMessage = dt + ":" + strData;
             lbDataComms.Items.Insert(0, strMessage);
         }
 
         public void processDataReceive(string strData)
         {
-            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-            lbDataComms.Invoke(d, new object[] { strData });
+            if (strData.IndexOf("LIGHT=") != -1) {
+                myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
+                lbDataComms.Invoke(d, new object[] { strData });
+            }
+            
         }
 
         public void commsDataRecieve(string dataReceived)
@@ -244,9 +251,11 @@ namespace WinFormIOTProject
         }
         private void InitComms()
         {
-            dataComms = new DataComms();
-            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+          
+                idk.dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve);
+                idk.dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+            
+         
         }
         // end of light sensor
 
@@ -294,7 +303,7 @@ namespace WinFormIOTProject
                 status1 = "too cool";
             else
                 status1 = "normal";
-            Status2.Text = status1;
+            Status2txt.Text = status1;
             //  saveLightSensorDataToDB(strTime, strlightValue, status);
         }
 
@@ -309,7 +318,7 @@ namespace WinFormIOTProject
         {
             if (strData1.IndexOf("Temp=") != -1)
                 handletempSensorData(strData1, strTime1, "Temp=");
-
+          
         }
 
         public void handleSensorData1(string strData1)
@@ -322,8 +331,12 @@ namespace WinFormIOTProject
 
         public void processDataReceive1(string strData1)
         {
-            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData1);
-            listBox1.Invoke(d, new object[] { strData1 });
+            if (strData1.IndexOf("Temp=") != -1) {
+                myprocessDataDelegate1 d = new myprocessDataDelegate1(handleSensorData1);
+                listBox1.Invoke(d, new object[] { strData1 });
+            }
+
+
         }
 
         public void commsDataRecieve1(string dataReceived1)
@@ -338,9 +351,10 @@ namespace WinFormIOTProject
         }
         private void InitComms1()
         {
-
-            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve1);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError1);
+                
+                idk.dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecieve1);
+                idk.dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError1);
+           
         }
 
         private void Clearbtn2_Click(object sender, EventArgs e)
@@ -354,9 +368,42 @@ namespace WinFormIOTProject
             lbDataComms.Items.Clear();
             Console.WriteLine("clearing data");
         }
+
+        private void Roomtemptxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Status2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Status2txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Temperature_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbDataComms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         // end of tem sensor 
-
-
 
     }
 }

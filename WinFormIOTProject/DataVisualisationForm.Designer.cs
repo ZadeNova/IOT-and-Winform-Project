@@ -74,6 +74,7 @@
             this.Temperature.TabIndex = 0;
             this.Temperature.Text = "Temperature";
             this.Temperature.UseVisualStyleBackColor = true;
+            this.Temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
             // Clearbtn2
             // 
@@ -92,6 +93,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(449, 134);
             this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Status2
             // 
@@ -101,6 +103,7 @@
             this.Status2.Size = new System.Drawing.Size(37, 13);
             this.Status2.TabIndex = 3;
             this.Status2.Text = "Status";
+            this.Status2.Click += new System.EventHandler(this.Status2_Click);
             // 
             // label3
             // 
@@ -110,6 +113,7 @@
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Room Temperature";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Roomtemptxt
             // 
@@ -118,6 +122,7 @@
             this.Roomtemptxt.Name = "Roomtemptxt";
             this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
             this.Roomtemptxt.TabIndex = 1;
+            this.Roomtemptxt.TextChanged += new System.EventHandler(this.Roomtemptxt_TextChanged);
             // 
             // Status2txt
             // 
@@ -126,6 +131,7 @@
             this.Status2txt.Name = "Status2txt";
             this.Status2txt.Size = new System.Drawing.Size(145, 20);
             this.Status2txt.TabIndex = 0;
+            this.Status2txt.TextChanged += new System.EventHandler(this.Status2txt_TextChanged);
             // 
             // Lighttab
             // 
@@ -184,6 +190,7 @@
             this.lbDataComms.Name = "lbDataComms";
             this.lbDataComms.Size = new System.Drawing.Size(473, 134);
             this.lbDataComms.TabIndex = 1;
+            this.lbDataComms.SelectedIndexChanged += new System.EventHandler(this.lbDataComms_SelectedIndexChanged);
             // 
             // Clearbtn
             // 

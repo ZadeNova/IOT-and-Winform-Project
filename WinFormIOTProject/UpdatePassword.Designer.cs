@@ -30,18 +30,21 @@
         {
             this.Homebtn = new FontAwesome.Sharp.IconButton();
             this.updatepassgrp = new System.Windows.Forms.GroupBox();
-            this.CurrentPasslbl = new System.Windows.Forms.Label();
-            this.NewPasslbl = new System.Windows.Forms.Label();
-            this.CurrentPasstxt = new System.Windows.Forms.TextBox();
-            this.NewPasstxt = new System.Windows.Forms.TextBox();
-            this.Cfmpasslbl = new System.Windows.Forms.Label();
-            this.CfmNewPasstxt = new System.Windows.Forms.TextBox();
             this.UpdatePassbtn = new System.Windows.Forms.Button();
+            this.Cfmpasslbl = new System.Windows.Forms.Label();
+            this.NewPasstxt = new System.Windows.Forms.TextBox();
+            this.CurrentPasstxt = new System.Windows.Forms.TextBox();
+            this.NewPasslbl = new System.Windows.Forms.Label();
+            this.CurrentPasslbl = new System.Windows.Forms.Label();
+            this.CfmNewPasstxt = new System.Windows.Forms.TextBox();
             this.updatepassgrp.SuspendLayout();
             this.SuspendLayout();
             // 
             // Homebtn
             // 
+            this.Homebtn.FlatAppearance.BorderSize = 0;
+            this.Homebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.Homebtn.IconColor = System.Drawing.Color.Black;
             this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -70,37 +73,15 @@
             this.updatepassgrp.TabStop = false;
             this.updatepassgrp.Text = "Update Password";
             // 
-            // CurrentPasslbl
+            // UpdatePassbtn
             // 
-            this.CurrentPasslbl.AutoSize = true;
-            this.CurrentPasslbl.Location = new System.Drawing.Point(242, 134);
-            this.CurrentPasslbl.Name = "CurrentPasslbl";
-            this.CurrentPasslbl.Size = new System.Drawing.Size(139, 20);
-            this.CurrentPasslbl.TabIndex = 0;
-            this.CurrentPasslbl.Text = "Current Password";
-            // 
-            // NewPasslbl
-            // 
-            this.NewPasslbl.AutoSize = true;
-            this.NewPasslbl.Location = new System.Drawing.Point(242, 204);
-            this.NewPasslbl.Name = "NewPasslbl";
-            this.NewPasslbl.Size = new System.Drawing.Size(115, 20);
-            this.NewPasslbl.TabIndex = 1;
-            this.NewPasslbl.Text = "New Password";
-            // 
-            // CurrentPasstxt
-            // 
-            this.CurrentPasstxt.Location = new System.Drawing.Point(460, 134);
-            this.CurrentPasstxt.Name = "CurrentPasstxt";
-            this.CurrentPasstxt.Size = new System.Drawing.Size(204, 28);
-            this.CurrentPasstxt.TabIndex = 2;
-            // 
-            // NewPasstxt
-            // 
-            this.NewPasstxt.Location = new System.Drawing.Point(460, 196);
-            this.NewPasstxt.Name = "NewPasstxt";
-            this.NewPasstxt.Size = new System.Drawing.Size(204, 28);
-            this.NewPasstxt.TabIndex = 3;
+            this.UpdatePassbtn.Location = new System.Drawing.Point(400, 391);
+            this.UpdatePassbtn.Name = "UpdatePassbtn";
+            this.UpdatePassbtn.Size = new System.Drawing.Size(126, 30);
+            this.UpdatePassbtn.TabIndex = 6;
+            this.UpdatePassbtn.Text = "Update";
+            this.UpdatePassbtn.UseVisualStyleBackColor = true;
+            this.UpdatePassbtn.Click += new System.EventHandler(this.UpdatePassbtn_Click);
             // 
             // Cfmpasslbl
             // 
@@ -111,22 +92,44 @@
             this.Cfmpasslbl.TabIndex = 4;
             this.Cfmpasslbl.Text = "Confirm New Password";
             // 
+            // NewPasstxt
+            // 
+            this.NewPasstxt.Location = new System.Drawing.Point(460, 196);
+            this.NewPasstxt.Name = "NewPasstxt";
+            this.NewPasstxt.Size = new System.Drawing.Size(204, 28);
+            this.NewPasstxt.TabIndex = 3;
+            // 
+            // CurrentPasstxt
+            // 
+            this.CurrentPasstxt.Location = new System.Drawing.Point(460, 134);
+            this.CurrentPasstxt.Name = "CurrentPasstxt";
+            this.CurrentPasstxt.Size = new System.Drawing.Size(204, 28);
+            this.CurrentPasstxt.TabIndex = 2;
+            // 
+            // NewPasslbl
+            // 
+            this.NewPasslbl.AutoSize = true;
+            this.NewPasslbl.Location = new System.Drawing.Point(242, 204);
+            this.NewPasslbl.Name = "NewPasslbl";
+            this.NewPasslbl.Size = new System.Drawing.Size(115, 20);
+            this.NewPasslbl.TabIndex = 1;
+            this.NewPasslbl.Text = "New Password";
+            // 
+            // CurrentPasslbl
+            // 
+            this.CurrentPasslbl.AutoSize = true;
+            this.CurrentPasslbl.Location = new System.Drawing.Point(242, 134);
+            this.CurrentPasslbl.Name = "CurrentPasslbl";
+            this.CurrentPasslbl.Size = new System.Drawing.Size(139, 20);
+            this.CurrentPasslbl.TabIndex = 0;
+            this.CurrentPasslbl.Text = "Current Password";
+            // 
             // CfmNewPasstxt
             // 
             this.CfmNewPasstxt.Location = new System.Drawing.Point(460, 263);
             this.CfmNewPasstxt.Name = "CfmNewPasstxt";
             this.CfmNewPasstxt.Size = new System.Drawing.Size(204, 28);
             this.CfmNewPasstxt.TabIndex = 5;
-            // 
-            // UpdatePassbtn
-            // 
-            this.UpdatePassbtn.Location = new System.Drawing.Point(400, 391);
-            this.UpdatePassbtn.Name = "UpdatePassbtn";
-            this.UpdatePassbtn.Size = new System.Drawing.Size(126, 30);
-            this.UpdatePassbtn.TabIndex = 6;
-            this.UpdatePassbtn.Text = "Update";
-            this.UpdatePassbtn.UseVisualStyleBackColor = true;
-            this.UpdatePassbtn.Click += new System.EventHandler(this.UpdatePassbtn_Click);
             // 
             // UpdatePassword
             // 

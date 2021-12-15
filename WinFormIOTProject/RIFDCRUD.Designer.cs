@@ -110,6 +110,7 @@
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(216, 20);
             this.Usernametxt.TabIndex = 4;
+            this.Usernametxt.TextChanged += new System.EventHandler(this.Usernametxt_TextChanged);
             // 
             // RFIDtxtCheck
             // 
@@ -158,6 +159,7 @@
             this.Checkerpage.Size = new System.Drawing.Size(761, 359);
             this.Checkerpage.TabIndex = 0;
             this.Checkerpage.Text = "Checker";
+            this.Checkerpage.Click += new System.EventHandler(this.Checkerpage_Click);
             // 
             // idcardpic
             // 
@@ -279,6 +281,7 @@
             this.Userupdatetxt.Name = "Userupdatetxt";
             this.Userupdatetxt.Size = new System.Drawing.Size(247, 20);
             this.Userupdatetxt.TabIndex = 6;
+            this.Userupdatetxt.TextChanged += new System.EventHandler(this.Userupdatetxt_TextChanged);
             // 
             // iconPictureBox2
             // 

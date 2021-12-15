@@ -88,7 +88,7 @@
     <Compile Include="DataVisualisationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataVisualisationForm.Designer.cs">
+    <Compile Include="DataVisualisationForm.designer.cs">
       <DependentUpon>DataVisualisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Email2FAafterLogin.cs">
@@ -135,6 +135,12 @@
     <Compile Include="Notification.Designer.cs">
       <DependentUpon>Notification.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRIMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRIMotion.designer.cs">
+      <DependentUpon>PRIMotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,12 @@
     </Compile>
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UltraSonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UltraSonic.designer.cs">
+      <DependentUpon>UltraSonic.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdatePassword.cs">
       <SubType>Form</SubType>
@@ -209,6 +221,9 @@
     <EmbeddedResource Include="Notification.resx">
       <DependentUpon>Notification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRIMotion.resx">
+      <DependentUpon>PRIMotion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfilePage.resx">
       <DependentUpon>ProfilePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UltraSonic.resx">
+      <DependentUpon>UltraSonic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>

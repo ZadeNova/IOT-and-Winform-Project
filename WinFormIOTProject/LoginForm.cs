@@ -169,7 +169,11 @@ namespace WinFormIOTProject
 
         private void RFIDLoginBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            RFIDLoginForm rfidForm = new RFIDLoginForm();
+
+            rfidForm.ShowDialog();
         }
 
         private void UsernameTxtbox_TextChanged(object sender, EventArgs e)
@@ -188,6 +192,11 @@ namespace WinFormIOTProject
             SignUpForm signupform = new SignUpForm();
             signupform.Show();
 
+        }
+
+        public void LoginForm_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

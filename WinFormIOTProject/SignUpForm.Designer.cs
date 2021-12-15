@@ -178,7 +178,7 @@
             // Loginformlbl
             // 
             this.Loginformlbl.AutoSize = true;
-            this.Loginformlbl.Location = new System.Drawing.Point(205, 364);
+            this.Loginformlbl.Location = new System.Drawing.Point(205, 362);
             this.Loginformlbl.Name = "Loginformlbl";
             this.Loginformlbl.Size = new System.Drawing.Size(149, 13);
             this.Loginformlbl.TabIndex = 12;

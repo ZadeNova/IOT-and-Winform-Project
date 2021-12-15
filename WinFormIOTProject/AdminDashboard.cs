@@ -147,5 +147,21 @@ namespace WinFormIOTProject
 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RIFDCRUD());
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UltraSonic());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PRIMotion());
+        }
     }
 }

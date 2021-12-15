@@ -43,9 +43,9 @@
             this.Data = new System.Windows.Forms.Button();
             this.AdminLogo = new System.Windows.Forms.Panel();
             this.panelChildForms = new System.Windows.Forms.Panel();
+            this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
-            this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.panelAdminMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
@@ -224,9 +224,10 @@
             this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(200, 23);
             this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
+            this.button5.Text = "PRI";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -241,9 +242,10 @@
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(200, 23);
             this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
+            this.button4.Text = "UltraSonic";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -258,9 +260,10 @@
             this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(200, 23);
             this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
+            this.button3.Text = "RFID";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DataGraphBtn
             // 
@@ -318,6 +321,22 @@
             this.panelChildForms.Size = new System.Drawing.Size(1080, 633);
             this.panelChildForms.TabIndex = 1;
             // 
+            // UserSettingsbtn
+            // 
+            this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
+            this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsbtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.UserSettingsbtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.UserSettingsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserSettingsbtn.IconSize = 40;
+            this.UserSettingsbtn.Location = new System.Drawing.Point(931, 2);
+            this.UserSettingsbtn.Name = "UserSettingsbtn";
+            this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
+            this.UserSettingsbtn.TabIndex = 3;
+            this.UserSettingsbtn.UseVisualStyleBackColor = true;
+            this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
+            // 
             // Logout
             // 
             this.Logout.FlatAppearance.BorderSize = 0;
@@ -349,22 +368,6 @@
             this.ProfileBtn.TabIndex = 1;
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
-            // 
-            // UserSettingsbtn
-            // 
-            this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
-            this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
-            this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserSettingsbtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
-            this.UserSettingsbtn.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.UserSettingsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.UserSettingsbtn.IconSize = 40;
-            this.UserSettingsbtn.Location = new System.Drawing.Point(931, 2);
-            this.UserSettingsbtn.Name = "UserSettingsbtn";
-            this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
-            this.UserSettingsbtn.TabIndex = 3;
-            this.UserSettingsbtn.UseVisualStyleBackColor = true;
-            this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
             // 
             // AdminDashboard
             // 

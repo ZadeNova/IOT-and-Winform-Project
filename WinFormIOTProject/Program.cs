@@ -7,6 +7,11 @@ using System.Windows.Forms;
 
 namespace WinFormIOTProject
 {
+
+    public static class idk {
+       
+        public static DataComms dataComms = new DataComms();
+    }
     static class Program
     {
         /// <summary>
@@ -29,11 +34,12 @@ namespace WinFormIOTProject
             //Application.Run(new RFIDLoginForm());
             //Application.Run(new CreateUserForm());
             //Application.Run(new UpdatePassword());
+           
         }
 
     }
-
-
+   
+   
 
     // Session 
     static class User

@@ -22,7 +22,9 @@ namespace WinFormIOTProject
 
         private void RFIDTEST_Load(object sender, EventArgs e)
         {
-            InitComms();
+          
+            idk.dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
+            idk.dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
         }
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
@@ -75,13 +77,12 @@ namespace WinFormIOTProject
 
             // Running on the UI thread
 
-
             RFIDtxtCheck.Invoke((MethodInvoker)delegate
             {
                 // Running on the UI thread
                 RFIDtxtCheck.Text = newText;
             });
-
+            
             RFIDdeletetxt.Invoke((MethodInvoker)delegate
             {
                 // Running on the UI thread
@@ -307,7 +308,6 @@ namespace WinFormIOTProject
                 }
             }
         }
-
         private void Updatebtn_Click(object sender, EventArgs e)
         {
             SqlConnection myConnect1 = new SqlConnection(strConnectionString);
@@ -322,7 +322,7 @@ namespace WinFormIOTProject
             {
                 MessageBox.Show("Please scan your RFID again ! ");
             }
-            else if (string.IsNullOrWhiteSpace(Usernametxt.Text))
+            else if (string.IsNullOrWhiteSpace(Userupdatetxt.Text))
             {
                 MessageBox.Show("Please enter the UserName ! ");
             }
@@ -334,7 +334,7 @@ namespace WinFormIOTProject
                 string strCommandText = "SELECT * FROM UserAccount WHERE  NAME=@uqqName";
                 SqlCommand cmd = new SqlCommand(strCommandText, myConnect1);
                 //cmd.Parameters.AddWithValue("@RFID", textBox2.Text);
-                cmd.Parameters.AddWithValue("@uqqName", Usernametxt.Text);
+                cmd.Parameters.AddWithValue("@uqqName", Userupdatetxt.Text);
 
                 try
                 {
@@ -362,7 +362,7 @@ namespace WinFormIOTProject
                                 myConnect1.Close();
                                 myConnect1.Open();
                                 SqlCommand cmd12 = new SqlCommand(delete, myConnect1);
-                                cmd12.Parameters.AddWithValue("@uqqqName", Usernametxt.Text);
+                                cmd12.Parameters.AddWithValue("@uqqqName", Userupdatetxt.Text);
                                 cmd12.Parameters.AddWithValue("@idk", RFIDupdatetxt.Text);
 
                                 cmd12.ExecuteNonQuery(); // It executes the sql command
@@ -403,6 +403,21 @@ namespace WinFormIOTProject
         }
 
         private void RFIDtxtCheck_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Checkerpage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usernametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Userupdatetxt_TextChanged(object sender, EventArgs e)
         {
 
         }

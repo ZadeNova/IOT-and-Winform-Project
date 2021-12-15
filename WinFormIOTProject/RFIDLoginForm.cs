@@ -26,7 +26,10 @@ namespace WinFormIOTProject
 
         private void RFIDLoginForm_Load(object sender, EventArgs e)
         {
-            InitComms();
+            // InitComms();
+            idk.dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
+            idk.dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+
         }
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
@@ -222,7 +225,7 @@ namespace WinFormIOTProject
                     {
                         // Enter into admin form
                         MessageBox.Show("Login Successful");
-                        dataComms.sendData("RFIDSUCC");
+                        idk.dataComms.sendData("RFIDSUCC");
                         this.Hide();
                         User.AccountUsername = reader["NAME"].ToString();
                         User.AccountEmail = reader["Email"].ToString();
@@ -233,7 +236,7 @@ namespace WinFormIOTProject
                     else
                     {
                         MessageBox.Show("Login Unsuccessful");
-                        dataComms.sendData("RFIDFAIL");
+                        idk.dataComms.sendData("RFIDFAIL");
 
                     }
                 }
