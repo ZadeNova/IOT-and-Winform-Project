@@ -157,13 +157,13 @@ namespace WinFormIOTProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-               
+            idk.dataComms.sendData("LNT");
+            Console.WriteLine("sending LNT");
+
         }
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
-        DataComms dataComms;
-       
+      
        
         public delegate void myprocessDataDelegate(string strData);
         private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
@@ -402,6 +402,12 @@ namespace WinFormIOTProject
         private void lbDataComms_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            idk.dataComms.sendData("StopLNT");
+            Console.WriteLine("stop lnt");
         }
         // end of tem sensor 
 

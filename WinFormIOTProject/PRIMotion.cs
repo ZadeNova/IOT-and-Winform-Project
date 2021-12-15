@@ -26,7 +26,7 @@ namespace WinFormIOTProject
 
         }
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
-        DataComms dataComms;
+       // DataComms dataComms;
 
         public delegate void myprocessDataDelegatePRI(String strData);
         private void saveprisSensorDataToDB(string strTime, string strUltraValue, string strStatus)
@@ -94,8 +94,11 @@ namespace WinFormIOTProject
 
         public void processDataReceivePRI(string strData)
         {
-            myprocessDataDelegatePRI d = new myprocessDataDelegatePRI(handleSensorDataPRI);
-            listBox1.Invoke(d, new object[] { strData });
+            if (strData.IndexOf("PRI=") != -1) {
+                myprocessDataDelegatePRI d = new myprocessDataDelegatePRI(handleSensorDataPRI);
+                listBox1.Invoke(d, new object[] { strData });
+            }
+              
         }
 
         public void commsDataRecievePRI(string dataReceivedPRI3)
@@ -108,15 +111,15 @@ namespace WinFormIOTProject
             MessageBox.Show(errMsgPRI);
             processDataReceivePRI(errMsgPRI);
         }   
-        private void InitComms()
-        {
+        //private void InitComms()
+        //{
 
-            dataComms = new DataComms();
-            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecievePRI);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendErrorPRI);
+        //    dataComms = new DataComms();
+        //    dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecievePRI);
+        //    dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendErrorPRI);
 
 
-        }
+        //}
 
         private void Roomtemptxt_TextChanged(object sender, EventArgs e)
         {
@@ -136,7 +139,7 @@ namespace WinFormIOTProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataComms.sendData("STOP");
+            idk.dataComms.sendData("STOP");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

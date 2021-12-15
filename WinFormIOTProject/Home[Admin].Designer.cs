@@ -54,9 +54,8 @@
             this.panelAdminMenu.Controls.Add(this.AdminLogo);
             this.panelAdminMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAdminMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelAdminMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelAdminMenu.Name = "panelAdminMenu";
-            this.panelAdminMenu.Size = new System.Drawing.Size(267, 565);
+            this.panelAdminMenu.Size = new System.Drawing.Size(200, 459);
             this.panelAdminMenu.TabIndex = 1;
             // 
             // button7
@@ -67,10 +66,9 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button7.Location = new System.Drawing.Point(0, 427);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Location = new System.Drawing.Point(0, 346);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(267, 62);
+            this.button7.Size = new System.Drawing.Size(200, 50);
             this.button7.TabIndex = 10;
             this.button7.Text = "Generate Report";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -85,10 +83,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button6.Location = new System.Drawing.Point(0, 365);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Location = new System.Drawing.Point(0, 296);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(267, 62);
+            this.button6.Size = new System.Drawing.Size(200, 50);
             this.button6.TabIndex = 9;
             this.button6.Text = "Settings";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,14 +99,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button1.Location = new System.Drawing.Point(0, 303);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(0, 246);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 62);
+            this.button1.Size = new System.Drawing.Size(200, 50);
             this.button1.TabIndex = 8;
             this.button1.Text = "Notifications";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SubmenuData
             // 
@@ -119,10 +116,9 @@
             this.SubmenuData.Controls.Add(this.button3);
             this.SubmenuData.Controls.Add(this.button2);
             this.SubmenuData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuData.Location = new System.Drawing.Point(0, 158);
-            this.SubmenuData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubmenuData.Location = new System.Drawing.Point(0, 128);
             this.SubmenuData.Name = "SubmenuData";
-            this.SubmenuData.Size = new System.Drawing.Size(267, 145);
+            this.SubmenuData.Size = new System.Drawing.Size(200, 118);
             this.SubmenuData.TabIndex = 7;
             this.SubmenuData.Paint += new System.Windows.Forms.PaintEventHandler(this.SubmenuData_Paint);
             // 
@@ -134,11 +130,10 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button5.Location = new System.Drawing.Point(0, 84);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Location = new System.Drawing.Point(0, 69);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(267, 28);
+            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(200, 23);
             this.button5.TabIndex = 3;
             this.button5.Text = "button5";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,11 +147,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button4.Location = new System.Drawing.Point(0, 56);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(0, 46);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(267, 28);
+            this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(200, 23);
             this.button4.TabIndex = 2;
             this.button4.Text = "button4";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,11 +164,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button3.Location = new System.Drawing.Point(0, 28);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(0, 23);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(267, 28);
+            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(200, 23);
             this.button3.TabIndex = 1;
             this.button3.Text = "button3";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -189,10 +182,9 @@
             this.button2.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Aquamarine;
             this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(267, 28);
+            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(200, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "button2";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,11 +198,10 @@
             this.Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Data.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Data.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Data.Location = new System.Drawing.Point(0, 96);
-            this.Data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Data.Location = new System.Drawing.Point(0, 78);
             this.Data.Name = "Data";
-            this.Data.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.Data.Size = new System.Drawing.Size(267, 62);
+            this.Data.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Data.Size = new System.Drawing.Size(200, 50);
             this.Data.TabIndex = 6;
             this.Data.Text = "Data ";
             this.Data.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,18 +212,16 @@
             this.AdminLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.AdminLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.AdminLogo.Location = new System.Drawing.Point(0, 0);
-            this.AdminLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AdminLogo.Name = "AdminLogo";
-            this.AdminLogo.Size = new System.Drawing.Size(267, 96);
+            this.AdminLogo.Size = new System.Drawing.Size(200, 78);
             this.AdminLogo.TabIndex = 5;
             // 
             // Home_Admin_
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1771, 565);
+            this.ClientSize = new System.Drawing.Size(1028, 459);
             this.Controls.Add(this.panelAdminMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home_Admin_";
             this.Text = "Home_Admin_";
             this.panelAdminMenu.ResumeLayout(false);

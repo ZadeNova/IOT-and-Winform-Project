@@ -50,6 +50,7 @@ namespace WinFormIOTProject
         private void Data_Click(object sender, EventArgs e)
         {
             showSubMenu(SubmenuData);
+           
         }
 
         private Form activeForm = null;
@@ -117,7 +118,9 @@ namespace WinFormIOTProject
 
         private void DataGraphBtn_Click(object sender, EventArgs e)
         {
+            idk.dataComms.sendData("LNT");
             openChildForm(new DataVisualisationForm());
+            
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -150,17 +153,20 @@ namespace WinFormIOTProject
 
         private void button3_Click(object sender, EventArgs e)
         {
+            idk.dataComms.sendData("RFIDCRUD");
             openChildForm(new RIFDCRUD());
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            idk.dataComms.sendData("ULTRASONIC");
             openChildForm(new UltraSonic());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            idk.dataComms.sendData("PRIMO");
             openChildForm(new PRIMotion());
         }
     }

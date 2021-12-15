@@ -78,12 +78,15 @@ namespace WinFormIOTProject
             Console.WriteLine(strRFIDValue);
             //RFIDtxt.Text= strRFIDValue;
             Console.WriteLine("THIS FUNC EXECUTE");
-            string newText = strRFIDValue;
-            RFIDtxt.Invoke((MethodInvoker)delegate
-            {
-                // Running on the UI thread
-                RFIDtxt.Text = newText;
-            });
+            if (strData.IndexOf("RFIDLo=") != -1) {
+                string newText = strRFIDValue;
+                RFIDtxt.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    RFIDtxt.Text = newText;
+                });
+            }
+           
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
 
@@ -108,9 +111,9 @@ namespace WinFormIOTProject
             Console.WriteLine(strData);
             Console.WriteLine(strTime);
             Console.WriteLine("im here lol");
-            if (strData.IndexOf("RFID=") != -1)
+            if (strData.IndexOf("RFIDLo=") != -1)
             {
-                HandleRFIDdata(strData, strTime, "RFID=");
+                HandleRFIDdata(strData, strTime, "RFIDLo=");
             }
             else if (strData.IndexOf("BUTTON=") != -1)
             {

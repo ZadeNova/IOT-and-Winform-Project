@@ -169,8 +169,9 @@ namespace WinFormIOTProject
 
         private void RFIDLoginBtn_Click(object sender, EventArgs e)
         {
+            idk.dataComms.sendData("LoginRFID");
             this.Hide();
-
+           
             RFIDLoginForm rfidForm = new RFIDLoginForm();
 
             rfidForm.ShowDialog();

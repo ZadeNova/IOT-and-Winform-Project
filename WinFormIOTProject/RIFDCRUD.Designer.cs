@@ -55,6 +55,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Updatebtn = new System.Windows.Forms.Button();
             this.StatusPage = new System.Windows.Forms.TabPage();
+            this.Home = new FontAwesome.Sharp.IconButton();
             this.tabcontrol.SuspendLayout();
             this.Checkerpage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idcardpic)).BeginInit();
@@ -136,7 +137,7 @@
             this.tabcontrol.Controls.Add(this.DeletePage);
             this.tabcontrol.Controls.Add(this.UpdatePage);
             this.tabcontrol.Controls.Add(this.StatusPage);
-            this.tabcontrol.Location = new System.Drawing.Point(12, 38);
+            this.tabcontrol.Location = new System.Drawing.Point(2, 52);
             this.tabcontrol.Name = "tabcontrol";
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(769, 385);
@@ -356,12 +357,28 @@
             this.StatusPage.TabIndex = 3;
             this.StatusPage.Text = "Status";
             // 
+            // Home
+            // 
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Home.IconColor = System.Drawing.Color.Black;
+            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home.Location = new System.Drawing.Point(2, 0);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 46);
+            this.Home.TabIndex = 8;
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // RIFDCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(793, 470);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.tabcontrol);
             this.Name = "RIFDCRUD";
             this.Text = "RFIDTEST";
@@ -409,5 +426,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Updatebtn;
         private System.Windows.Forms.TabPage StatusPage;
+        private FontAwesome.Sharp.IconButton Home;
     }
 }

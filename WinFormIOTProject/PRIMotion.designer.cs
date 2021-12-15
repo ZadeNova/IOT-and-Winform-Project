@@ -39,7 +39,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(338, 49);
+            this.button1.Location = new System.Drawing.Point(363, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 46);
             this.button1.TabIndex = 19;
@@ -49,7 +49,7 @@
             // 
             // Clearbtn2
             // 
-            this.Clearbtn2.Location = new System.Drawing.Point(338, 1);
+            this.Clearbtn2.Location = new System.Drawing.Point(363, 15);
             this.Clearbtn2.Name = "Clearbtn2";
             this.Clearbtn2.Size = new System.Drawing.Size(123, 42);
             this.Clearbtn2.TabIndex = 18;
@@ -60,7 +60,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 107);
+            this.listBox1.Location = new System.Drawing.Point(37, 121);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(449, 134);
             this.listBox1.TabIndex = 17;
@@ -69,7 +69,7 @@
             // Status2
             // 
             this.Status2.AutoSize = true;
-            this.Status2.Location = new System.Drawing.Point(9, 62);
+            this.Status2.Location = new System.Drawing.Point(34, 76);
             this.Status2.Name = "Status2";
             this.Status2.Size = new System.Drawing.Size(37, 13);
             this.Status2.TabIndex = 16;
@@ -78,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 10);
+            this.label3.Location = new System.Drawing.Point(34, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 15;
@@ -87,7 +87,7 @@
             // Roomtemptxt
             // 
             this.Roomtemptxt.BackColor = System.Drawing.SystemColors.Control;
-            this.Roomtemptxt.Location = new System.Drawing.Point(122, 10);
+            this.Roomtemptxt.Location = new System.Drawing.Point(147, 24);
             this.Roomtemptxt.Name = "Roomtemptxt";
             this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
             this.Roomtemptxt.TabIndex = 14;
@@ -96,7 +96,7 @@
             // Status2txt
             // 
             this.Status2txt.BackColor = System.Drawing.SystemColors.Control;
-            this.Status2txt.Location = new System.Drawing.Point(122, 62);
+            this.Status2txt.Location = new System.Drawing.Point(147, 76);
             this.Status2txt.Name = "Status2txt";
             this.Status2txt.Size = new System.Drawing.Size(145, 20);
             this.Status2txt.TabIndex = 13;

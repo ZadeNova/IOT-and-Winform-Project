@@ -9,7 +9,7 @@ namespace WinFormIOTProject
 {
 
     public static class idk {
-       //hj code dont remove lol 
+       //hj code dont remove lol idk
         public static DataComms dataComms = new DataComms();
     }
     static class Program
@@ -20,6 +20,7 @@ namespace WinFormIOTProject
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

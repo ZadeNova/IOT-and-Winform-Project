@@ -35,11 +35,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Status2txt = new System.Windows.Forms.TextBox();
             this.Status2 = new System.Windows.Forms.Label();
+            this.Home = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // Clearbtn2
             // 
-            this.Clearbtn2.Location = new System.Drawing.Point(349, 12);
+            this.Clearbtn2.Location = new System.Drawing.Point(375, 37);
             this.Clearbtn2.Name = "Clearbtn2";
             this.Clearbtn2.Size = new System.Drawing.Size(123, 42);
             this.Clearbtn2.TabIndex = 11;
@@ -50,7 +51,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(23, 118);
+            this.listBox1.Location = new System.Drawing.Point(49, 143);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(449, 134);
             this.listBox1.TabIndex = 10;
@@ -59,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 21);
+            this.label3.Location = new System.Drawing.Point(46, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 8;
@@ -69,7 +70,7 @@
             // Roomtemptxt
             // 
             this.Roomtemptxt.BackColor = System.Drawing.SystemColors.Control;
-            this.Roomtemptxt.Location = new System.Drawing.Point(133, 21);
+            this.Roomtemptxt.Location = new System.Drawing.Point(159, 46);
             this.Roomtemptxt.Name = "Roomtemptxt";
             this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
             this.Roomtemptxt.TabIndex = 7;
@@ -77,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 60);
+            this.button1.Location = new System.Drawing.Point(375, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 46);
             this.button1.TabIndex = 12;
@@ -88,7 +89,7 @@
             // Status2txt
             // 
             this.Status2txt.BackColor = System.Drawing.SystemColors.Control;
-            this.Status2txt.Location = new System.Drawing.Point(133, 73);
+            this.Status2txt.Location = new System.Drawing.Point(159, 98);
             this.Status2txt.Name = "Status2txt";
             this.Status2txt.Size = new System.Drawing.Size(145, 20);
             this.Status2txt.TabIndex = 6;
@@ -97,17 +98,33 @@
             // Status2
             // 
             this.Status2.AutoSize = true;
-            this.Status2.Location = new System.Drawing.Point(20, 73);
+            this.Status2.Location = new System.Drawing.Point(46, 98);
             this.Status2.Name = "Status2";
             this.Status2.Size = new System.Drawing.Size(37, 13);
             this.Status2.TabIndex = 9;
             this.Status2.Text = "Status";
+            // 
+            // Home
+            // 
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Home.IconColor = System.Drawing.Color.Black;
+            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home.Location = new System.Drawing.Point(-3, -3);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 46);
+            this.Home.TabIndex = 13;
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // UltraSonic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 289);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Clearbtn2);
             this.Controls.Add(this.listBox1);
@@ -132,5 +149,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Status2txt;
         private System.Windows.Forms.Label Status2;
+        private FontAwesome.Sharp.IconButton Home;
     }
 }

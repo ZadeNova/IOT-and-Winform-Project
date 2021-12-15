@@ -88,6 +88,7 @@ namespace WinFormIOTProject
             // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = true;
+            
             MailMessage mail = new MailMessage();
 
 

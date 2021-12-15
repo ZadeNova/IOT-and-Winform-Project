@@ -93,8 +93,11 @@ namespace WinFormIOTProject
 
         public void processDataReceive123(string strData)
         {
-            myprocessDataDelegate123 d = new myprocessDataDelegate123(handleSensorData123);
-            listBox1.Invoke(d, new object[] { strData });
+            if (strData.IndexOf("Ultra=") != -1) {
+                myprocessDataDelegate123 d = new myprocessDataDelegate123(handleSensorData123);
+                listBox1.Invoke(d, new object[] { strData });
+            }
+            
         }
 
         public void commsDataRecieve124(string dataReceived123)
@@ -155,7 +158,12 @@ namespace WinFormIOTProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataComms.sendData("STOP");
+            idk.dataComms.sendData("STOP");
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

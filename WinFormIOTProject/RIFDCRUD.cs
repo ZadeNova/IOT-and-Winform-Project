@@ -76,24 +76,27 @@ namespace WinFormIOTProject
 
 
             // Running on the UI thread
+            if (strData.IndexOf("RFID=") != -1)
+            {
+                RFIDtxtCheck.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    RFIDtxtCheck.Text = newText;
+                });
 
-            RFIDtxtCheck.Invoke((MethodInvoker)delegate
-            {
-                // Running on the UI thread
-                RFIDtxtCheck.Text = newText;
-            });
-            
-            RFIDdeletetxt.Invoke((MethodInvoker)delegate
-            {
-                // Running on the UI thread
-                RFIDdeletetxt.Text = newText;
-            });
+                RFIDdeletetxt.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    RFIDdeletetxt.Text = newText;
+                });
 
-            RFIDupdatetxt.Invoke((MethodInvoker)delegate
-            {
-                // Running on the UI thread
-                RFIDupdatetxt.Text = newText;
-            });
+                RFIDupdatetxt.Invoke((MethodInvoker)delegate
+                {
+                    // Running on the UI thread
+                    RFIDupdatetxt.Text = newText;
+                });
+            }
+               
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
 
@@ -420,6 +423,11 @@ namespace WinFormIOTProject
         private void Userupdatetxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
