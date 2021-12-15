@@ -9,7 +9,7 @@ namespace WinFormIOTProject
 {
 
     public static class idk {
-       
+       //hj code dont remove lol 
         public static DataComms dataComms = new DataComms();
     }
     static class Program
