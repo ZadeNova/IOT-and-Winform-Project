@@ -62,6 +62,7 @@
             this.TwoFAtxt.Name = "TwoFAtxt";
             this.TwoFAtxt.Size = new System.Drawing.Size(310, 20);
             this.TwoFAtxt.TabIndex = 2;
+            this.TwoFAtxt.TextChanged += new System.EventHandler(this.TwoFAtxt_TextChanged);
             // 
             // Confirmbtn
             // 

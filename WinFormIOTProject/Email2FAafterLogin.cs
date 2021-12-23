@@ -143,5 +143,10 @@ namespace WinFormIOTProject
             LoginForm logform = new LoginForm();
             logform.ShowDialog();
         }
+
+        private void TwoFAtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

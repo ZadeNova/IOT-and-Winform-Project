@@ -105,6 +105,7 @@
             this.CurrentPasstxt.Name = "CurrentPasstxt";
             this.CurrentPasstxt.Size = new System.Drawing.Size(204, 28);
             this.CurrentPasstxt.TabIndex = 2;
+            this.CurrentPasstxt.TextChanged += new System.EventHandler(this.CurrentPasstxt_TextChanged);
             // 
             // NewPasslbl
             // 

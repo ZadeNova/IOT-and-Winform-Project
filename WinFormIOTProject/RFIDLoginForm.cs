@@ -233,6 +233,7 @@ namespace WinFormIOTProject
                         User.AccountUsername = reader["NAME"].ToString();
                         User.AccountEmail = reader["Email"].ToString();
                         User.AccountRole = reader["Role"].ToString();
+                        User.AccountID = Convert.ToInt16(reader["Id"]);
                         AdminDashboard form2 = new AdminDashboard();
                         form2.ShowDialog();
                     }

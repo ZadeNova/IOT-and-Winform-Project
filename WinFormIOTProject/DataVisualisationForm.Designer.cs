@@ -44,6 +44,7 @@
             this.lbDataComms = new System.Windows.Forms.ListBox();
             this.Clearbtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Home = new FontAwesome.Sharp.IconButton();
             this.tabControlData.SuspendLayout();
             this.Temperature.SuspendLayout();
             this.Lighttab.SuspendLayout();
@@ -53,14 +54,15 @@
             // 
             this.tabControlData.Controls.Add(this.Temperature);
             this.tabControlData.Controls.Add(this.Lighttab);
-            this.tabControlData.Location = new System.Drawing.Point(12, 24);
+            this.tabControlData.Location = new System.Drawing.Point(12, 53);
             this.tabControlData.Name = "tabControlData";
             this.tabControlData.SelectedIndex = 0;
-            this.tabControlData.Size = new System.Drawing.Size(493, 318);
+            this.tabControlData.Size = new System.Drawing.Size(536, 338);
             this.tabControlData.TabIndex = 0;
             // 
             // Temperature
             // 
+            this.Temperature.BackColor = System.Drawing.Color.DarkGray;
             this.Temperature.Controls.Add(this.Clearbtn2);
             this.Temperature.Controls.Add(this.listBox1);
             this.Temperature.Controls.Add(this.Status2);
@@ -70,17 +72,16 @@
             this.Temperature.Location = new System.Drawing.Point(4, 22);
             this.Temperature.Name = "Temperature";
             this.Temperature.Padding = new System.Windows.Forms.Padding(3);
-            this.Temperature.Size = new System.Drawing.Size(485, 292);
+            this.Temperature.Size = new System.Drawing.Size(528, 312);
             this.Temperature.TabIndex = 0;
             this.Temperature.Text = "Temperature";
-            this.Temperature.UseVisualStyleBackColor = true;
             this.Temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
             // Clearbtn2
             // 
-            this.Clearbtn2.Location = new System.Drawing.Point(334, 34);
+            this.Clearbtn2.Location = new System.Drawing.Point(325, 28);
             this.Clearbtn2.Name = "Clearbtn2";
-            this.Clearbtn2.Size = new System.Drawing.Size(123, 42);
+            this.Clearbtn2.Size = new System.Drawing.Size(166, 56);
             this.Clearbtn2.TabIndex = 5;
             this.Clearbtn2.Text = "Clear";
             this.Clearbtn2.UseVisualStyleBackColor = true;
@@ -89,16 +90,16 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(18, 117);
+            this.listBox1.Location = new System.Drawing.Point(9, 116);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(449, 134);
+            this.listBox1.Size = new System.Drawing.Size(482, 160);
             this.listBox1.TabIndex = 4;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Status2
             // 
             this.Status2.AutoSize = true;
-            this.Status2.Location = new System.Drawing.Point(15, 72);
+            this.Status2.Location = new System.Drawing.Point(6, 71);
             this.Status2.Name = "Status2";
             this.Status2.Size = new System.Drawing.Size(37, 13);
             this.Status2.TabIndex = 3;
@@ -108,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 20);
+            this.label3.Location = new System.Drawing.Point(6, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 2;
@@ -118,7 +119,7 @@
             // Roomtemptxt
             // 
             this.Roomtemptxt.BackColor = System.Drawing.SystemColors.Control;
-            this.Roomtemptxt.Location = new System.Drawing.Point(128, 20);
+            this.Roomtemptxt.Location = new System.Drawing.Point(119, 19);
             this.Roomtemptxt.Name = "Roomtemptxt";
             this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
             this.Roomtemptxt.TabIndex = 1;
@@ -127,7 +128,7 @@
             // Status2txt
             // 
             this.Status2txt.BackColor = System.Drawing.SystemColors.Control;
-            this.Status2txt.Location = new System.Drawing.Point(128, 72);
+            this.Status2txt.Location = new System.Drawing.Point(119, 71);
             this.Status2txt.Name = "Status2txt";
             this.Status2txt.Size = new System.Drawing.Size(145, 20);
             this.Status2txt.TabIndex = 0;
@@ -135,6 +136,7 @@
             // 
             // Lighttab
             // 
+            this.Lighttab.BackColor = System.Drawing.Color.DarkGray;
             this.Lighttab.Controls.Add(this.Statustxt);
             this.Lighttab.Controls.Add(this.Roomlighttxt);
             this.Lighttab.Controls.Add(this.label2);
@@ -144,10 +146,9 @@
             this.Lighttab.Location = new System.Drawing.Point(4, 22);
             this.Lighttab.Name = "Lighttab";
             this.Lighttab.Padding = new System.Windows.Forms.Padding(3);
-            this.Lighttab.Size = new System.Drawing.Size(485, 292);
+            this.Lighttab.Size = new System.Drawing.Size(528, 312);
             this.Lighttab.TabIndex = 1;
             this.Lighttab.Text = "Light";
-            this.Lighttab.UseVisualStyleBackColor = true;
             // 
             // Statustxt
             // 
@@ -204,7 +205,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(16, 368);
+            this.button2.Location = new System.Drawing.Point(25, 413);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 42);
             this.button2.TabIndex = 2;
@@ -212,12 +213,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Home
+            // 
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Home.IconColor = System.Drawing.Color.Black;
+            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home.Location = new System.Drawing.Point(1, 1);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 46);
+            this.Home.TabIndex = 9;
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // DataVisualisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1064, 594);
+            this.ClientSize = new System.Drawing.Size(730, 466);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControlData);
             this.Name = "DataVisualisationForm";
@@ -250,5 +267,6 @@
         private System.Windows.Forms.ListBox lbDataComms;
         private System.Windows.Forms.Button Clearbtn;
         private System.Windows.Forms.Button button2;
+        private FontAwesome.Sharp.IconButton Home;
     }
 }

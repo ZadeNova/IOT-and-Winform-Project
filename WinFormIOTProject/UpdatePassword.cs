@@ -118,9 +118,11 @@ namespace WinFormIOTProject
 
         }
 
-      
-            
+        private void CurrentPasstxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 
 

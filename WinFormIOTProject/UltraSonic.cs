@@ -31,15 +31,15 @@ namespace WinFormIOTProject
         private void saveultrsSensorDataToDB(string strTime, string strUltraValue, string strStatus)
         {
             SqlConnection myconnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@time, @value, @status)";
+            String strCommandText = "INSERT Ultra_table (DATETIME, Ultra, Ultra_status, userid)" + "VALUES (@time, @value, @status, @user)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
             updateCmd.Parameters.AddWithValue("@time", strTime);
             updateCmd.Parameters.AddWithValue("@value", strUltraValue);
             updateCmd.Parameters.AddWithValue("@status", strStatus);
+            updateCmd.Parameters.AddWithValue("@user", User.AccountID);
 
             myconnect.Open();
-
-            // int result = updateCmd.ExecuteNonQuery();
+            int result = updateCmd.ExecuteNonQuery();
             myconnect.Close();
         }
 
@@ -67,7 +67,7 @@ namespace WinFormIOTProject
             else
                 status = "Nothing ";
             Status2txt.Text = status;
-            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+            saveultrsSensorDataToDB(strTime, strUltraValue123, status);
         }
 
         private void handleButtonData123(string strData, string strTime, string ID)

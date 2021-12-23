@@ -361,7 +361,7 @@ namespace WinFormIOTProject
                             {
                                 // Enter into admin form
                                 MessageBox.Show("Updating");
-                                string delete = "UPDATE UserAccount SET RFID_ID=@idk WHERE NAME=@uqqqName AND RFID_ID='NoRFID'";
+                                string delete = "UPDATE UserAccount SET RFID_ID=@idk WHERE NAME=@uqqqName ";
                                 myConnect1.Close();
                                 myConnect1.Open();
                                 SqlCommand cmd12 = new SqlCommand(delete, myConnect1);
@@ -428,6 +428,11 @@ namespace WinFormIOTProject
         private void Home_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void UpdatePage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

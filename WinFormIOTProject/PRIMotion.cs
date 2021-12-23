@@ -29,18 +29,19 @@ namespace WinFormIOTProject
        // DataComms dataComms;
 
         public delegate void myprocessDataDelegatePRI(String strData);
-        private void saveprisSensorDataToDB(string strTime, string strUltraValue, string strStatus)
+        private void saveprisSensorDataToDB(string strTime, string strUltraValue)
         {
             SqlConnection myconnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@time, @value, @status)";
+            String strCommandText = "INSERT PRI_table (DATETIME, PRI_status, userid)" + "VALUES (@time, @value, @user)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
             updateCmd.Parameters.AddWithValue("@time", strTime);
             updateCmd.Parameters.AddWithValue("@value", strUltraValue);
-            updateCmd.Parameters.AddWithValue("@status", strStatus);
+            updateCmd.Parameters.AddWithValue("@user", User.AccountID);
+
 
             myconnect.Open();
 
-            // int result = updateCmd.ExecuteNonQuery();
+            int result = updateCmd.ExecuteNonQuery();
             myconnect.Close();
         }
 
@@ -59,23 +60,18 @@ namespace WinFormIOTProject
         {
             string strUltraValuePRI = extractStringValuePRI(strData, ID);
             Roomtemptxt.Text = strUltraValuePRI;
-            Roomtemptxt.Text = strUltraValuePRI;
-
-            //float flightValuePRI = extractFloatValuePRI(strData, ID);
-            string status = "";
-            //if (strUltraValuePRI)
-            //    status = "Something is Moving ";
-            //else
-            //    status = "No motion at all ";
-            Status2txt.Text = status;
-            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+            //Roomtemptxt.Text = strUltraValuePRI;
+            Console.WriteLine(strUltraValuePRI);
+            if (strUltraValuePRI == "True") {
+                saveprisSensorDataToDB(strTime, strUltraValuePRI);
+            }
+            
         }
 
         private void handleButtonDataPRI(string strData, string strTime, string ID)
         {
             string strbuttonValue = extractStringValuePRI(strData, ID);
-            //tbButtonValue.Text = strbuttonValue;
-            //tbDoorBell.Text = strbuttonValue;
+           
         }
 
         private void extractSensorDataPRI(string strData, string strTime)
@@ -111,15 +107,7 @@ namespace WinFormIOTProject
             MessageBox.Show(errMsgPRI);
             processDataReceivePRI(errMsgPRI);
         }   
-        //private void InitComms()
-        //{
-
-        //    dataComms = new DataComms();
-        //    dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataRecievePRI);
-        //    dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendErrorPRI);
-
-
-        //}
+       
 
         private void Roomtemptxt_TextChanged(object sender, EventArgs e)
         {
@@ -145,6 +133,16 @@ namespace WinFormIOTProject
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

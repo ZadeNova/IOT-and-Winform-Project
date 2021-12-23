@@ -31,10 +31,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Clearbtn2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.Status2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Roomtemptxt = new System.Windows.Forms.TextBox();
-            this.Status2txt = new System.Windows.Forms.TextBox();
+            this.Home = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // button1
@@ -66,41 +65,39 @@
             this.listBox1.TabIndex = 17;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // Status2
-            // 
-            this.Status2.AutoSize = true;
-            this.Status2.Location = new System.Drawing.Point(34, 76);
-            this.Status2.Name = "Status2";
-            this.Status2.Size = new System.Drawing.Size(37, 13);
-            this.Status2.TabIndex = 16;
-            this.Status2.Text = "Status";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 24);
+            this.label3.Location = new System.Drawing.Point(37, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Distance";
+            this.label3.Text = "Movement ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Roomtemptxt
             // 
             this.Roomtemptxt.BackColor = System.Drawing.SystemColors.Control;
-            this.Roomtemptxt.Location = new System.Drawing.Point(147, 24);
+            this.Roomtemptxt.Location = new System.Drawing.Point(150, 49);
             this.Roomtemptxt.Name = "Roomtemptxt";
             this.Roomtemptxt.Size = new System.Drawing.Size(145, 20);
             this.Roomtemptxt.TabIndex = 14;
             this.Roomtemptxt.TextChanged += new System.EventHandler(this.Roomtemptxt_TextChanged);
             // 
-            // Status2txt
+            // Home
             // 
-            this.Status2txt.BackColor = System.Drawing.SystemColors.Control;
-            this.Status2txt.Location = new System.Drawing.Point(147, 76);
-            this.Status2txt.Name = "Status2txt";
-            this.Status2txt.Size = new System.Drawing.Size(145, 20);
-            this.Status2txt.TabIndex = 13;
-            this.Status2txt.TextChanged += new System.EventHandler(this.Status2txt_TextChanged);
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Home.IconColor = System.Drawing.Color.Black;
+            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home.Location = new System.Drawing.Point(-1, 0);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 46);
+            this.Home.TabIndex = 20;
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // PRIMotion
             // 
@@ -108,13 +105,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(511, 257);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Clearbtn2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.Status2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Roomtemptxt);
-            this.Controls.Add(this.Status2txt);
             this.Name = "PRIMotion";
             this.Text = "PRIMotion";
             this.Load += new System.EventHandler(this.PRIMotion_Load);
@@ -128,9 +124,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Clearbtn2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label Status2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Roomtemptxt;
-        private System.Windows.Forms.TextBox Status2txt;
+        private FontAwesome.Sharp.IconButton Home;
     }
 }

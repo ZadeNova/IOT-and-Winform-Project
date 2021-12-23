@@ -169,5 +169,17 @@ namespace WinFormIOTProject
             idk.dataComms.sendData("PRIMO");
             openChildForm(new PRIMotion());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            idk.dataComms.sendData("WATER");
+            openChildForm(new watersensor());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            idk.dataComms.sendData("SOUND");
+            openChildForm(new SoundSensor());
+        }
     }
 }

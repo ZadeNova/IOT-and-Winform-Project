@@ -169,15 +169,16 @@ namespace WinFormIOTProject
         private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
         {
             SqlConnection myconnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@time, @value, @status)";
+            String strCommandText = "INSERT Light_table (DATETIME, LIGHT, LIGHT_STATUS, userid)" + "VALUES (@time1, @value1, @status1, @user1)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
-            updateCmd.Parameters.AddWithValue("@time", strTime);
-            updateCmd.Parameters.AddWithValue("@value", strlightValue);
-            updateCmd.Parameters.AddWithValue("@status", strStatus);
+            updateCmd.Parameters.AddWithValue("@time1", strTime);
+            updateCmd.Parameters.AddWithValue("@value1", strlightValue);
+            updateCmd.Parameters.AddWithValue("@status1", strStatus);
+            updateCmd.Parameters.AddWithValue("@user1", User.AccountID);
 
             myconnect.Open();
 
-            // int result = updateCmd.ExecuteNonQuery();
+            int result = updateCmd.ExecuteNonQuery();
             myconnect.Close();
         }
 
@@ -205,7 +206,7 @@ namespace WinFormIOTProject
             else
                 status = "Bright";
             Statustxt.Text = status;
-            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+            saveLightSensorDataToDB(strTime, strlightValue, status);
         }
 
         private void handleButtonData(string strData, string strTime, string ID)
@@ -263,18 +264,19 @@ namespace WinFormIOTProject
 
 
         public delegate void myprocessDataDelegate1(string strData1);
-        private void savetempSensorDataToDB(string strTime1, string strlightValue1, string strStatus1)
+        private void savetempSensorDataToDB1(string strTime1, string strlightValue1, string strStatus1)
         {
             SqlConnection myconnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MySensor (TimeOccured, SensorValue, SensorStatus)" + "VALUES (@timetem, @valuetem, @statustem)";
-            SqlCommand updateCmd = new SqlCommand(strCommandText, myconnect);
-            updateCmd.Parameters.AddWithValue("@timetem", strTime1);
-            updateCmd.Parameters.AddWithValue("@valuetem", strlightValue1);
-            updateCmd.Parameters.AddWithValue("@statustem", strStatus1);
+            String strCommandText = "INSERT tem_table (DATETIME, TEM, TEM_STATUS, userid1)" + "VALUES (@timetem, @valuetem, @statustem, @user)";
+            SqlCommand updateCmd1 = new SqlCommand(strCommandText, myconnect);
+            updateCmd1.Parameters.AddWithValue("@timetem", strTime1);
+            updateCmd1.Parameters.AddWithValue("@valuetem", strlightValue1);
+            updateCmd1.Parameters.AddWithValue("@statustem", strStatus1);
+            updateCmd1.Parameters.AddWithValue("@user", User.AccountID);
 
             myconnect.Open();
 
-            // int result = updateCmd.ExecuteNonQuery();
+            int result1 = updateCmd1.ExecuteNonQuery();
             myconnect.Close();
         }
 
@@ -304,7 +306,7 @@ namespace WinFormIOTProject
             else
                 status1 = "normal";
             Status2txt.Text = status1;
-            //  saveLightSensorDataToDB(strTime, strlightValue, status);
+            savetempSensorDataToDB1(strTime1, strlightValue1, status1);
         }
 
         private void handleButtonData1(string strData1, string strTime1, string ID1)
@@ -408,6 +410,11 @@ namespace WinFormIOTProject
         {
             idk.dataComms.sendData("StopLNT");
             Console.WriteLine("stop lnt");
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         // end of tem sensor 
 
