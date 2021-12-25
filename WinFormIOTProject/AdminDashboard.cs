@@ -22,7 +22,10 @@ namespace WinFormIOTProject
         private void CustomizeDesign()
         {
             SubmenuData.Visible = false;
-
+            panel1.Visible = false;
+            
+           
+         
         }
 
         private void Hidesubmenu()
@@ -31,6 +34,8 @@ namespace WinFormIOTProject
                 SubmenuData.Visible = false;
             
         }
+       
+
 
         private void showSubMenu(Panel subMenu)
         {
@@ -42,6 +47,25 @@ namespace WinFormIOTProject
             else
             {
                 subMenu.Visible = false;
+            }
+
+        }
+        private void Hidesubmenu2()
+        {
+            if (panel1.Visible == true)
+                panel1.Visible = false;
+
+        }
+        private void showSubMenu2(Panel subMenu2)
+        {
+            if (subMenu2.Visible == false)
+            {
+                //Hidesubmenu();
+                subMenu2.Visible = true;
+            }
+            else
+            {
+                subMenu2.Visible = false;
             }
 
         }
@@ -106,7 +130,8 @@ namespace WinFormIOTProject
 
         private void ManageUserBtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new ManageUserForm());
+            showSubMenu2(panel1);
+          
         }
 
         private void ProfileBtn_Click(object sender, EventArgs e)
@@ -180,6 +205,36 @@ namespace WinFormIOTProject
         {
             idk.dataComms.sendData("SOUND");
             openChildForm(new SoundSensor());
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ManageUserForm());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ManageRFID());
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            AdminDashboard form2 = new AdminDashboard();
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll_1(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

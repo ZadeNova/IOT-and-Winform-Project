@@ -78,6 +78,7 @@
             // 
             this.RFIDtxt.Location = new System.Drawing.Point(173, 195);
             this.RFIDtxt.Name = "RFIDtxt";
+            this.RFIDtxt.ReadOnly = true;
             this.RFIDtxt.Size = new System.Drawing.Size(266, 20);
             this.RFIDtxt.TabIndex = 3;
             this.RFIDtxt.TextChanged += new System.EventHandler(this.RFIDtxt_TextChanged);

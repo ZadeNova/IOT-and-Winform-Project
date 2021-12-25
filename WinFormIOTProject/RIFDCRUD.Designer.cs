@@ -102,8 +102,10 @@
             // 
             this.RFIDupdatetxt.Location = new System.Drawing.Point(290, 215);
             this.RFIDupdatetxt.Name = "RFIDupdatetxt";
+            this.RFIDupdatetxt.ReadOnly = true;
             this.RFIDupdatetxt.Size = new System.Drawing.Size(247, 20);
             this.RFIDupdatetxt.TabIndex = 7;
+            this.RFIDupdatetxt.TextChanged += new System.EventHandler(this.RFIDupdatetxt_TextChanged);
             // 
             // Userupdatetxt
             // 
@@ -191,6 +193,7 @@
             this.DeletePage.Size = new System.Drawing.Size(761, 359);
             this.DeletePage.TabIndex = 1;
             this.DeletePage.Text = "Delete";
+            this.DeletePage.Click += new System.EventHandler(this.DeletePage_Click);
             // 
             // Deletebtn
             // 
@@ -206,8 +209,10 @@
             // 
             this.RFIDdeletetxt.Location = new System.Drawing.Point(262, 164);
             this.RFIDdeletetxt.Name = "RFIDdeletetxt";
+            this.RFIDdeletetxt.ReadOnly = true;
             this.RFIDdeletetxt.Size = new System.Drawing.Size(319, 20);
             this.RFIDdeletetxt.TabIndex = 4;
+            this.RFIDdeletetxt.TextChanged += new System.EventHandler(this.RFIDdeletetxt_TextChanged);
             // 
             // label7
             // 
@@ -218,6 +223,7 @@
             this.label7.Size = new System.Drawing.Size(128, 27);
             this.label7.TabIndex = 3;
             this.label7.Text = "Delete RFID";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -228,6 +234,7 @@
             this.label6.Size = new System.Drawing.Size(47, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "RFID";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -238,6 +245,7 @@
             this.label5.Size = new System.Drawing.Size(210, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Please scan your RFID card";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // iconPictureBox1
             // 
@@ -251,6 +259,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // Checkerpage
             // 
@@ -308,6 +317,7 @@
             // 
             this.RFIDtxtCheck.Location = new System.Drawing.Point(215, 125);
             this.RFIDtxtCheck.Name = "RFIDtxtCheck";
+            this.RFIDtxtCheck.ReadOnly = true;
             this.RFIDtxtCheck.Size = new System.Drawing.Size(216, 20);
             this.RFIDtxtCheck.TabIndex = 5;
             this.RFIDtxtCheck.TextChanged += new System.EventHandler(this.RFIDtxtCheck_TextChanged);
@@ -316,6 +326,7 @@
             // 
             this.Usernametxt.Location = new System.Drawing.Point(215, 208);
             this.Usernametxt.Name = "Usernametxt";
+            this.Usernametxt.ReadOnly = true;
             this.Usernametxt.Size = new System.Drawing.Size(216, 20);
             this.Usernametxt.TabIndex = 4;
             this.Usernametxt.TextChanged += new System.EventHandler(this.Usernametxt_TextChanged);

@@ -96,6 +96,7 @@ namespace WinFormIOTProject
                     RFIDupdatetxt.Text = newText;
                 });
             }
+
                
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
@@ -104,6 +105,7 @@ namespace WinFormIOTProject
 
 
         }
+
         private void extractSensorData(string strData, string strTime)
         {
             //Any type of data may be send over by hardware
@@ -286,8 +288,15 @@ namespace WinFormIOTProject
                         SqlCommand cmd1 = new SqlCommand(delete, myConnect);
                         cmd1.Parameters.AddWithValue("@idk", RFIDtxtCheck.Text);
                         cmd1.ExecuteNonQuery(); // It executes the sql command
-                        MessageBox.Show("Deleted");
+                      
                         myConnect.Close();
+                        myConnect.Open();
+                        string update_MA_RFID = "UPDATE Manage_RFID SET RFID_STATUS='NotActive' WHERE RFID_ID=@idk";
+                        SqlCommand cmd2 = new SqlCommand(update_MA_RFID, myConnect);
+                        cmd2.Parameters.AddWithValue("@idk", RFIDtxtCheck.Text);
+                        cmd2.ExecuteNonQuery();
+                        myConnect.Close();
+                        MessageBox.Show("Deleted");
                         //dataComms.sendData("RFIDSUCC");
 
                     }
@@ -369,8 +378,15 @@ namespace WinFormIOTProject
                                 cmd12.Parameters.AddWithValue("@idk", RFIDupdatetxt.Text);
 
                                 cmd12.ExecuteNonQuery(); // It executes the sql command
-                                MessageBox.Show("Updated ! ");
+                             
                                 myConnect1.Close();
+                                myConnect1.Open();
+                                string update_MA_RFID = "UPDATE Manage_RFID SET RFID_STATUS='Active' WHERE RFID_ID=@idk";
+                                SqlCommand cmd2 = new SqlCommand(update_MA_RFID, myConnect1);
+                                cmd2.Parameters.AddWithValue("@idk", RFIDupdatetxt.Text);
+                                cmd2.ExecuteNonQuery();
+                                myConnect1.Close();
+                                MessageBox.Show("Updated ! ");
 
                                 //dataComms.sendData("RFIDSUCC");
                             }
@@ -431,6 +447,41 @@ namespace WinFormIOTProject
         }
 
         private void UpdatePage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RFIDupdatetxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RFIDdeletetxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeletePage_Click(object sender, EventArgs e)
         {
 
         }

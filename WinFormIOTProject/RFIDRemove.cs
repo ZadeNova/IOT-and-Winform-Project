@@ -7,35 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Net.Sockets;
 
 namespace WinFormIOTProject
 {
-
-    public partial class RFIDLoginForm : Form
+    public partial class RFIDRemove : Form
     {
-
-
-        public RFIDLoginForm()
+        public RFIDRemove()
         {
             InitializeComponent();
         }
-
-        private void RFIDLoginForm_Load(object sender, EventArgs e)
+        string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
+        private void RemoveRFIDcs_Load(object sender, EventArgs e)
         {
-            // InitComms();
             idk.dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
             idk.dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
-
         }
-
-        string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataComms dataComms;
-
-
+        string RFIDUSERCHECK = "";
         public delegate void myprocessDataDelegate(String strData);
         // To save your sensor data to DB you need to change to suite your project needs
         private void RFIDSensorDataToDB(string strTime, string RfidID)
@@ -57,8 +48,7 @@ namespace WinFormIOTProject
             myConnect.Close();
 
         }// End function
-
-        // Dont edit this
+         // Dont edit this
         public string extractStringValue(string strData, string ID)
         {
             string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
@@ -70,6 +60,7 @@ namespace WinFormIOTProject
         {
             return (float.Parse(extractStringValue(strData, ID)));
         }
+
         public void HandleRFIDdata(string strData, string strTime, string ID)
         {
             string strRFIDValue = extractStringValue(strData, ID);
@@ -78,10 +69,19 @@ namespace WinFormIOTProject
             Console.WriteLine(strRFIDValue);
             //RFIDtxt.Text= strRFIDValue;
             Console.WriteLine("THIS FUNC EXECUTE");
-            if (strData.IndexOf("RFIDLo=") != -1) {
+            string newText = strRFIDValue;
+
+
+            // Running on the UI thread
+            if (strData.IndexOf("RFID=") != -1)
+            {
+
+
                 SetText(strRFIDValue);
+
+              
             }
-           
+
             // write all the logic here to extract float or int or string
             // Here is the place for the data to communicate with the UI of winforms
 
@@ -96,23 +96,16 @@ namespace WinFormIOTProject
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
             // If these threads are different, it returns true.
-            if (this.RFIDtxt.InvokeRequired)
+            if (this.RFIDdeletetxt.InvokeRequired)
             {
                 SetTextCallback d = new SetTextCallback(SetText);
                 this.Invoke(d, new object[] { text });
             }
             else
             {
-                this.RFIDtxt.Text = text;
+                this.RFIDdeletetxt.Text = text;
             }
         }
-
-        //private void handleButtonData(string strData, string strTime , string ID)
-        //{
-        //    string strButtonValue = extractStringValue(strData, ID);
-        //    // Update the GUI for windows form
-        //}
-
         private void extractSensorData(string strData, string strTime)
         {
             //Any type of data may be send over by hardware
@@ -123,9 +116,9 @@ namespace WinFormIOTProject
             Console.WriteLine(strData);
             Console.WriteLine(strTime);
             Console.WriteLine("im here lol");
-            if (strData.IndexOf("RFIDLo=") != -1)
+            if (strData.IndexOf("RFID=") != -1)
             {
-                HandleRFIDdata(strData, strTime, "RFIDLo=");
+                HandleRFIDdata(strData, strTime, "RFID=");
             }
             else if (strData.IndexOf("BUTTON=") != -1)
             {
@@ -140,9 +133,6 @@ namespace WinFormIOTProject
 
         }
 
-        // Zade create register time for all users.
-
-        // Raw data received from hardware comes here
         public void handleSensorData(String strData)
         {
             string dt = DateTime.Now.ToString("s"); //Get current time
@@ -154,13 +144,14 @@ namespace WinFormIOTProject
             Console.WriteLine(strData + "ste data from handle sensor data ");
         }
 
+
         // This method is automatically called when data is received
         public void processDataReceive(String strData)
         {
             //handleSensorData(strData);
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
             d.Invoke(strData);
-            Console.WriteLine(d + "this d ");
+
             ////lbDataComms.Invoke(d,new object[] { strData });
             Console.WriteLine("Process data receive");
         }
@@ -178,39 +169,8 @@ namespace WinFormIOTProject
 
         }
 
-        // This method must be called right at the start for data communications
-        private void InitComms()
+        private void Deletebtn_Click(object sender, EventArgs e)
         {
-            dataComms = new DataComms();
-            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void RFIDLoginFormLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RFIDtxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // Write the code to send data from windows form to raspberry pi
-        // Check 5B first
-        // Check 5A for Raspberry pi codes.
-
-
-        private void Testingbtn_Click(object sender, EventArgs e)
-        {
-
-
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             myConnect.Open();
             //
@@ -219,7 +179,7 @@ namespace WinFormIOTProject
             //SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
             //Check if empty
-            if (string.IsNullOrWhiteSpace(RFIDtxt.Text))
+            if (string.IsNullOrWhiteSpace(RFIDdeletetxt.Text))
             {
                 MessageBox.Show("IsEmpty");
             }
@@ -228,55 +188,43 @@ namespace WinFormIOTProject
                 MessageBox.Show("Not Empty");
 
                 // Check if user and password exists in database
-               
+                string strCommandText = "SELECT * FROM UserAccount WHERE RFID_ID=@RFID";
+                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+                cmd.Parameters.AddWithValue("@RFID", RFIDdeletetxt.Text);
 
-                string strCommandText12 = "SELECT * FROM Manage_RFID WHERE RFID_ID=@RFID AND RFID_STATUS ='Disable'";
-                SqlCommand cmd12 = new SqlCommand(strCommandText12, myConnect);
-                cmd12.Parameters.AddWithValue("@RFID", RFIDtxt.Text);
+
                 try
                 {
-                    SqlDataReader reader12 = cmd12.ExecuteReader();
-                    if (reader12.Read())
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        MessageBox.Show("RFID being Disable , contact admin !");
-                    }
-                    else {
-                        string strCommandText = "SELECT * FROM UserAccount WHERE RFID_ID=@RFID ";
-                        SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-                        cmd.Parameters.AddWithValue("@RFID", RFIDtxt.Text);
+                        // Enter into admin form
+                        MessageBox.Show("Deleting");
+                        string delete = "UPDATE UserAccount SET RFID_ID='NoRFID' WHERE RFID_ID=@idk";
                         myConnect.Close();
                         myConnect.Open();
-                        try
-                        {
-                            SqlDataReader reader = cmd.ExecuteReader();
-                            if (reader.Read())
-                            {
-                                // Enter into admin form
-                                MessageBox.Show("Login Successful");
-                                idk.dataComms.sendData("RFIDSUCC");
-                                this.Hide();
-                                User.AccountUsername = reader["NAME"].ToString();
-                                User.AccountEmail = reader["Email"].ToString();
-                                User.AccountRole = reader["Role"].ToString();
-                                User.AccountID = Convert.ToInt16(reader["Id"]);
-                                AdminDashboard form2 = new AdminDashboard();
-                                form2.ShowDialog();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Login Unsuccessful");
-                                idk.dataComms.sendData("RFIDFAIL");
+                        SqlCommand cmd1 = new SqlCommand(delete, myConnect);
+                        cmd1.Parameters.AddWithValue("@idk", RFIDdeletetxt.Text);
+                        cmd1.ExecuteNonQuery(); // It executes the sql command
 
-                            }
-                        }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show("Error: " + ex.Message.ToString());
-                        }
-                        finally
-                        {
-                            myConnect.Close();
-                        }
+                        myConnect.Close();
+                        myConnect.Open();
+                        string update_MA_RFID = "UPDATE Manage_RFID SET RFID_STATUS='NotActive' WHERE RFID_ID=@idk";
+                        SqlCommand cmd2 = new SqlCommand(update_MA_RFID, myConnect);
+                        cmd2.Parameters.AddWithValue("@idk", RFIDdeletetxt.Text);
+                        cmd2.ExecuteNonQuery();
+                        myConnect.Close();
+                        MessageBox.Show("Deleted");
+                        //dataComms.sendData("RFIDSUCC");
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("This RFID is new , not being use !");
+                        MessageBox.Show("Cant be deleted !  ");
+                        // dataComms.sendData("RFIDFAIL");
+
 
                     }
                 }
@@ -288,27 +236,13 @@ namespace WinFormIOTProject
                 {
                     myConnect.Close();
                 }
-               
-
-
-
-
-
             }
+        }
+    
 
+        private void RFIDdeletetxt_TextChanged(object sender, EventArgs e)
+        {
 
         }
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }

@@ -28,21 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.Homebtn = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iOTProjDBDataSet = new WinFormIOTProject.IOTProjDBDataSet();
+            this.iOTProjDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iOTProjDBDataSet1 = new WinFormIOTProject.IOTProjDBDataSet1();
+            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userAccountTableAdapter = new WinFormIOTProject.IOTProjDBDataSet1TableAdapters.UserAccountTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rFIDIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // iconButton1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(438, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ManageUsers";
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.Location = new System.Drawing.Point(6, 5);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(75, 46);
+            this.iconButton1.TabIndex = 9;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconPictureBox1
             // 
@@ -52,37 +74,129 @@
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 39;
-            this.iconPictureBox1.Location = new System.Drawing.Point(384, 29);
+            this.iconPictureBox1.Location = new System.Drawing.Point(345, 26);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(39, 44);
-            this.iconPictureBox1.TabIndex = 1;
+            this.iconPictureBox1.TabIndex = 8;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
-            // Homebtn
+            // label1
             // 
-            this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.Homebtn.IconColor = System.Drawing.Color.Black;
-            this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Homebtn.IconSize = 40;
-            this.Homebtn.Location = new System.Drawing.Point(53, 21);
-            this.Homebtn.Name = "Homebtn";
-            this.Homebtn.Size = new System.Drawing.Size(75, 46);
-            this.Homebtn.TabIndex = 2;
-            this.Homebtn.UseVisualStyleBackColor = true;
-            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(399, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ManageUsers";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.roleDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.rFIDIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.userAccountBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(65, 117);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(765, 176);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iOTProjDBDataSet
+            // 
+            this.iOTProjDBDataSet.DataSetName = "IOTProjDBDataSet";
+            this.iOTProjDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iOTProjDBDataSetBindingSource
+            // 
+            this.iOTProjDBDataSetBindingSource.DataSource = this.iOTProjDBDataSet;
+            this.iOTProjDBDataSetBindingSource.Position = 0;
+            // 
+            // iOTProjDBDataSet1
+            // 
+            this.iOTProjDBDataSet1.DataSetName = "IOTProjDBDataSet1";
+            this.iOTProjDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userAccountBindingSource
+            // 
+            this.userAccountBindingSource.DataMember = "UserAccount";
+            this.userAccountBindingSource.DataSource = this.iOTProjDBDataSet1;
+            // 
+            // userAccountTableAdapter
+            // 
+            this.userAccountTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Phone_Number";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone_Number";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // rFIDIDDataGridViewTextBoxColumn
+            // 
+            this.rFIDIDDataGridViewTextBoxColumn.DataPropertyName = "RFID_ID";
+            this.rFIDIDDataGridViewTextBoxColumn.HeaderText = "RFID_ID";
+            this.rFIDIDDataGridViewTextBoxColumn.Name = "rFIDIDDataGridViewTextBoxColumn";
             // 
             // ManageUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1064, 594);
-            this.Controls.Add(this.Homebtn);
+            this.ClientSize = new System.Drawing.Size(900, 487);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "ManageUserForm";
             this.Text = "ManageUserForm";
+            this.Load += new System.EventHandler(this.ManageUserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +204,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton Homebtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource iOTProjDBDataSetBindingSource;
+        private IOTProjDBDataSet iOTProjDBDataSet;
+        private IOTProjDBDataSet1 iOTProjDBDataSet1;
+        private System.Windows.Forms.BindingSource userAccountBindingSource;
+        private IOTProjDBDataSet1TableAdapters.UserAccountTableAdapter userAccountTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rFIDIDDataGridViewTextBoxColumn;
     }
 }

@@ -51,15 +51,22 @@
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
             this.panelChildForms.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAdminMenu
             // 
+            this.panelAdminMenu.AutoScroll = true;
             this.panelAdminMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.panelAdminMenu.Controls.Add(this.panel1);
             this.panelAdminMenu.Controls.Add(this.iconPictureBox1);
             this.panelAdminMenu.Controls.Add(this.ManageUserBtn);
             this.panelAdminMenu.Controls.Add(this.Createuser);
@@ -72,7 +79,7 @@
             this.panelAdminMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAdminMenu.Location = new System.Drawing.Point(0, 0);
             this.panelAdminMenu.Name = "panelAdminMenu";
-            this.panelAdminMenu.Size = new System.Drawing.Size(200, 633);
+            this.panelAdminMenu.Size = new System.Drawing.Size(200, 690);
             this.panelAdminMenu.TabIndex = 0;
             // 
             // iconPictureBox1
@@ -101,11 +108,11 @@
             this.ManageUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ManageUserBtn.IconSize = 40;
             this.ManageUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ManageUserBtn.Location = new System.Drawing.Point(0, 559);
+            this.ManageUserBtn.Location = new System.Drawing.Point(0, 553);
             this.ManageUserBtn.Name = "ManageUserBtn";
-            this.ManageUserBtn.Size = new System.Drawing.Size(200, 54);
+            this.ManageUserBtn.Size = new System.Drawing.Size(183, 48);
             this.ManageUserBtn.TabIndex = 19;
-            this.ManageUserBtn.Text = "Manage User";
+            this.ManageUserBtn.Text = "Management";
             this.ManageUserBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ManageUserBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ManageUserBtn.UseVisualStyleBackColor = true;
@@ -124,9 +131,9 @@
             this.Createuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Createuser.IconSize = 40;
             this.Createuser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Createuser.Location = new System.Drawing.Point(0, 505);
+            this.Createuser.Location = new System.Drawing.Point(0, 499);
             this.Createuser.Name = "Createuser";
-            this.Createuser.Size = new System.Drawing.Size(200, 54);
+            this.Createuser.Size = new System.Drawing.Size(183, 54);
             this.Createuser.TabIndex = 18;
             this.Createuser.Text = "Create User";
             this.Createuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,9 +154,9 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 451);
+            this.iconButton1.Location = new System.Drawing.Point(0, 445);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(200, 54);
+            this.iconButton1.Size = new System.Drawing.Size(183, 54);
             this.iconButton1.TabIndex = 17;
             this.iconButton1.Text = "Generate Report";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,9 +177,9 @@
             this.Notification.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Notification.IconSize = 40;
             this.Notification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Notification.Location = new System.Drawing.Point(0, 397);
+            this.Notification.Location = new System.Drawing.Point(0, 391);
             this.Notification.Name = "Notification";
-            this.Notification.Size = new System.Drawing.Size(200, 54);
+            this.Notification.Size = new System.Drawing.Size(183, 54);
             this.Notification.TabIndex = 16;
             this.Notification.Text = "Notification";
             this.Notification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,9 +200,9 @@
             this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Settings.IconSize = 40;
             this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(0, 349);
+            this.Settings.Location = new System.Drawing.Point(0, 343);
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(200, 48);
+            this.Settings.Size = new System.Drawing.Size(183, 48);
             this.Settings.TabIndex = 1;
             this.Settings.Text = "Settings";
             this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,7 +225,7 @@
             this.SubmenuData.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubmenuData.Location = new System.Drawing.Point(0, 128);
             this.SubmenuData.Name = "SubmenuData";
-            this.SubmenuData.Size = new System.Drawing.Size(200, 221);
+            this.SubmenuData.Size = new System.Drawing.Size(183, 215);
             this.SubmenuData.TabIndex = 7;
             // 
             // button8
@@ -232,7 +239,7 @@
             this.button8.Location = new System.Drawing.Point(0, 188);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(200, 27);
+            this.button8.Size = new System.Drawing.Size(183, 27);
             this.button8.TabIndex = 8;
             this.button8.Text = "Rotary Angle";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,7 +256,7 @@
             this.button7.Location = new System.Drawing.Point(0, 161);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(200, 27);
+            this.button7.Size = new System.Drawing.Size(183, 27);
             this.button7.TabIndex = 7;
             this.button7.Text = "Relay";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,7 +273,7 @@
             this.button6.Location = new System.Drawing.Point(0, 138);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(200, 23);
+            this.button6.Size = new System.Drawing.Size(183, 23);
             this.button6.TabIndex = 6;
             this.button6.Text = "Sound Sensor";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,7 +291,7 @@
             this.button2.Location = new System.Drawing.Point(0, 115);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(200, 23);
+            this.button2.Size = new System.Drawing.Size(183, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Collision";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,7 +308,7 @@
             this.button1.Location = new System.Drawing.Point(0, 92);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 23);
+            this.button1.Size = new System.Drawing.Size(183, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Water_Sensor";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,7 +326,7 @@
             this.button5.Location = new System.Drawing.Point(0, 69);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(200, 23);
+            this.button5.Size = new System.Drawing.Size(183, 23);
             this.button5.TabIndex = 3;
             this.button5.Text = "PRI";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,7 +344,7 @@
             this.button4.Location = new System.Drawing.Point(0, 46);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 23);
+            this.button4.Size = new System.Drawing.Size(183, 23);
             this.button4.TabIndex = 2;
             this.button4.Text = "UltraSonic";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -355,7 +362,7 @@
             this.button3.Location = new System.Drawing.Point(0, 23);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 23);
+            this.button3.Size = new System.Drawing.Size(183, 23);
             this.button3.TabIndex = 1;
             this.button3.Text = "RFID";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,7 +380,7 @@
             this.DataGraphBtn.Location = new System.Drawing.Point(0, 0);
             this.DataGraphBtn.Name = "DataGraphBtn";
             this.DataGraphBtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.DataGraphBtn.Size = new System.Drawing.Size(200, 23);
+            this.DataGraphBtn.Size = new System.Drawing.Size(183, 23);
             this.DataGraphBtn.TabIndex = 0;
             this.DataGraphBtn.Text = "Graphs/Data";
             this.DataGraphBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,7 +398,7 @@
             this.Data.Location = new System.Drawing.Point(0, 78);
             this.Data.Name = "Data";
             this.Data.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Data.Size = new System.Drawing.Size(200, 50);
+            this.Data.Size = new System.Drawing.Size(183, 50);
             this.Data.TabIndex = 6;
             this.Data.Text = "Data ";
             this.Data.UseVisualStyleBackColor = true;
@@ -403,19 +410,20 @@
             this.AdminLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.AdminLogo.Location = new System.Drawing.Point(0, 0);
             this.AdminLogo.Name = "AdminLogo";
-            this.AdminLogo.Size = new System.Drawing.Size(200, 78);
+            this.AdminLogo.Size = new System.Drawing.Size(183, 78);
             this.AdminLogo.TabIndex = 5;
             // 
             // panelChildForms
             // 
             this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.panelChildForms.Controls.Add(this.button10);
             this.panelChildForms.Controls.Add(this.UserSettingsbtn);
             this.panelChildForms.Controls.Add(this.Logout);
             this.panelChildForms.Controls.Add(this.ProfileBtn);
             this.panelChildForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForms.Location = new System.Drawing.Point(200, 0);
             this.panelChildForms.Name = "panelChildForms";
-            this.panelChildForms.Size = new System.Drawing.Size(1080, 633);
+            this.panelChildForms.Size = new System.Drawing.Size(1080, 690);
             this.panelChildForms.TabIndex = 1;
             // 
             // UserSettingsbtn
@@ -466,11 +474,67 @@
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.button16);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 601);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(183, 170);
+            this.panel1.TabIndex = 21;
+            // 
+            // button16
+            // 
+            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button16.Location = new System.Drawing.Point(0, 0);
+            this.button16.Name = "button16";
+            this.button16.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button16.Size = new System.Drawing.Size(183, 36);
+            this.button16.TabIndex = 1;
+            this.button16.Text = "Users";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button9.Location = new System.Drawing.Point(0, 36);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(183, 23);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "RFID";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(129, 57);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(8, 8);
+            this.button10.TabIndex = 4;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 633);
+            this.ClientSize = new System.Drawing.Size(1280, 690);
             this.Controls.Add(this.panelChildForms);
             this.Controls.Add(this.panelAdminMenu);
             this.Name = "AdminDashboard";
@@ -480,6 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.SubmenuData.ResumeLayout(false);
             this.panelChildForms.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,5 +574,9 @@
         private System.Windows.Forms.Button DataGraphBtn;
         private FontAwesome.Sharp.IconButton ManageUserBtn;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
