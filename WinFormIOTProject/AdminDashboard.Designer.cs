@@ -29,13 +29,21 @@
         private void InitializeComponent()
         {
             this.panelAdminMenu = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.ManageUserBtn = new FontAwesome.Sharp.IconButton();
-            this.Createuser = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Createuser = new FontAwesome.Sharp.IconButton();
             this.Notification = new FontAwesome.Sharp.IconButton();
+            this.SubMenuManagement = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.ManageUserBtn = new FontAwesome.Sharp.IconButton();
+            this.SubmenuSettings = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.Settings = new FontAwesome.Sharp.IconButton();
+            this.SubmenuDataGraphs = new System.Windows.Forms.Panel();
+            this.Graphsbtn = new System.Windows.Forms.Button();
+            this.ViewDataGraphbtn = new FontAwesome.Sharp.IconButton();
             this.SubmenuData = new System.Windows.Forms.Panel();
+            this.AllData = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -51,20 +59,13 @@
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
-            this.AllData = new System.Windows.Forms.Button();
-            this.Settings = new FontAwesome.Sharp.IconButton();
-            this.ViewDataGraphbtn = new FontAwesome.Sharp.IconButton();
-            this.SubmenuDataGraphs = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
-            this.SubmenuSettings = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.SubMenuManagement = new System.Windows.Forms.Panel();
+            this.Statistics = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
+            this.SubMenuManagement.SuspendLayout();
+            this.SubmenuSettings.SuspendLayout();
+            this.SubmenuDataGraphs.SuspendLayout();
             this.SubmenuData.SuspendLayout();
             this.panelChildForms.SuspendLayout();
-            this.SubmenuDataGraphs.SuspendLayout();
-            this.SubmenuSettings.SuspendLayout();
-            this.SubMenuManagement.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAdminMenu
@@ -89,23 +90,85 @@
             this.panelAdminMenu.Size = new System.Drawing.Size(200, 688);
             this.panelAdminMenu.TabIndex = 0;
             // 
-            // button9
+            // iconButton1
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(183, 27);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "RFID";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
+            this.iconButton1.ForeColor = System.Drawing.Color.Aquamarine;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Scroll;
+            this.iconButton1.IconColor = System.Drawing.Color.Gray;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 759);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(183, 38);
+            this.iconButton1.TabIndex = 17;
+            this.iconButton1.Text = "Generate Report";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // Createuser
+            // 
+            this.Createuser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Createuser.FlatAppearance.BorderSize = 0;
+            this.Createuser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.Createuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Createuser.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
+            this.Createuser.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Createuser.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.Createuser.IconColor = System.Drawing.Color.Gray;
+            this.Createuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Createuser.IconSize = 40;
+            this.Createuser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Createuser.Location = new System.Drawing.Point(0, 717);
+            this.Createuser.Name = "Createuser";
+            this.Createuser.Size = new System.Drawing.Size(183, 42);
+            this.Createuser.TabIndex = 18;
+            this.Createuser.Text = "Create User";
+            this.Createuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Createuser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Createuser.UseVisualStyleBackColor = true;
+            this.Createuser.Click += new System.EventHandler(this.Createuser_Click_1);
+            // 
+            // Notification
+            // 
+            this.Notification.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Notification.FlatAppearance.BorderSize = 0;
+            this.Notification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.Notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Notification.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
+            this.Notification.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Notification.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.Notification.IconColor = System.Drawing.Color.Gray;
+            this.Notification.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Notification.IconSize = 40;
+            this.Notification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Notification.Location = new System.Drawing.Point(0, 664);
+            this.Notification.Name = "Notification";
+            this.Notification.Size = new System.Drawing.Size(183, 53);
+            this.Notification.TabIndex = 16;
+            this.Notification.Text = "Notification";
+            this.Notification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Notification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Notification.UseVisualStyleBackColor = true;
+            this.Notification.Click += new System.EventHandler(this.Notification_Click_1);
+            // 
+            // SubMenuManagement
+            // 
+            this.SubMenuManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubMenuManagement.Controls.Add(this.button16);
+            this.SubMenuManagement.Controls.Add(this.button9);
+            this.SubMenuManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubMenuManagement.Location = new System.Drawing.Point(0, 596);
+            this.SubMenuManagement.Name = "SubMenuManagement";
+            this.SubMenuManagement.Size = new System.Drawing.Size(183, 68);
+            this.SubMenuManagement.TabIndex = 23;
             // 
             // button16
             // 
@@ -125,20 +188,38 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button9.Location = new System.Drawing.Point(0, 0);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(183, 27);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "RFID";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // ManageUserBtn
             // 
             this.ManageUserBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ManageUserBtn.FlatAppearance.BorderSize = 0;
             this.ManageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.ManageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManageUserBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageUserBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
             this.ManageUserBtn.ForeColor = System.Drawing.Color.Aquamarine;
             this.ManageUserBtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
             this.ManageUserBtn.IconColor = System.Drawing.Color.Gray;
             this.ManageUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ManageUserBtn.IconSize = 40;
             this.ManageUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ManageUserBtn.Location = new System.Drawing.Point(0, 527);
+            this.ManageUserBtn.Location = new System.Drawing.Point(0, 540);
             this.ManageUserBtn.Name = "ManageUserBtn";
             this.ManageUserBtn.Size = new System.Drawing.Size(183, 56);
             this.ManageUserBtn.TabIndex = 19;
@@ -148,74 +229,106 @@
             this.ManageUserBtn.UseVisualStyleBackColor = true;
             this.ManageUserBtn.Click += new System.EventHandler(this.ManageUserBtn_Click);
             // 
-            // Createuser
+            // SubmenuSettings
             // 
-            this.Createuser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Createuser.FlatAppearance.BorderSize = 0;
-            this.Createuser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.Createuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Createuser.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Createuser.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Createuser.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.Createuser.IconColor = System.Drawing.Color.Gray;
-            this.Createuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Createuser.IconSize = 40;
-            this.Createuser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Createuser.Location = new System.Drawing.Point(0, 716);
-            this.Createuser.Name = "Createuser";
-            this.Createuser.Size = new System.Drawing.Size(183, 58);
-            this.Createuser.TabIndex = 18;
-            this.Createuser.Text = "Create User";
-            this.Createuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Createuser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Createuser.UseVisualStyleBackColor = true;
-            this.Createuser.Click += new System.EventHandler(this.Createuser_Click_1);
+            this.SubmenuSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubmenuSettings.Controls.Add(this.button10);
+            this.SubmenuSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubmenuSettings.Location = new System.Drawing.Point(0, 495);
+            this.SubmenuSettings.Name = "SubmenuSettings";
+            this.SubmenuSettings.Size = new System.Drawing.Size(183, 45);
+            this.SubmenuSettings.TabIndex = 22;
             // 
-            // iconButton1
+            // button10
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Scroll;
-            this.iconButton1.IconColor = System.Drawing.Color.Gray;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 40;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 774);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(183, 50);
-            this.iconButton1.TabIndex = 17;
-            this.iconButton1.Text = "Generate Report";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button10.Location = new System.Drawing.Point(0, 0);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(183, 23);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "idk whattoadd";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // Notification
+            // Settings
             // 
-            this.Notification.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Notification.FlatAppearance.BorderSize = 0;
-            this.Notification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.Notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Notification.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notification.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Notification.IconChar = FontAwesome.Sharp.IconChar.Bell;
-            this.Notification.IconColor = System.Drawing.Color.Gray;
-            this.Notification.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Notification.IconSize = 40;
-            this.Notification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Notification.Location = new System.Drawing.Point(0, 651);
-            this.Notification.Name = "Notification";
-            this.Notification.Size = new System.Drawing.Size(183, 65);
-            this.Notification.TabIndex = 16;
-            this.Notification.Text = "Notification";
-            this.Notification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Notification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Notification.UseVisualStyleBackColor = true;
-            this.Notification.Click += new System.EventHandler(this.Notification_Click_1);
+            this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Settings.FlatAppearance.BorderSize = 0;
+            this.Settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
+            this.Settings.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Settings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.Settings.IconColor = System.Drawing.Color.Gray;
+            this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Settings.IconSize = 40;
+            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings.Location = new System.Drawing.Point(0, 452);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(183, 43);
+            this.Settings.TabIndex = 1;
+            this.Settings.Text = "Settings";
+            this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.Click += new System.EventHandler(this.Settings_Click_1);
+            // 
+            // SubmenuDataGraphs
+            // 
+            this.SubmenuDataGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubmenuDataGraphs.Controls.Add(this.Statistics);
+            this.SubmenuDataGraphs.Controls.Add(this.Graphsbtn);
+            this.SubmenuDataGraphs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubmenuDataGraphs.Location = new System.Drawing.Point(0, 386);
+            this.SubmenuDataGraphs.Name = "SubmenuDataGraphs";
+            this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 66);
+            this.SubmenuDataGraphs.TabIndex = 21;
+            // 
+            // Graphsbtn
+            // 
+            this.Graphsbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Graphsbtn.FlatAppearance.BorderSize = 0;
+            this.Graphsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.Graphsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Graphsbtn.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Graphsbtn.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Graphsbtn.Location = new System.Drawing.Point(0, 0);
+            this.Graphsbtn.Name = "Graphsbtn";
+            this.Graphsbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.Graphsbtn.Size = new System.Drawing.Size(183, 23);
+            this.Graphsbtn.TabIndex = 0;
+            this.Graphsbtn.Text = "Graphs/Data";
+            this.Graphsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Graphsbtn.UseVisualStyleBackColor = true;
+            // 
+            // ViewDataGraphbtn
+            // 
+            this.ViewDataGraphbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ViewDataGraphbtn.FlatAppearance.BorderSize = 0;
+            this.ViewDataGraphbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.ViewDataGraphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewDataGraphbtn.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
+            this.ViewDataGraphbtn.ForeColor = System.Drawing.Color.Aquamarine;
+            this.ViewDataGraphbtn.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.ViewDataGraphbtn.IconColor = System.Drawing.Color.Gray;
+            this.ViewDataGraphbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ViewDataGraphbtn.IconSize = 36;
+            this.ViewDataGraphbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ViewDataGraphbtn.Location = new System.Drawing.Point(0, 347);
+            this.ViewDataGraphbtn.Name = "ViewDataGraphbtn";
+            this.ViewDataGraphbtn.Size = new System.Drawing.Size(183, 39);
+            this.ViewDataGraphbtn.TabIndex = 18;
+            this.ViewDataGraphbtn.Text = "View Data Graphs";
+            this.ViewDataGraphbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ViewDataGraphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ViewDataGraphbtn.UseVisualStyleBackColor = true;
+            this.ViewDataGraphbtn.Click += new System.EventHandler(this.ViewDataGraphbtn_Click);
             // 
             // SubmenuData
             // 
@@ -231,10 +344,28 @@
             this.SubmenuData.Controls.Add(this.button3);
             this.SubmenuData.Controls.Add(this.DataGraphBtn);
             this.SubmenuData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuData.Location = new System.Drawing.Point(0, 77);
+            this.SubmenuData.Location = new System.Drawing.Point(0, 90);
             this.SubmenuData.Name = "SubmenuData";
             this.SubmenuData.Size = new System.Drawing.Size(183, 257);
             this.SubmenuData.TabIndex = 7;
+            // 
+            // AllData
+            // 
+            this.AllData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AllData.FlatAppearance.BorderSize = 0;
+            this.AllData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.AllData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllData.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllData.ForeColor = System.Drawing.Color.Aquamarine;
+            this.AllData.Location = new System.Drawing.Point(0, 215);
+            this.AllData.Name = "AllData";
+            this.AllData.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.AllData.Size = new System.Drawing.Size(183, 27);
+            this.AllData.TabIndex = 9;
+            this.AllData.Text = "View All Data";
+            this.AllData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AllData.UseVisualStyleBackColor = true;
+            this.AllData.Click += new System.EventHandler(this.AllData_Click);
             // 
             // button8
             // 
@@ -403,7 +534,7 @@
             this.Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Data.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Data.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Data.Location = new System.Drawing.Point(0, 33);
+            this.Data.Location = new System.Drawing.Point(0, 46);
             this.Data.Name = "Data";
             this.Data.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Data.Size = new System.Drawing.Size(183, 44);
@@ -418,7 +549,7 @@
             this.AdminLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.AdminLogo.Location = new System.Drawing.Point(0, 0);
             this.AdminLogo.Name = "AdminLogo";
-            this.AdminLogo.Size = new System.Drawing.Size(183, 33);
+            this.AdminLogo.Size = new System.Drawing.Size(183, 46);
             this.AdminLogo.TabIndex = 5;
             // 
             // panelChildForms
@@ -482,134 +613,23 @@
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
-            // AllData
+            // Statistics
             // 
-            this.AllData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AllData.FlatAppearance.BorderSize = 0;
-            this.AllData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.AllData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AllData.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllData.ForeColor = System.Drawing.Color.Aquamarine;
-            this.AllData.Location = new System.Drawing.Point(0, 215);
-            this.AllData.Name = "AllData";
-            this.AllData.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.AllData.Size = new System.Drawing.Size(183, 27);
-            this.AllData.TabIndex = 9;
-            this.AllData.Text = "View All Data";
-            this.AllData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AllData.UseVisualStyleBackColor = true;
-            this.AllData.Click += new System.EventHandler(this.AllData_Click);
-            // 
-            // Settings
-            // 
-            this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Settings.FlatAppearance.BorderSize = 0;
-            this.Settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Settings.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Settings.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.Settings.IconColor = System.Drawing.Color.Gray;
-            this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Settings.IconSize = 40;
-            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(0, 439);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(183, 43);
-            this.Settings.TabIndex = 1;
-            this.Settings.Text = "Settings";
-            this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Settings.UseVisualStyleBackColor = true;
-            this.Settings.Click += new System.EventHandler(this.Settings_Click_1);
-            // 
-            // ViewDataGraphbtn
-            // 
-            this.ViewDataGraphbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ViewDataGraphbtn.FlatAppearance.BorderSize = 0;
-            this.ViewDataGraphbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.ViewDataGraphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewDataGraphbtn.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewDataGraphbtn.ForeColor = System.Drawing.Color.Aquamarine;
-            this.ViewDataGraphbtn.IconChar = FontAwesome.Sharp.IconChar.Database;
-            this.ViewDataGraphbtn.IconColor = System.Drawing.Color.Gray;
-            this.ViewDataGraphbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ViewDataGraphbtn.IconSize = 36;
-            this.ViewDataGraphbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ViewDataGraphbtn.Location = new System.Drawing.Point(0, 334);
-            this.ViewDataGraphbtn.Name = "ViewDataGraphbtn";
-            this.ViewDataGraphbtn.Size = new System.Drawing.Size(183, 39);
-            this.ViewDataGraphbtn.TabIndex = 18;
-            this.ViewDataGraphbtn.Text = "View Data Graphs";
-            this.ViewDataGraphbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ViewDataGraphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ViewDataGraphbtn.UseVisualStyleBackColor = true;
-            this.ViewDataGraphbtn.Click += new System.EventHandler(this.ViewDataGraphbtn_Click);
-            // 
-            // SubmenuDataGraphs
-            // 
-            this.SubmenuDataGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
-            this.SubmenuDataGraphs.Controls.Add(this.button20);
-            this.SubmenuDataGraphs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuDataGraphs.Location = new System.Drawing.Point(0, 373);
-            this.SubmenuDataGraphs.Name = "SubmenuDataGraphs";
-            this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 66);
-            this.SubmenuDataGraphs.TabIndex = 21;
-            // 
-            // button20
-            // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button20.Location = new System.Drawing.Point(0, 0);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button20.Size = new System.Drawing.Size(183, 23);
-            this.button20.TabIndex = 0;
-            this.button20.Text = "Graphs/Data";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // SubmenuSettings
-            // 
-            this.SubmenuSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
-            this.SubmenuSettings.Controls.Add(this.button10);
-            this.SubmenuSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuSettings.Location = new System.Drawing.Point(0, 482);
-            this.SubmenuSettings.Name = "SubmenuSettings";
-            this.SubmenuSettings.Size = new System.Drawing.Size(183, 45);
-            this.SubmenuSettings.TabIndex = 22;
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button10.Location = new System.Drawing.Point(0, 0);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(183, 23);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Graphs/Data";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // SubMenuManagement
-            // 
-            this.SubMenuManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
-            this.SubMenuManagement.Controls.Add(this.button16);
-            this.SubMenuManagement.Controls.Add(this.button9);
-            this.SubMenuManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuManagement.Location = new System.Drawing.Point(0, 583);
-            this.SubMenuManagement.Name = "SubMenuManagement";
-            this.SubMenuManagement.Size = new System.Drawing.Size(183, 68);
-            this.SubMenuManagement.TabIndex = 23;
+            this.Statistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Statistics.FlatAppearance.BorderSize = 0;
+            this.Statistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.Statistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Statistics.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statistics.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Statistics.Location = new System.Drawing.Point(0, 23);
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.Statistics.Size = new System.Drawing.Size(183, 23);
+            this.Statistics.TabIndex = 1;
+            this.Statistics.Text = "Statistics";
+            this.Statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Statistics.UseVisualStyleBackColor = true;
+            this.Statistics.Click += new System.EventHandler(this.Statistics_Click);
             // 
             // AdminDashboard
             // 
@@ -622,11 +642,11 @@
             this.Text = "AdminDashboard";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panelAdminMenu.ResumeLayout(false);
+            this.SubMenuManagement.ResumeLayout(false);
+            this.SubmenuSettings.ResumeLayout(false);
+            this.SubmenuDataGraphs.ResumeLayout(false);
             this.SubmenuData.ResumeLayout(false);
             this.panelChildForms.ResumeLayout(false);
-            this.SubmenuDataGraphs.ResumeLayout(false);
-            this.SubmenuSettings.ResumeLayout(false);
-            this.SubMenuManagement.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -663,6 +683,7 @@
         private System.Windows.Forms.Panel SubmenuSettings;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel SubmenuDataGraphs;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button Graphsbtn;
+        private System.Windows.Forms.Button Statistics;
     }
 }

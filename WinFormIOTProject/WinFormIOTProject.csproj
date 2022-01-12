@@ -219,6 +219,12 @@
     <Compile Include="SoundSensor.Designer.cs">
       <DependentUpon>SoundSensor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UltraSonic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SoundSensor.resx">
       <DependentUpon>SoundSensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UltraSonic.resx">
       <DependentUpon>UltraSonic.cs</DependentUpon>

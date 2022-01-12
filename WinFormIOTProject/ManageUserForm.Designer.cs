@@ -33,11 +33,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iOTProjDBDataSet1 = new WinFormIOTProject.IOTProjDBDataSet1();
-            this.iOTProjDBDataSet = new WinFormIOTProject.IOTProjDBDataSet();
-            this.iOTProjDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userAccountTableAdapter = new WinFormIOTProject.IOTProjDBDataSet1TableAdapters.UserAccountTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +40,17 @@
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFIDIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iOTProjDBDataSet1 = new WinFormIOTProject.IOTProjDBDataSet1();
+            this.iOTProjDBDataSet = new WinFormIOTProject.IOTProjDBDataSet();
+            this.iOTProjDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userAccountTableAdapter = new WinFormIOTProject.IOTProjDBDataSet1TableAdapters.UserAccountTableAdapter();
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Usernametxtbox = new System.Windows.Forms.TextBox();
+            this.Filterbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).BeginInit();
@@ -77,7 +80,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 39;
-            this.iconPictureBox1.Location = new System.Drawing.Point(345, 26);
+            this.iconPictureBox1.Location = new System.Drawing.Point(354, 12);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(39, 44);
             this.iconPictureBox1.TabIndex = 8;
@@ -88,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 26);
+            this.label1.Location = new System.Drawing.Point(399, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 7;
@@ -108,35 +111,11 @@
             this.statusDataGridViewTextBoxColumn,
             this.rFIDIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.userAccountBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 117);
+            this.dataGridView1.Location = new System.Drawing.Point(65, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(765, 176);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // userAccountBindingSource
-            // 
-            this.userAccountBindingSource.DataMember = "UserAccount";
-            this.userAccountBindingSource.DataSource = this.iOTProjDBDataSet1;
-            // 
-            // iOTProjDBDataSet1
-            // 
-            this.iOTProjDBDataSet1.DataSetName = "IOTProjDBDataSet1";
-            this.iOTProjDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // iOTProjDBDataSet
-            // 
-            this.iOTProjDBDataSet.DataSetName = "IOTProjDBDataSet";
-            this.iOTProjDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // iOTProjDBDataSetBindingSource
-            // 
-            this.iOTProjDBDataSetBindingSource.DataSource = this.iOTProjDBDataSet;
-            this.iOTProjDBDataSetBindingSource.Position = 0;
-            // 
-            // userAccountTableAdapter
-            // 
-            this.userAccountTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -187,6 +166,30 @@
             this.rFIDIDDataGridViewTextBoxColumn.Name = "rFIDIDDataGridViewTextBoxColumn";
             this.rFIDIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // userAccountBindingSource
+            // 
+            this.userAccountBindingSource.DataMember = "UserAccount";
+            this.userAccountBindingSource.DataSource = this.iOTProjDBDataSet1;
+            // 
+            // iOTProjDBDataSet1
+            // 
+            this.iOTProjDBDataSet1.DataSetName = "IOTProjDBDataSet1";
+            this.iOTProjDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iOTProjDBDataSet
+            // 
+            this.iOTProjDBDataSet.DataSetName = "IOTProjDBDataSet";
+            this.iOTProjDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iOTProjDBDataSetBindingSource
+            // 
+            this.iOTProjDBDataSetBindingSource.DataSource = this.iOTProjDBDataSet;
+            this.iOTProjDBDataSetBindingSource.Position = 0;
+            // 
+            // userAccountTableAdapter
+            // 
+            this.userAccountTableAdapter.ClearBeforeFill = true;
+            // 
             // UserSettingsbtn
             // 
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
@@ -235,12 +238,42 @@
             this.Logout.UseVisualStyleBackColor = true;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(62, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Filter By:";
+            // 
+            // Usernametxtbox
+            // 
+            this.Usernametxtbox.Location = new System.Drawing.Point(65, 334);
+            this.Usernametxtbox.Name = "Usernametxtbox";
+            this.Usernametxtbox.Size = new System.Drawing.Size(100, 20);
+            this.Usernametxtbox.TabIndex = 15;
+            this.Usernametxtbox.TextChanged += new System.EventHandler(this.Usernametxtbox_TextChanged);
+            // 
+            // Filterbtn
+            // 
+            this.Filterbtn.Location = new System.Drawing.Point(65, 391);
+            this.Filterbtn.Name = "Filterbtn";
+            this.Filterbtn.Size = new System.Drawing.Size(75, 23);
+            this.Filterbtn.TabIndex = 16;
+            this.Filterbtn.Text = "Filter";
+            this.Filterbtn.UseVisualStyleBackColor = true;
+            this.Filterbtn.Click += new System.EventHandler(this.Filterbtn_Click);
+            // 
             // ManageUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(900, 487);
+            this.Controls.Add(this.Filterbtn);
+            this.Controls.Add(this.Usernametxtbox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.ProfileBtn);
             this.Controls.Add(this.UserSettingsbtn);
@@ -283,5 +316,8 @@
         private FontAwesome.Sharp.IconButton UserSettingsbtn;
         private FontAwesome.Sharp.IconButton ProfileBtn;
         private FontAwesome.Sharp.IconButton Logout;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Usernametxtbox;
+        private System.Windows.Forms.Button Filterbtn;
     }
 }

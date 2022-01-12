@@ -245,5 +245,10 @@ namespace WinFormIOTProject
         {
             showSubMenu(SubmenuDataGraphs);
         }
+
+        private void Statistics_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Statistics());
+        }
     }
 }

@@ -41,7 +41,12 @@ namespace WinFormIOTProject
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                Usernametxtbox.Text = row.Cells[1].Value.ToString();
+                
+            }
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -68,6 +73,21 @@ namespace WinFormIOTProject
             AdminDashboard.ActiveForm.Close();
             UserSettingsForm usersettingform = new UserSettingsForm();
             usersettingform.Show();
+        }
+
+        private void Usernametxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Filterbtn_Click(object sender, EventArgs e)
+        {
+            //Type the filter code here lmao
+
+
+
+
+
         }
     }
 }
