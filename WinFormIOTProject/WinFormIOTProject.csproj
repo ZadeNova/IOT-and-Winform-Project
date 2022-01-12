@@ -243,6 +243,12 @@
     <Compile Include="UserSettingsForm.Designer.cs">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAllData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllData.Designer.cs">
+      <DependentUpon>ViewAllData.cs</DependentUpon>
+    </Compile>
     <Compile Include="watersensor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllData.resx">
+      <DependentUpon>ViewAllData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="watersensor.resx">
       <DependentUpon>watersensor.cs</DependentUpon>

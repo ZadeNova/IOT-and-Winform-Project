@@ -80,12 +80,12 @@ namespace WinFormIOTProject
                             
                             // Enter into admin form
                             //MessageBox.Show("Login Successful");
-                            this.Hide();
+                            //this.Hide();
                             User.AccountUsername = UsernameTxtbox.Text;
                             User.AccountEmail = reader["Email"].ToString();
                             User.AccountRole = reader["Role"].ToString();
 
-
+                            this.Hide();
                             myConnect.Close();
                             myConnect.Open();
                             string commandss = "SELECT * FROM TwoFactorAuthenticationTable WHERE Name = @Name AND Email2FA = @Email2fa";
@@ -98,21 +98,21 @@ namespace WinFormIOTProject
                             if (readerfa.Read())
                             {
                                 // IF the user has 2FA email enabled.
-
-                                MessageBox.Show("Works1");
+                                
+                                //MessageBox.Show("Works1");
                                 Email2FAafterLogin emailfaform = new Email2FAafterLogin();
-                                emailfaform.ShowDialog();
+                                emailfaform.Show();
 
-
+                                
                             }
 
                             else
                             {
-
+                                
                                 AdminDashboard form2 = new AdminDashboard();
-                                form2.ShowDialog();
+                                form2.Show();
 
-                                MessageBox.Show("Not working");
+                                
                             }
 
 
@@ -123,12 +123,7 @@ namespace WinFormIOTProject
                             MessageBox.Show("Username and password unknown!");
                         }
 
-
-
-
-
-                       
-
+                        
                     }
                     else
                     {
@@ -170,10 +165,8 @@ namespace WinFormIOTProject
         private void RFIDLoginBtn_Click(object sender, EventArgs e)
         {
             idk.dataComms.sendData("LoginRFID");
-            this.Hide();
-           
+            this.Hide();       
             RFIDLoginForm rfidForm = new RFIDLoginForm();
-
             rfidForm.ShowDialog();
         }
 

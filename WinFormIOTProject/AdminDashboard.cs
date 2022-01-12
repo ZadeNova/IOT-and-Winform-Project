@@ -22,8 +22,9 @@ namespace WinFormIOTProject
         private void CustomizeDesign()
         {
             SubmenuData.Visible = false;
-            panel1.Visible = false;
-            
+            SubMenuManagement.Visible = false;
+            SubmenuDataGraphs.Visible = false;
+            SubmenuSettings.Visible = false;
            
          
         }
@@ -48,12 +49,12 @@ namespace WinFormIOTProject
             {
                 subMenu.Visible = false;
             }
-
+            
         }
         private void Hidesubmenu2()
         {
-            if (panel1.Visible == true)
-                panel1.Visible = false;
+            if (SubMenuManagement.Visible == true)
+                SubMenuManagement.Visible = false;
 
         }
         private void showSubMenu2(Panel subMenu2)
@@ -70,6 +71,8 @@ namespace WinFormIOTProject
 
         }
         //end of submenu code
+
+      
 
         private void Data_Click(object sender, EventArgs e)
         {
@@ -96,21 +99,11 @@ namespace WinFormIOTProject
 
         
 
-        
-
-        
-
-       
-
-        
-
-       
-
-        
-
         private void Settings_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new Settings());
+
+            //openChildForm(new Settings());
+            showSubMenu(SubmenuSettings);
         }
 
         private void Notification_Click_1(object sender, EventArgs e)
@@ -130,7 +123,7 @@ namespace WinFormIOTProject
 
         private void ManageUserBtn_Click(object sender, EventArgs e)
         {
-            showSubMenu2(panel1);
+            showSubMenu2(SubMenuManagement);
           
         }
 
@@ -170,10 +163,6 @@ namespace WinFormIOTProject
             this.Hide();
             UserSettingsForm usersettingform = new UserSettingsForm();
             usersettingform.ShowDialog();
-
-
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -235,6 +224,26 @@ namespace WinFormIOTProject
         private void vScrollBar1_Scroll_1(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelChildForms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AllData_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ViewAllData());
+        }
+
+        private void ViewDataGraphbtn_Click(object sender, EventArgs e)
+        {
+            showSubMenu(SubmenuDataGraphs);
         }
     }
 }

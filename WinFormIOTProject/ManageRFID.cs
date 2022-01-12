@@ -13,12 +13,19 @@ using System.Data.SqlClient;
 
 namespace WinFormIOTProject
 {
+
+
     public partial class ManageRFID : Form
     {
-        public ManageRFID()
+        public static string dataref = "";
+      
+      
+    public ManageRFID()
         {
             InitializeComponent();
+          
         }
+      
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,10 +37,11 @@ namespace WinFormIOTProject
         {
 
         }
+      
 
         private void ManageRFID_Load(object sender, EventArgs e)
         {
-
+           
             SqlConnection myconnect = new SqlConnection(strConnectionString);
             String results = "SELECT UserAccount.Id, UserAccount.Name, Manage_RFID.RFID_ID , Manage_RFID.RFID_STATUS FROM UserAccount INNER JOIN Manage_RFID ON UserAccount.RFID_ID = Manage_RFID.RFID_ID";
             SqlCommand updateCmd = new SqlCommand(results, myconnect);
@@ -43,8 +51,7 @@ namespace WinFormIOTProject
             sdr.Fill(dt);
             dataGridView1.DataSource = dt;
             myconnect.Close();
-
-
+            
             String results2 = "SELECT RFID_ID , RFID_STATUS FROM Manage_RFID WHERE RFID_STATUS !='Active'";
             SqlCommand updateCmd2 = new SqlCommand(results2, myconnect);
             myconnect.Open();
@@ -53,9 +60,10 @@ namespace WinFormIOTProject
             sdr2.Fill(dt2);
             dataGridView2.DataSource = dt2;
             myconnect.Close();
+
+           
         }
        
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -64,7 +72,6 @@ namespace WinFormIOTProject
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,6 +108,7 @@ namespace WinFormIOTProject
             idk.dataComms.sendData("RFIDCRUD");
             Form asign = new RFIDAsign();
             asign.ShowDialog();
+      
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -116,5 +124,11 @@ namespace WinFormIOTProject
             Form asign6 = new RFIDEnable();
             asign6.ShowDialog();
         }
+        void Reload()
+        {
+            this.Reload();
+        }
+
+
     }
 }

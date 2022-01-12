@@ -158,6 +158,8 @@ namespace WinFormIOTProject
             }
             NewPass = NewPass + characterpool[rand.Next(36, 46)];
 
+            NewPass = Hash.ComputeHash(NewPass, "SHA512", null);
+
             return NewPass;
 
         }

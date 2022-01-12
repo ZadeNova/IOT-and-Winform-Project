@@ -47,6 +47,9 @@
             this.EmailTxt = new System.Windows.Forms.TextBox();
             this.UserNametxt = new System.Windows.Forms.TextBox();
             this.Homebtn = new FontAwesome.Sharp.IconButton();
+            this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
+            this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.Logout = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.Userpicicon)).BeginInit();
             this.Usercreategrpbox.SuspendLayout();
             this.GrpSetting.SuspendLayout();
@@ -55,10 +58,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(458, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create User";
             // 
@@ -93,7 +96,7 @@
             this.Usercreategrpbox.Controls.Add(this.PhoneNumtxt);
             this.Usercreategrpbox.Controls.Add(this.EmailTxt);
             this.Usercreategrpbox.Controls.Add(this.UserNametxt);
-            this.Usercreategrpbox.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usercreategrpbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usercreategrpbox.Location = new System.Drawing.Point(43, 74);
             this.Usercreategrpbox.Name = "Usercreategrpbox";
             this.Usercreategrpbox.Size = new System.Drawing.Size(972, 466);
@@ -134,7 +137,7 @@
             this.UserBtn.AutoSize = true;
             this.UserBtn.Location = new System.Drawing.Point(69, 194);
             this.UserBtn.Name = "UserBtn";
-            this.UserBtn.Size = new System.Drawing.Size(67, 23);
+            this.UserBtn.Size = new System.Drawing.Size(65, 24);
             this.UserBtn.TabIndex = 12;
             this.UserBtn.TabStop = true;
             this.UserBtn.Text = "User";
@@ -145,7 +148,7 @@
             this.AdminBtn.AutoSize = true;
             this.AdminBtn.Location = new System.Drawing.Point(69, 70);
             this.AdminBtn.Name = "AdminBtn";
-            this.AdminBtn.Size = new System.Drawing.Size(77, 23);
+            this.AdminBtn.Size = new System.Drawing.Size(77, 24);
             this.AdminBtn.TabIndex = 11;
             this.AdminBtn.TabStop = true;
             this.AdminBtn.Text = "Admin";
@@ -155,72 +158,72 @@
             // 
             this.CfmPassTxt.Location = new System.Drawing.Point(245, 370);
             this.CfmPassTxt.Name = "CfmPassTxt";
-            this.CfmPassTxt.Size = new System.Drawing.Size(275, 27);
+            this.CfmPassTxt.Size = new System.Drawing.Size(275, 26);
             this.CfmPassTxt.TabIndex = 10;
             // 
             // PasswordTxt
             // 
             this.PasswordTxt.Location = new System.Drawing.Point(245, 301);
             this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.Size = new System.Drawing.Size(275, 27);
+            this.PasswordTxt.Size = new System.Drawing.Size(275, 26);
             this.PasswordTxt.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(85, 376);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 15);
+            this.label6.Size = new System.Drawing.Size(132, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Confirm Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(85, 313);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 15);
+            this.label5.Size = new System.Drawing.Size(0, 16);
             this.label5.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(89, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 15);
+            this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Phone Number";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(91, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(89, 307);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
             // 
             // UserNamelbl
             // 
             this.UserNamelbl.AutoSize = true;
-            this.UserNamelbl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNamelbl.Location = new System.Drawing.Point(91, 81);
             this.UserNamelbl.Name = "UserNamelbl";
-            this.UserNamelbl.Size = new System.Drawing.Size(71, 15);
+            this.UserNamelbl.Size = new System.Drawing.Size(79, 16);
             this.UserNamelbl.TabIndex = 3;
             this.UserNamelbl.Text = "Username";
             // 
@@ -228,21 +231,21 @@
             // 
             this.PhoneNumtxt.Location = new System.Drawing.Point(245, 218);
             this.PhoneNumtxt.Name = "PhoneNumtxt";
-            this.PhoneNumtxt.Size = new System.Drawing.Size(275, 27);
+            this.PhoneNumtxt.Size = new System.Drawing.Size(275, 26);
             this.PhoneNumtxt.TabIndex = 2;
             // 
             // EmailTxt
             // 
             this.EmailTxt.Location = new System.Drawing.Point(245, 147);
             this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(275, 27);
+            this.EmailTxt.Size = new System.Drawing.Size(275, 26);
             this.EmailTxt.TabIndex = 1;
             // 
             // UserNametxt
             // 
             this.UserNametxt.Location = new System.Drawing.Point(245, 75);
             this.UserNametxt.Name = "UserNametxt";
-            this.UserNametxt.Size = new System.Drawing.Size(275, 27);
+            this.UserNametxt.Size = new System.Drawing.Size(275, 26);
             this.UserNametxt.TabIndex = 0;
             // 
             // Homebtn
@@ -263,12 +266,63 @@
             this.Homebtn.UseVisualStyleBackColor = false;
             this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
             // 
+            // UserSettingsbtn
+            // 
+            this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
+            this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsbtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.UserSettingsbtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.UserSettingsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserSettingsbtn.IconSize = 40;
+            this.UserSettingsbtn.Location = new System.Drawing.Point(918, 3);
+            this.UserSettingsbtn.Name = "UserSettingsbtn";
+            this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
+            this.UserSettingsbtn.TabIndex = 4;
+            this.UserSettingsbtn.UseVisualStyleBackColor = true;
+            this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
+            // 
+            // ProfileBtn
+            // 
+            this.ProfileBtn.FlatAppearance.BorderSize = 0;
+            this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProfileBtn.IconChar = FontAwesome.Sharp.IconChar.UserAstronaut;
+            this.ProfileBtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.ProfileBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProfileBtn.IconSize = 40;
+            this.ProfileBtn.Location = new System.Drawing.Point(971, 0);
+            this.ProfileBtn.Name = "ProfileBtn";
+            this.ProfileBtn.Size = new System.Drawing.Size(44, 46);
+            this.ProfileBtn.TabIndex = 5;
+            this.ProfileBtn.UseVisualStyleBackColor = true;
+            this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
+            // 
+            // Logout
+            // 
+            this.Logout.FlatAppearance.BorderSize = 0;
+            this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout.IconSize = 40;
+            this.Logout.Location = new System.Drawing.Point(1018, 0);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(46, 46);
+            this.Logout.TabIndex = 6;
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1064, 594);
+            this.Controls.Add(this.Logout);
+            this.Controls.Add(this.ProfileBtn);
+            this.Controls.Add(this.UserSettingsbtn);
             this.Controls.Add(this.Homebtn);
             this.Controls.Add(this.Usercreategrpbox);
             this.Controls.Add(this.Userpicicon);
@@ -306,5 +360,8 @@
         private System.Windows.Forms.GroupBox GrpSetting;
         private System.Windows.Forms.RadioButton UserBtn;
         private System.Windows.Forms.RadioButton AdminBtn;
+        private FontAwesome.Sharp.IconButton UserSettingsbtn;
+        private FontAwesome.Sharp.IconButton ProfileBtn;
+        private FontAwesome.Sharp.IconButton Logout;
     }
 }

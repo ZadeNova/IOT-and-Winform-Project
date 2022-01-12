@@ -33,10 +33,10 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iOTProjDBDataSet1 = new WinFormIOTProject.IOTProjDBDataSet1();
             this.iOTProjDBDataSet = new WinFormIOTProject.IOTProjDBDataSet();
             this.iOTProjDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iOTProjDBDataSet1 = new WinFormIOTProject.IOTProjDBDataSet1();
-            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userAccountTableAdapter = new WinFormIOTProject.IOTProjDBDataSet1TableAdapters.UserAccountTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +45,15 @@
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFIDIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
+            this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.Logout = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconButton1
@@ -111,6 +114,16 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // userAccountBindingSource
+            // 
+            this.userAccountBindingSource.DataMember = "UserAccount";
+            this.userAccountBindingSource.DataSource = this.iOTProjDBDataSet1;
+            // 
+            // iOTProjDBDataSet1
+            // 
+            this.iOTProjDBDataSet1.DataSetName = "IOTProjDBDataSet1";
+            this.iOTProjDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // iOTProjDBDataSet
             // 
             this.iOTProjDBDataSet.DataSetName = "IOTProjDBDataSet";
@@ -120,16 +133,6 @@
             // 
             this.iOTProjDBDataSetBindingSource.DataSource = this.iOTProjDBDataSet;
             this.iOTProjDBDataSetBindingSource.Position = 0;
-            // 
-            // iOTProjDBDataSet1
-            // 
-            this.iOTProjDBDataSet1.DataSetName = "IOTProjDBDataSet1";
-            this.iOTProjDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userAccountBindingSource
-            // 
-            this.userAccountBindingSource.DataMember = "UserAccount";
-            this.userAccountBindingSource.DataSource = this.iOTProjDBDataSet1;
             // 
             // userAccountTableAdapter
             // 
@@ -147,36 +150,90 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Phone_Number";
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone_Number";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
             this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // rFIDIDDataGridViewTextBoxColumn
             // 
             this.rFIDIDDataGridViewTextBoxColumn.DataPropertyName = "RFID_ID";
             this.rFIDIDDataGridViewTextBoxColumn.HeaderText = "RFID_ID";
             this.rFIDIDDataGridViewTextBoxColumn.Name = "rFIDIDDataGridViewTextBoxColumn";
+            this.rFIDIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // UserSettingsbtn
+            // 
+            this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
+            this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsbtn.IconChar = FontAwesome.Sharp.IconChar.UserCog;
+            this.UserSettingsbtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.UserSettingsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserSettingsbtn.IconSize = 40;
+            this.UserSettingsbtn.Location = new System.Drawing.Point(757, 4);
+            this.UserSettingsbtn.Name = "UserSettingsbtn";
+            this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
+            this.UserSettingsbtn.TabIndex = 11;
+            this.UserSettingsbtn.UseVisualStyleBackColor = true;
+            this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
+            // 
+            // ProfileBtn
+            // 
+            this.ProfileBtn.FlatAppearance.BorderSize = 0;
+            this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProfileBtn.IconChar = FontAwesome.Sharp.IconChar.UserAstronaut;
+            this.ProfileBtn.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.ProfileBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProfileBtn.IconSize = 40;
+            this.ProfileBtn.Location = new System.Drawing.Point(810, 2);
+            this.ProfileBtn.Name = "ProfileBtn";
+            this.ProfileBtn.Size = new System.Drawing.Size(44, 46);
+            this.ProfileBtn.TabIndex = 12;
+            this.ProfileBtn.UseVisualStyleBackColor = true;
+            this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
+            // 
+            // Logout
+            // 
+            this.Logout.FlatAppearance.BorderSize = 0;
+            this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logout.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout.IconSize = 40;
+            this.Logout.Location = new System.Drawing.Point(855, 2);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(46, 46);
+            this.Logout.TabIndex = 13;
+            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // ManageUserForm
             // 
@@ -184,6 +241,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(900, 487);
+            this.Controls.Add(this.Logout);
+            this.Controls.Add(this.ProfileBtn);
+            this.Controls.Add(this.UserSettingsbtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconPictureBox1);
@@ -193,10 +253,10 @@
             this.Load += new System.EventHandler(this.ManageUserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iOTProjDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +280,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rFIDIDDataGridViewTextBoxColumn;
+        private FontAwesome.Sharp.IconButton UserSettingsbtn;
+        private FontAwesome.Sharp.IconButton ProfileBtn;
+        private FontAwesome.Sharp.IconButton Logout;
     }
 }
