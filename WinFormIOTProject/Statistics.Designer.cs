@@ -50,6 +50,7 @@
             this.Controls.Add(this.Statslbl);
             this.Name = "Statistics";
             this.Text = "Statistics";
+            this.Load += new System.EventHandler(this.Statistics_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

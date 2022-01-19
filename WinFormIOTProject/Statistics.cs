@@ -16,5 +16,10 @@ namespace WinFormIOTProject
         {
             InitializeComponent();
         }
+
+        private void Statistics_Load(object sender, EventArgs e)
+        {
+           //dadawdawd
+        }
     }
 }
