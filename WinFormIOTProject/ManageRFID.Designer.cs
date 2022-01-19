@@ -168,6 +168,7 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Other_RFID,
             this.Other_Status});
+            this.dataGridView2.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dataGridView2.Location = new System.Drawing.Point(577, 157);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(251, 191);
@@ -272,14 +273,12 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn RFID_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RFID_STATUS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Other_RFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Other_Status;
         private System.Windows.Forms.Button button1;
@@ -287,5 +286,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

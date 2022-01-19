@@ -13,10 +13,12 @@ namespace WinFormIOTProject
 {
     public partial class RFIDAsign : Form
     {
+        
         public RFIDAsign()
         {
             InitializeComponent();
         }
+        
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
       
         private void Userupdatetxt_TextChanged(object sender, EventArgs e)
@@ -112,6 +114,8 @@ namespace WinFormIOTProject
                                         cmd2.ExecuteNonQuery();
                                         myConnect1.Close();
                                         MessageBox.Show("Asigned ! ");
+                                    
+
 
                                         //dataComms.sendData("RFIDSUCC");
                                     }
@@ -156,6 +160,10 @@ namespace WinFormIOTProject
                 }
             }
         }
+       
+
+        //on the place where you will reload form1
+
         public delegate void myprocessDataDelegate(String strData);
         // To save your sensor data to DB you need to change to suite your project needs
         private void RFIDSensorDataToDB(string strTime, string RfidID)
@@ -253,10 +261,7 @@ namespace WinFormIOTProject
 
             }//Check button status
 
-
-
-
-
+            
         }
 
         public void handleSensorData(String strData)
@@ -306,6 +311,8 @@ namespace WinFormIOTProject
         {
 
         }
+       
+       
     }
     }
 

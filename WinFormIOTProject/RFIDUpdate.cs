@@ -17,6 +17,7 @@ namespace WinFormIOTProject
         public RFIDUpdate()
         {
             InitializeComponent();
+            
         }
 
         private void RFIDUpdate_Load(object sender, EventArgs e)
@@ -27,7 +28,18 @@ namespace WinFormIOTProject
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataComms dataComms;
         string RFIDUSERCHECK = "";
+        public delegate void UpdateDelegate(object sender, UpdateEventArgs args);
+        public event UpdateDelegate UpdateEventHandler;
+        public class UpdateEventArgs : EventArgs
+        {
+            public string Data { get; set; }
+        }
 
+        protected void raiseUpdate()
+        {
+            UpdateEventArgs args = new UpdateEventArgs();
+            UpdateEventHandler?.Invoke(this, args);
+        }
         private void Updatebtn_Click(object sender, EventArgs e)
         {
             SqlConnection myConnect1 = new SqlConnection(strConnectionString);
@@ -95,9 +107,14 @@ namespace WinFormIOTProject
                                 cmd2.ExecuteNonQuery();
                                 myConnect1.Close();
                                 MessageBox.Show("Updated ! ");
+                                raiseUpdate();
+                                
+
+
 
                                 //dataComms.sendData("RFIDSUCC");
                             }
+                          
                         }
                         catch (SqlException ex)
                         {

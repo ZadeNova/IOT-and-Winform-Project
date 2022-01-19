@@ -134,9 +134,7 @@ namespace WinFormIOTProject
 
             }//Check button status
 
-
-
-
+            
 
         }
 
@@ -299,12 +297,12 @@ namespace WinFormIOTProject
 
         }
 
-
-
-
-
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm f2 = new LoginForm();
+            f2.Show();
+            this.Hide();
+        }
     }
 
 

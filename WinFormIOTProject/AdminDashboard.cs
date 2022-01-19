@@ -71,6 +71,8 @@ namespace WinFormIOTProject
         }
         //end of submenu code
 
+      
+
         private void Data_Click(object sender, EventArgs e)
         {
             showSubMenu(SubmenuData);
@@ -96,20 +98,9 @@ namespace WinFormIOTProject
 
         
 
-        
-
-        
-
-       
-
-        
-
-       
-
-        
-
         private void Settings_Click_1(object sender, EventArgs e)
         {
+          
             openChildForm(new Settings());
         }
 
@@ -170,10 +161,6 @@ namespace WinFormIOTProject
             this.Hide();
             UserSettingsForm usersettingform = new UserSettingsForm();
             usersettingform.ShowDialog();
-
-
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -233,6 +220,11 @@ namespace WinFormIOTProject
         }
 
         private void vScrollBar1_Scroll_1(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

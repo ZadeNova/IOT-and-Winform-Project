@@ -230,16 +230,18 @@ namespace WinFormIOTProject
             string strMessage = dt + ":" + strData;
             lbDataComms.Items.Insert(0, strMessage);
         }
-
+       
         public void processDataReceive(string strData)
         {
             if (strData.IndexOf("LIGHT=") != -1) {
+           
                 myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
                 lbDataComms.Invoke(d, new object[] { strData });
+
             }
             
         }
-
+      
         public void commsDataRecieve(string dataReceived)
         {
             processDataReceive(dataReceived);

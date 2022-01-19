@@ -13,27 +13,41 @@ using System.Data.SqlClient;
 
 namespace WinFormIOTProject
 {
+
+
     public partial class ManageRFID : Form
     {
-        public ManageRFID()
+        public static string dataref = "";
+      
+      
+    public ManageRFID()
         {
             InitializeComponent();
+         
         }
-        string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
 
+      
+        string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString ;
+        
+       
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
+       
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
+      
         private void ManageRFID_Load(object sender, EventArgs e)
         {
-
+            BindSource();
+            
+        }
+        public void BindSource() {
             SqlConnection myconnect = new SqlConnection(strConnectionString);
             String results = "SELECT UserAccount.Id, UserAccount.Name, Manage_RFID.RFID_ID , Manage_RFID.RFID_STATUS FROM UserAccount INNER JOIN Manage_RFID ON UserAccount.RFID_ID = Manage_RFID.RFID_ID";
             SqlCommand updateCmd = new SqlCommand(results, myconnect);
@@ -44,7 +58,6 @@ namespace WinFormIOTProject
             dataGridView1.DataSource = dt;
             myconnect.Close();
 
-
             String results2 = "SELECT RFID_ID , RFID_STATUS FROM Manage_RFID WHERE RFID_STATUS !='Active'";
             SqlCommand updateCmd2 = new SqlCommand(results2, myconnect);
             myconnect.Open();
@@ -54,7 +67,7 @@ namespace WinFormIOTProject
             dataGridView2.DataSource = dt2;
             myconnect.Close();
         }
-       
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -64,7 +77,6 @@ namespace WinFormIOTProject
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,11 +96,18 @@ namespace WinFormIOTProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
             idk.dataComms.sendData("RFIDCRUD");
             Form asign2 = new RFIDUpdate();
             asign2.ShowDialog();
+          
         }
 
+      
+        private void F3_UpdateEventHandler1(object sender, RFIDUpdate.UpdateEventArgs args)
+        {
+            BindSource();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             idk.dataComms.sendData("RFIDCRUD");
@@ -101,6 +120,7 @@ namespace WinFormIOTProject
             idk.dataComms.sendData("RFIDCRUD");
             Form asign = new RFIDAsign();
             asign.ShowDialog();
+      
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -116,5 +136,11 @@ namespace WinFormIOTProject
             Form asign6 = new RFIDEnable();
             asign6.ShowDialog();
         }
+        void Reload()
+        {
+            this.Reload();
+        }
+
+
     }
 }

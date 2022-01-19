@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panelAdminMenu = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.ManageUserBtn = new FontAwesome.Sharp.IconButton();
             this.Createuser = new FontAwesome.Sharp.IconButton();
@@ -48,18 +51,15 @@
             this.Data = new System.Windows.Forms.Button();
             this.AdminLogo = new System.Windows.Forms.Panel();
             this.panelChildForms = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SubmenuData.SuspendLayout();
             this.panelChildForms.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAdminMenu
@@ -81,6 +81,53 @@
             this.panelAdminMenu.Name = "panelAdminMenu";
             this.panelAdminMenu.Size = new System.Drawing.Size(200, 690);
             this.panelAdminMenu.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.button16);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 601);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(183, 170);
+            this.panel1.TabIndex = 21;
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button9.Location = new System.Drawing.Point(0, 36);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(183, 23);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "RFID";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button16
+            // 
+            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button16.Location = new System.Drawing.Point(0, 0);
+            this.button16.Name = "button16";
+            this.button16.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button16.Size = new System.Drawing.Size(183, 36);
+            this.button16.TabIndex = 1;
+            this.button16.Text = "Users";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // iconPictureBox1
             // 
@@ -426,6 +473,15 @@
             this.panelChildForms.Size = new System.Drawing.Size(1080, 690);
             this.panelChildForms.TabIndex = 1;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(129, 57);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(8, 8);
+            this.button10.TabIndex = 4;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // UserSettingsbtn
             // 
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
@@ -474,62 +530,6 @@
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 601);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 170);
-            this.panel1.TabIndex = 21;
-            // 
-            // button16
-            // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button16.Location = new System.Drawing.Point(0, 0);
-            this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button16.Size = new System.Drawing.Size(183, 36);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "Users";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button9.Location = new System.Drawing.Point(0, 36);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(183, 23);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "RFID";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(129, 57);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(8, 8);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,10 +541,10 @@
             this.Text = "AdminDashboard";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panelAdminMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.SubmenuData.ResumeLayout(false);
             this.panelChildForms.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

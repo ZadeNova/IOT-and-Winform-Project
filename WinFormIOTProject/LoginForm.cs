@@ -123,12 +123,7 @@ namespace WinFormIOTProject
                             MessageBox.Show("Username and password unknown!");
                         }
 
-
-
-
-
-                       
-
+                        
                     }
                     else
                     {
@@ -170,10 +165,8 @@ namespace WinFormIOTProject
         private void RFIDLoginBtn_Click(object sender, EventArgs e)
         {
             idk.dataComms.sendData("LoginRFID");
-            this.Hide();
-           
+            this.Hide();       
             RFIDLoginForm rfidForm = new RFIDLoginForm();
-
             rfidForm.ShowDialog();
         }
 
