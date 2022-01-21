@@ -62,20 +62,83 @@ namespace WinFormIOTProject
         {
             return (float.Parse(extractStringValue(strData, ID)));
         }
+        delegate void SetTextCallback(string text);
+        private void SetTexttemlisttext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.listBox1.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemlisttext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.listBox1.Text = text;
+                this.listBox1.Items.Insert(0, text);
+            }
+        }
 
+
+
+        private void SetTexttemvaltext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Roomtemptxt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemvaltext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Roomtemptxt.Text = text;
+            }
+        }
+
+        private void SetTexttemstatext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Status2txt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemstatext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Status2txt.Text = text;
+            }
+        }
         private void handlewaterSensorData(string strData, string strTime, string ID)
         {
+            string strCommandText3 = "SELECT * from WinformPieSetting where userid = @userid ";
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
+            cmd33.Parameters.AddWithValue("@userid", User.AccountID);
+            myConnect.Open();
+            SqlDataReader dr = cmd33.ExecuteReader();
+            dr.Read();
+            int temval = Convert.ToInt16(dr["watervalue"]);
+            string temsta1 = dr["waterstatus"].ToString();
+            string temsta2 = dr["waterstatus1"].ToString();
+            dr.Close();
+            myConnect.Close();
+
             string strwaterValue = extractStringValue(strData, ID);
-            Roomtemptxt.Text = strwaterValue;
-            Roomtemptxt.Text = strwaterValue;
+            SetTexttemvaltext(strwaterValue);
+           
 
             float flightValue = extractFloatValue(strData, ID);
             string status = "";
-            if (flightValue <= 250)
-                status = "Moderately Wet";
+            if (flightValue <= temval)
+                status = temsta1;
             else
-                status = "dry";
-            Status2txt.Text = status;
+                status = temsta2;
+            SetTexttemstatext(status);
             savewaterSensorDataToDB(strTime, strwaterValue, status);
         }
 
@@ -100,7 +163,7 @@ namespace WinFormIOTProject
             extractSensorData(strData, dt);
 
             string strMessage = dt + ":" + strData;
-            listBox1.Items.Insert(0, strMessage);
+            SetTexttemlisttext(strData);
         }
 
         public void processDataReceive(string strData)
@@ -108,7 +171,7 @@ namespace WinFormIOTProject
             if (strData.IndexOf("Water=") != -1)
             {
                 myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-                listBox1.Invoke(d, new object[] { strData });
+                d.Invoke(strData);
             }
 
         }

@@ -157,6 +157,7 @@
             this.Statustxt.Name = "Statustxt";
             this.Statustxt.Size = new System.Drawing.Size(161, 20);
             this.Statustxt.TabIndex = 5;
+            this.Statustxt.TextChanged += new System.EventHandler(this.Statustxt_TextChanged);
             // 
             // Roomlighttxt
             // 
@@ -165,6 +166,7 @@
             this.Roomlighttxt.Name = "Roomlighttxt";
             this.Roomlighttxt.Size = new System.Drawing.Size(161, 20);
             this.Roomlighttxt.TabIndex = 4;
+            this.Roomlighttxt.TextChanged += new System.EventHandler(this.Roomlighttxt_TextChanged);
             // 
             // label2
             // 

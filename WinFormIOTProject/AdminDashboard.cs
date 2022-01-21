@@ -250,5 +250,10 @@ namespace WinFormIOTProject
         {
             openChildForm(new Statistics());
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ras_Pie_Setting());
+        }
     }
 }

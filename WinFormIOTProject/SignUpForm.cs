@@ -60,6 +60,7 @@ namespace WinFormIOTProject
 
                     SqlCommand cmd2 = new SqlCommand(strCommandText2, myConnect);
                     cmd2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+            
                     SqlDataReader reader = cmd2.ExecuteReader();
                     if (reader.Read())
                     {
@@ -119,16 +120,51 @@ namespace WinFormIOTProject
                             myConnect.Close();
 
                             myConnect.Open();
+
+                            string strCommandText3 = "SELECT * FROM UserAccount WHERE Name=@Name";
+                            SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
+                            cmd33.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                            SqlDataReader dr = cmd33.ExecuteReader();
+                            dr.Read();
+                            int userrid = Convert.ToInt16(dr["Id"]);
+                            dr.Close();
+                            myConnect.Close();
+
+                            myConnect.Open();
                             string anothercommand = "INSERT INTO TwoFactorAuthenticationTable (Name,Email) VALUES (@Name , @Email)";
                             SqlCommand anothercommand2 = new SqlCommand(anothercommand, myConnect);
                             anothercommand2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
                             anothercommand2.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
                             anothercommand2.ExecuteNonQuery();
-
-
                             myConnect.Close();
 
-                            User.AccountUsername = NewUsertxt.Text; // User session
+                           
+          
+                            myConnect.Open();
+                            string strCommandText1 = "INSERT INTO WinformPieSetting (userid,avgsoundvalue,soundstatus,soundstatus1,watervalue,waterstatus,waterstatus1,lightvalue,ligtstatus,ligtstatus1,temvalue,temstatus,temstatus1,ultravalue,ultrastatus,ultrastatus1) VALUES (@userid,@avgsoundvalue,@soundstatus,@soundstatus1,@watervalue,@waterstatus,@waterstatus1,@lightvalue,@ligtstatus,@ligtstatus1,@temvalue,@temstatus,@temstatus1,@ultravalue,@ultrastatus,@ultrastatus1)";
+
+                            SqlCommand cmd1 = new SqlCommand(strCommandText1, myConnect);
+                            cmd1.Parameters.AddWithValue("@userid", userrid);
+                            cmd1.Parameters.AddWithValue("@avgsoundvalue", 100);
+                            cmd1.Parameters.AddWithValue("@soundstatus", "Environment noise level");
+                            cmd1.Parameters.AddWithValue("@soundstatus1", "Unusual noise level");
+                            cmd1.Parameters.AddWithValue("@watervalue", 250);
+                            cmd1.Parameters.AddWithValue("@waterstatus", "Moderately Wet");
+                            cmd1.Parameters.AddWithValue("@waterstatus1", "dry");
+                            cmd1.Parameters.AddWithValue("@lightvalue", 500);
+                            cmd1.Parameters.AddWithValue("@ligtstatus", "Dark");
+                            cmd1.Parameters.AddWithValue("@ligtstatus1", "Bright");
+                            cmd1.Parameters.AddWithValue("@temvalue",30);
+                            cmd1.Parameters.AddWithValue("@temstatus", "too hot");
+                            cmd1.Parameters.AddWithValue("@temstatus1", "normal");
+                            cmd1.Parameters.AddWithValue("@ultravalue",15);
+                            cmd1.Parameters.AddWithValue("@ultrastatus", "Something is close");
+                            cmd1.Parameters.AddWithValue("@ultrastatus1", "Nothing");
+                           
+                            cmd1.ExecuteNonQuery();
+                            myConnect.Close();
+                            User.AccountUsername = NewUsertxt.Text;
+                            // User session
                             AdminDashboard AdminForm = new AdminDashboard();
                             this.Hide();
                             AdminForm.ShowDialog();
