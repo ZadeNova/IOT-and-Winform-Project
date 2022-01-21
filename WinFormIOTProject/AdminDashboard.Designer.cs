@@ -40,6 +40,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.Settings = new FontAwesome.Sharp.IconButton();
             this.SubmenuDataGraphs = new System.Windows.Forms.Panel();
+            this.Statistics = new System.Windows.Forms.Button();
             this.Graphsbtn = new System.Windows.Forms.Button();
             this.ViewDataGraphbtn = new FontAwesome.Sharp.IconButton();
             this.SubmenuData = new System.Windows.Forms.Panel();
@@ -59,7 +60,6 @@
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
-            this.Statistics = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
             this.SubMenuManagement.SuspendLayout();
             this.SubmenuSettings.SuspendLayout();
@@ -290,6 +290,24 @@
             this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 66);
             this.SubmenuDataGraphs.TabIndex = 21;
             // 
+            // Statistics
+            // 
+            this.Statistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Statistics.FlatAppearance.BorderSize = 0;
+            this.Statistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.Statistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Statistics.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statistics.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Statistics.Location = new System.Drawing.Point(0, 23);
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.Statistics.Size = new System.Drawing.Size(183, 23);
+            this.Statistics.TabIndex = 1;
+            this.Statistics.Text = "Statistics";
+            this.Statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Statistics.UseVisualStyleBackColor = true;
+            this.Statistics.Click += new System.EventHandler(this.Statistics_Click);
+            // 
             // Graphsbtn
             // 
             this.Graphsbtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -306,6 +324,7 @@
             this.Graphsbtn.Text = "Graphs/Data";
             this.Graphsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Graphsbtn.UseVisualStyleBackColor = true;
+            this.Graphsbtn.Click += new System.EventHandler(this.Graphsbtn_Click);
             // 
             // ViewDataGraphbtn
             // 
@@ -554,11 +573,13 @@
             // 
             // panelChildForms
             // 
+            this.panelChildForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
             this.panelChildForms.Controls.Add(this.UserSettingsbtn);
             this.panelChildForms.Controls.Add(this.Logout);
             this.panelChildForms.Controls.Add(this.ProfileBtn);
-            this.panelChildForms.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelChildForms.Location = new System.Drawing.Point(200, 0);
             this.panelChildForms.Name = "panelChildForms";
             this.panelChildForms.Size = new System.Drawing.Size(1080, 690);
@@ -567,6 +588,7 @@
             // 
             // UserSettingsbtn
             // 
+            this.UserSettingsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
             this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -583,6 +605,7 @@
             // 
             // Logout
             // 
+            this.Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -599,6 +622,7 @@
             // 
             // ProfileBtn
             // 
+            this.ProfileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
             this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -612,24 +636,6 @@
             this.ProfileBtn.TabIndex = 1;
             this.ProfileBtn.UseVisualStyleBackColor = true;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
-            // 
-            // Statistics
-            // 
-            this.Statistics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Statistics.FlatAppearance.BorderSize = 0;
-            this.Statistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Statistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Statistics.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Statistics.ForeColor = System.Drawing.Color.Aquamarine;
-            this.Statistics.Location = new System.Drawing.Point(0, 23);
-            this.Statistics.Name = "Statistics";
-            this.Statistics.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Statistics.Size = new System.Drawing.Size(183, 23);
-            this.Statistics.TabIndex = 1;
-            this.Statistics.Text = "Statistics";
-            this.Statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Statistics.UseVisualStyleBackColor = true;
-            this.Statistics.Click += new System.EventHandler(this.Statistics_Click);
             // 
             // AdminDashboard
             // 

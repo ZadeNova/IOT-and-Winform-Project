@@ -250,5 +250,10 @@ namespace WinFormIOTProject
         {
             openChildForm(new Statistics());
         }
+
+        private void Graphsbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GraphData());
+        }
     }
 }

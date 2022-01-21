@@ -114,6 +114,7 @@
             // 
             // UserSettingsbtn
             // 
+            this.UserSettingsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
             this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -130,6 +131,7 @@
             // 
             // ProfileBtn
             // 
+            this.ProfileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
             this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,6 +148,7 @@
             // 
             // Logout
             // 
+            this.Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -30,11 +30,11 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.RaspBoxGrp = new System.Windows.Forms.GroupBox();
+            this.Useless = new System.Windows.Forms.Button();
             this.Home = new FontAwesome.Sharp.IconButton();
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
-            this.Useless = new System.Windows.Forms.Button();
             this.RaspBoxGrp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             this.RaspBoxGrp.TabStop = false;
             this.RaspBoxGrp.Text = "Raspberry Pi";
             // 
+            // Useless
+            // 
+            this.Useless.Location = new System.Drawing.Point(349, 129);
+            this.Useless.Name = "Useless";
+            this.Useless.Size = new System.Drawing.Size(75, 23);
+            this.Useless.TabIndex = 0;
+            this.Useless.Text = "button1";
+            this.Useless.UseVisualStyleBackColor = true;
+            this.Useless.Click += new System.EventHandler(this.Useless_Click);
+            // 
             // Home
             // 
             this.Home.FlatAppearance.BorderSize = 0;
@@ -81,6 +91,7 @@
             // 
             // UserSettingsbtn
             // 
+            this.UserSettingsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
             this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -97,6 +108,7 @@
             // 
             // ProfileBtn
             // 
+            this.ProfileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
             this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,6 +125,7 @@
             // 
             // Logout
             // 
+            this.Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -126,16 +139,6 @@
             this.Logout.TabIndex = 9;
             this.Logout.UseVisualStyleBackColor = true;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
-            // Useless
-            // 
-            this.Useless.Location = new System.Drawing.Point(349, 129);
-            this.Useless.Name = "Useless";
-            this.Useless.Size = new System.Drawing.Size(75, 23);
-            this.Useless.TabIndex = 0;
-            this.Useless.Text = "button1";
-            this.Useless.UseVisualStyleBackColor = true;
-            this.Useless.Click += new System.EventHandler(this.Useless_Click);
             // 
             // Settings
             // 

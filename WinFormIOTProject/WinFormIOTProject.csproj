@@ -79,6 +79,12 @@
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="AESOperation.cs" />
+    <Compile Include="GraphData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphData.Designer.cs">
+      <DependentUpon>GraphData.cs</DependentUpon>
+    </Compile>
     <Compile Include="RFIDAsign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,11 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SoundDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SoundSensor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +274,9 @@
     </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphData.resx">
+      <DependentUpon>GraphData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RFIDAsign.resx">
       <DependentUpon>RFIDAsign.cs</DependentUpon>
@@ -389,6 +403,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SoundDataSet.xsc">
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoundDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoundDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoundDataSet.xss">
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </None>
     <None Include="webfonts\fa-brands-400.eot" />
     <None Include="webfonts\fa-brands-400.ttf" />
     <None Include="webfonts\fa-brands-400.woff" />

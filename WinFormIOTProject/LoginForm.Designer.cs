@@ -41,6 +41,7 @@
             // 
             // UsernameTxtbox
             // 
+            this.UsernameTxtbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameTxtbox.Location = new System.Drawing.Point(251, 98);
             this.UsernameTxtbox.Name = "UsernameTxtbox";
             this.UsernameTxtbox.Size = new System.Drawing.Size(157, 20);
@@ -49,6 +50,7 @@
             // 
             // PasswordTxtBox
             // 
+            this.PasswordTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTxtBox.Location = new System.Drawing.Point(251, 177);
             this.PasswordTxtBox.Name = "PasswordTxtBox";
             this.PasswordTxtBox.Size = new System.Drawing.Size(157, 20);
@@ -57,6 +59,7 @@
             // 
             // UsernameLabel
             // 
+            this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Location = new System.Drawing.Point(129, 98);
             this.UsernameLabel.Name = "UsernameLabel";
@@ -66,6 +69,7 @@
             // 
             // PasswordLabel
             // 
+            this.PasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Location = new System.Drawing.Point(132, 177);
             this.PasswordLabel.Name = "PasswordLabel";
@@ -76,6 +80,7 @@
             // 
             // LoginBtn
             // 
+            this.LoginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBtn.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.LoginBtn.IconColor = System.Drawing.Color.Black;
@@ -92,6 +97,7 @@
             // 
             // ForgetPassBtn
             // 
+            this.ForgetPassBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ForgetPassBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForgetPassBtn.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
             this.ForgetPassBtn.IconColor = System.Drawing.Color.Black;
@@ -108,6 +114,7 @@
             // 
             // RFIDLoginBtn
             // 
+            this.RFIDLoginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RFIDLoginBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RFIDLoginBtn.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.RFIDLoginBtn.IconColor = System.Drawing.Color.Black;
@@ -125,6 +132,7 @@
             // 
             // Login
             // 
+            this.Login.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Login.AutoSize = true;
             this.Login.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.Location = new System.Drawing.Point(302, 28);
@@ -137,6 +145,7 @@
             // 
             // SignupLbl
             // 
+            this.SignupLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.SignupLbl.AutoSize = true;
             this.SignupLbl.Location = new System.Drawing.Point(266, 370);
             this.SignupLbl.Name = "SignupLbl";
