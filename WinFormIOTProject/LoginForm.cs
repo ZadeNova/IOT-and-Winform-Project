@@ -84,6 +84,8 @@ namespace WinFormIOTProject
                             User.AccountUsername = UsernameTxtbox.Text;
                             User.AccountEmail = reader["Email"].ToString();
                             User.AccountRole = reader["Role"].ToString();
+                            User.AccountID =Convert.ToInt16(reader["Id"]);
+
 
                             this.Hide();
                             myConnect.Close();

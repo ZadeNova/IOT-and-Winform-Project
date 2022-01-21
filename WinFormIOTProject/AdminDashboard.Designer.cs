@@ -252,9 +252,10 @@
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button10.Size = new System.Drawing.Size(183, 23);
             this.button10.TabIndex = 0;
-            this.button10.Text = "idk whattoadd";
+            this.button10.Text = "Winform Ras Pi";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Settings
             // 
@@ -540,7 +541,7 @@
             this.DataGraphBtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.DataGraphBtn.Size = new System.Drawing.Size(183, 23);
             this.DataGraphBtn.TabIndex = 0;
-            this.DataGraphBtn.Text = "Graphs/Data";
+            this.DataGraphBtn.Text = "Light N Temp";
             this.DataGraphBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DataGraphBtn.UseVisualStyleBackColor = true;
             this.DataGraphBtn.Click += new System.EventHandler(this.DataGraphBtn_Click);

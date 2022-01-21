@@ -251,9 +251,9 @@ namespace WinFormIOTProject
             openChildForm(new Statistics());
         }
 
-        private void Graphsbtn_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-            openChildForm(new GraphData());
+            openChildForm(new Ras_Pie_Setting());
         }
     }
 }

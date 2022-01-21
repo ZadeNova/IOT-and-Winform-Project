@@ -33,6 +33,7 @@ namespace WinFormIOTProject
         {
             InitComms();
             InitComms1();
+          
 
             //ChartTempProperties();
             //AddDataChart();
@@ -192,20 +193,82 @@ namespace WinFormIOTProject
         {
             return (float.Parse(extractStringValue(strData, ID)));
         }
+        private void SetTextlightlisttext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.lbDataComms.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTextlightlisttext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.lbDataComms.Text = text;
+                this.lbDataComms.Items.Insert(0, text);
+            }
+        }
 
+
+
+        private void SetTextlightvaltext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Roomlighttxt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTextlightvaltext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Roomlighttxt.Text = text;
+            }
+        }
+
+        private void SetTextlightstatext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Statustxt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTextlightstatext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Statustxt.Text = text;
+            }
+        }
         private void handleLightSensorData(string strData, string strTime, string ID)
         {
+            string strCommandText3 = "SELECT * from WinformPieSetting where userid = @userid ";
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
+            cmd33.Parameters.AddWithValue("@userid", User.AccountID);
+            myConnect.Open();
+            SqlDataReader dr = cmd33.ExecuteReader();
+            dr.Read();
+            int ligtval = Convert.ToInt16(dr["lightvalue"]);
+            string lightsta1 = dr["ligtstatus"].ToString();
+            string lightsta2 = dr["ligtstatus1"].ToString();
+            dr.Close();
+            myConnect.Close();
+
             string strlightValue = extractStringValue(strData, ID);
-            Roomlighttxt.Text = strlightValue;
-            Roomlighttxt.Text = strlightValue;
+            SetTextlightvaltext(strlightValue);
+          
 
             float flightValue = extractFloatValue(strData, ID);
             string status = "";
-            if (flightValue <= 500)
-                status = "Dark";
+            if (flightValue <= ligtval)
+                status = lightsta1;
             else
-                status = "Bright";
-            Statustxt.Text = status;
+                status = lightsta2;
+            SetTextlightstatext(status);
             saveLightSensorDataToDB(strTime, strlightValue, status);
         }
 
@@ -228,7 +291,7 @@ namespace WinFormIOTProject
             extractSensorData(strData, dt);
 
             string strMessage = dt + ":" + strData;
-            lbDataComms.Items.Insert(0, strMessage);
+            SetTextlightlisttext(strData);
         }
        
         public void processDataReceive(string strData)
@@ -236,7 +299,7 @@ namespace WinFormIOTProject
             if (strData.IndexOf("LIGHT=") != -1) {
            
                 myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-                lbDataComms.Invoke(d, new object[] { strData });
+                d.Invoke(strData);
 
             }
             
@@ -295,19 +358,28 @@ namespace WinFormIOTProject
 
         private void handletempSensorData(string strData1, string strTime1, string ID1)
         {
+            string strCommandText3 = "SELECT * from WinformPieSetting where userid = @userid ";
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
+            cmd33.Parameters.AddWithValue("@userid", User.AccountID);
+            myConnect.Open();
+            SqlDataReader dr = cmd33.ExecuteReader();
+            dr.Read();
+            int temval = Convert.ToInt16(dr["temvalue"]);
+            string temsta1 = dr["temstatus"].ToString();
+            string temsta2 = dr["temstatus1"].ToString();
+            dr.Close();
+            myConnect.Close();
             string strlightValue1 = extractStringValue1(strData1, ID1);
-            Roomtemptxt.Text = strlightValue1;
-            Roomtemptxt.Text = strlightValue1;
-
+            SetTexttemvaltext(strlightValue1);
+          
             float flightValue1 = extractFloatValue1(strData1, ID1);
             string status1 = "";
-            if (flightValue1 >= 30)
-                status1 = "too hot";
-            else if (flightValue1 <= 20)
-                status1 = "too cool";
+            if (flightValue1 >= temval)
+                status1 = temsta1;
             else
-                status1 = "normal";
-            Status2txt.Text = status1;
+                status1 = temsta2;
+            SetTexttemstatext(status1);
             savetempSensorDataToDB1(strTime1, strlightValue1, status1);
         }
 
@@ -330,17 +402,67 @@ namespace WinFormIOTProject
             string dt = DateTime.Now.ToString("s");
             extractSensorData1(strData1, dt);
             string strMessage1 = dt + ":" + strData1;
-            listBox1.Items.Insert(0, strMessage1);
+            SetTexttemlisttext(strData1);
         }
 
         public void processDataReceive1(string strData1)
         {
             if (strData1.IndexOf("Temp=") != -1) {
                 myprocessDataDelegate1 d = new myprocessDataDelegate1(handleSensorData1);
-                listBox1.Invoke(d, new object[] { strData1 });
+                d.Invoke(strData1);
             }
+            
+        }
+        delegate void SetTextCallback(string text);
+        private void SetTexttemlisttext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.listBox1.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemlisttext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.listBox1.Text = text;
+                this.listBox1.Items.Insert(0, text);
+            }
+        }
 
+       
 
+        private void SetTexttemvaltext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Roomtemptxt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemvaltext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Roomtemptxt.Text = text;
+            }
+        }
+
+        private void SetTexttemstatext(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.Status2txt.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetTexttemstatext);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.Status2txt.Text = text;
+            }
         }
 
         public void commsDataRecieve1(string dataReceived1)
@@ -417,6 +539,16 @@ namespace WinFormIOTProject
         private void Home_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Roomlighttxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Statustxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
         // end of tem sensor 
 
