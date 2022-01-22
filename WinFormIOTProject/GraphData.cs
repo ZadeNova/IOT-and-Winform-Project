@@ -54,6 +54,9 @@ namespace WinFormIOTProject
 
         private void SoundChartProperties()
         {
+
+            
+            SoundChart.Series[0].ChartType = SeriesChartType.Line;
             // Background
             SoundChart.BackColor = getColor(64, 64, 64, 64);
             SoundChart.BackGradientStyle = GradientStyle.TopBottom;
@@ -69,21 +72,28 @@ namespace WinFormIOTProject
 
             Font labelFont = new Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold);
 
-            Color colorGridLines = getColor(64, 64, 64, 80);
+            //Chart border color
+            Color colorGridLines = getColor(27, 64, 21, 80);
             ChartArea chartArea1 = SoundChart.ChartAreas[0];
             chartArea1.BackColor = Color.OldLace;
-            chartArea1.BackGradientStyle = GradientStyle.TopBottom;
+            chartArea1.BackGradientStyle = GradientStyle.Center;
             chartArea1.BorderColor = colorGridLines;
             chartArea1.BorderDashStyle = ChartDashStyle.Solid;
             chartArea1.ShadowColor = Color.Transparent;
+
+            // Legend settings
+            Legend legend1 = SoundChart.Legends[0];
+            legend1.BackColor = Color.Transparent;
+            legend1.Enabled = true;
+            legend1.Font = labelFont;
+            SoundChart.Series[0].LegendText = "Sound value";
 
             //X axis stuff
             chartArea1.AxisX.LabelStyle.Font = labelFont;
             chartArea1.AxisX.LineColor = colorGridLines;
             chartArea1.AxisX.MajorGrid.LineColor = colorGridLines;
-            chartArea1.AxisX.LabelStyle.Format = "hh:mm:ss";
+            chartArea1.AxisX.LabelStyle.Format = "mm:ss";
             chartArea1.AxisX.IsLabelAutoFit = true;
-
 
             chartArea1.AxisX.IntervalType = DateTimeIntervalType.Seconds;
             chartArea1.AxisX.Interval = 1;
@@ -110,62 +120,65 @@ namespace WinFormIOTProject
         private void GraphData_Load(object sender, EventArgs e)
         {
 
+            loadSoundData();
             // Get all graph data from sql here.
-            string query = "SELECT * FROM Sound_table";
-            DataTable sounddt = getSoundData(query);
+            //string query = "SELECT * FROM Sound_table";
+
             //for (var i = 0; i <= sounddt.Rows.Count - 1; i++)
             //{
             //    Console.WriteLine(i);
             //}
             //Console.WriteLine(sounddt.Rows);
-            Console.WriteLine("HELLOOOO THERE");
+            //Console.WriteLine("HELLOOOO THERE");
 
-            List<DateTime> SoundDateTime = new List<DateTime>();
-            List<string> SoundValuesList = new List<string>();
-            List<string> ConvertedSoundDateTime = new List<string>();
-            foreach(DataRow row in sounddt.Rows)
-            {
+            //List<DateTime> SoundDateTime = new List<DateTime>();
+            //List<string> SoundValuesList = new List<string>();
+            //List<string> ConvertedSoundDateTime = new List<string>();
+            //foreach (DataRow row in sounddt.Rows)
+            //{
 
-                SoundDateTime.Add(Convert.ToDateTime(row["DATETIME"]));
-                //SoundDateTime.Add(row["DATETIME"].ToString());
-                SoundValuesList.Add(row["Sound"].ToString());
-
-
-            }
-            foreach(var i in SoundDateTime)
-            {
-                Console.WriteLine(i);
-                var aa = String.Format("{0:ss}", i); // Convert to seconds
-                Console.WriteLine(aa);
-                ConvertedSoundDateTime.Add(aa);
-
-            }
-            
-            
+            //    SoundDateTime.Add(Convert.ToDateTime(row["DATETIME"]));
+            //    SoundDateTime.Add(row["DATETIME"].ToString());
+            //    SoundValuesList.Add(row["Sound"].ToString());
 
 
-            SoundChart.Series[0].ChartType = SeriesChartType.Line;
+            //}
+            //foreach (var i in SoundDateTime)
+            //{
+            //    Console.WriteLine(i);
+            //    var aa = String.Format("{0:ss}", i); // Convert to seconds
+            //    Console.WriteLine(aa);
+            //    ConvertedSoundDateTime.Add(aa);
+
+            //}
+
+
+
+
+           
             //SoundChart.Series[0].Points.DataBindXY(ConvertedSoundDateTime, SoundValuesList);
             
 
             //SoundChart.ChartAreas[0].AxisX.Interval = 3;
-            SoundChart.Series[0].LegendText = "Sound value";
+            
             //SoundChart.Series[0].XValueType = ChartValueType.DateTime;
             //SoundChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Hours;
             SoundChartProperties();
 
         }
 
-        private static DataTable getSoundData(string query)
+        private void loadSoundData()
         {
             string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(strConnectionString))
             {
-                using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Sound_table", con))
                 {
-                    DataTable dt = new DataTable();
+                    DataSet dt = new DataSet();
                     sda.Fill(dt);
-                    return dt;
+                    SoundChart.DataSource = dt;
+                    SoundChart.Series[0].XValueMember = "DATETIME";
+                    SoundChart.Series[0].YValueMembers = "Sound";
                 }
             }
         }

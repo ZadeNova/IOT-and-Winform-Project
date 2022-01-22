@@ -15,11 +15,11 @@ using System.Data.SqlClient;
 
 namespace WinFormIOTProject
 {
-    public partial class GraphDatass : Form
+    public partial class LightChart : Form
     {
 
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
-        public GraphDatass()
+        public LightChart()
         {
             InitializeComponent();
             ChartTempProperties();

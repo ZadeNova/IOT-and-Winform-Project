@@ -1,6 +1,6 @@
 ﻿namespace WinFormIOTProject
 {
-    partial class GraphDatass
+    partial class LightChart
     {
         /// <summary>
         /// Required designer variable.
