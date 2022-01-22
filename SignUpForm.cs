@@ -294,5 +294,19 @@ namespace WinFormIOTProject
             User.AccountUsername = "";
 
         }
+
+
+        private bool CheckPhoneNumLength()
+        {
+            if (PhoneNumTxt.Text.Length == 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
