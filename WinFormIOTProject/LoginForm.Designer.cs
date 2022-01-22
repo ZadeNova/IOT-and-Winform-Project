@@ -37,23 +37,25 @@
             this.RFIDLoginBtn = new FontAwesome.Sharp.IconButton();
             this.Login = new System.Windows.Forms.Label();
             this.SignupLbl = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // UsernameTxtbox
             // 
             this.UsernameTxtbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameTxtbox.Location = new System.Drawing.Point(251, 98);
+            this.UsernameTxtbox.Location = new System.Drawing.Point(182, 46);
             this.UsernameTxtbox.Name = "UsernameTxtbox";
-            this.UsernameTxtbox.Size = new System.Drawing.Size(157, 20);
+            this.UsernameTxtbox.Size = new System.Drawing.Size(231, 20);
             this.UsernameTxtbox.TabIndex = 0;
             this.UsernameTxtbox.TextChanged += new System.EventHandler(this.UsernameTxtbox_TextChanged);
             // 
             // PasswordTxtBox
             // 
             this.PasswordTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTxtBox.Location = new System.Drawing.Point(251, 177);
+            this.PasswordTxtBox.Location = new System.Drawing.Point(182, 143);
             this.PasswordTxtBox.Name = "PasswordTxtBox";
-            this.PasswordTxtBox.Size = new System.Drawing.Size(157, 20);
+            this.PasswordTxtBox.Size = new System.Drawing.Size(231, 20);
             this.PasswordTxtBox.TabIndex = 1;
             this.PasswordTxtBox.TextChanged += new System.EventHandler(this.PasswordTxtBox_TextChanged);
             // 
@@ -61,7 +63,7 @@
             // 
             this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(129, 98);
+            this.UsernameLabel.Location = new System.Drawing.Point(95, 46);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(55, 13);
             this.UsernameLabel.TabIndex = 2;
@@ -71,7 +73,7 @@
             // 
             this.PasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(132, 177);
+            this.PasswordLabel.Location = new System.Drawing.Point(95, 143);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 3;
@@ -86,7 +88,7 @@
             this.LoginBtn.IconColor = System.Drawing.Color.Black;
             this.LoginBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.LoginBtn.IconSize = 40;
-            this.LoginBtn.Location = new System.Drawing.Point(370, 295);
+            this.LoginBtn.Location = new System.Drawing.Point(354, 257);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(111, 43);
             this.LoginBtn.TabIndex = 7;
@@ -103,7 +105,7 @@
             this.ForgetPassBtn.IconColor = System.Drawing.Color.Black;
             this.ForgetPassBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ForgetPassBtn.IconSize = 40;
-            this.ForgetPassBtn.Location = new System.Drawing.Point(146, 295);
+            this.ForgetPassBtn.Location = new System.Drawing.Point(39, 257);
             this.ForgetPassBtn.Name = "ForgetPassBtn";
             this.ForgetPassBtn.Size = new System.Drawing.Size(138, 43);
             this.ForgetPassBtn.TabIndex = 8;
@@ -120,7 +122,7 @@
             this.RFIDLoginBtn.IconColor = System.Drawing.Color.Black;
             this.RFIDLoginBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.RFIDLoginBtn.IconSize = 30;
-            this.RFIDLoginBtn.Location = new System.Drawing.Point(370, 248);
+            this.RFIDLoginBtn.Location = new System.Drawing.Point(354, 201);
             this.RFIDLoginBtn.Margin = new System.Windows.Forms.Padding(2);
             this.RFIDLoginBtn.Name = "RFIDLoginBtn";
             this.RFIDLoginBtn.Size = new System.Drawing.Size(111, 41);
@@ -147,7 +149,7 @@
             // 
             this.SignupLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.SignupLbl.AutoSize = true;
-            this.SignupLbl.Location = new System.Drawing.Point(266, 370);
+            this.SignupLbl.Location = new System.Drawing.Point(209, 287);
             this.SignupLbl.Name = "SignupLbl";
             this.SignupLbl.Size = new System.Drawing.Size(105, 13);
             this.SignupLbl.TabIndex = 11;
@@ -155,25 +157,36 @@
             this.SignupLbl.Text = "No account?Sign up";
             this.SignupLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignupLbl_LinkClicked);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.UsernameTxtbox);
+            this.groupBox1.Controls.Add(this.SignupLbl);
+            this.groupBox1.Controls.Add(this.ForgetPassBtn);
+            this.groupBox1.Controls.Add(this.RFIDLoginBtn);
+            this.groupBox1.Controls.Add(this.PasswordTxtBox);
+            this.groupBox1.Controls.Add(this.LoginBtn);
+            this.groupBox1.Controls.Add(this.PasswordLabel);
+            this.groupBox1.Controls.Add(this.UsernameLabel);
+            this.groupBox1.Location = new System.Drawing.Point(68, 62);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(506, 315);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(125)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(647, 440);
-            this.Controls.Add(this.SignupLbl);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Login);
-            this.Controls.Add(this.RFIDLoginBtn);
-            this.Controls.Add(this.ForgetPassBtn);
-            this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.PasswordTxtBox);
-            this.Controls.Add(this.UsernameTxtbox);
             this.Name = "LoginForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +203,7 @@
         private FontAwesome.Sharp.IconButton RFIDLoginBtn;
         private System.Windows.Forms.Label Login;
         private System.Windows.Forms.LinkLabel SignupLbl;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

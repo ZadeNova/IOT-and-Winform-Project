@@ -37,6 +37,7 @@
             // 
             // EmailBoxTxt
             // 
+            this.EmailBoxTxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.EmailBoxTxt.Location = new System.Drawing.Point(290, 202);
             this.EmailBoxTxt.Name = "EmailBoxTxt";
             this.EmailBoxTxt.Size = new System.Drawing.Size(276, 20);
@@ -45,6 +46,7 @@
             // 
             // Forgetpasslabel
             // 
+            this.Forgetpasslabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Forgetpasslabel.AutoSize = true;
             this.Forgetpasslabel.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Forgetpasslabel.Location = new System.Drawing.Point(354, 28);
@@ -65,6 +67,7 @@
             // 
             // ResetPassBtn
             // 
+            this.ResetPassBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ResetPassBtn.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetPassBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ResetPassBtn.IconColor = System.Drawing.Color.Black;
@@ -79,6 +82,7 @@
             // 
             // bckLogFormLbl
             // 
+            this.bckLogFormLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bckLogFormLbl.AutoSize = true;
             this.bckLogFormLbl.Location = new System.Drawing.Point(377, 421);
             this.bckLogFormLbl.Name = "bckLogFormLbl";
@@ -92,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(125)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(896, 531);
             this.Controls.Add(this.bckLogFormLbl);
             this.Controls.Add(this.ResetPassBtn);

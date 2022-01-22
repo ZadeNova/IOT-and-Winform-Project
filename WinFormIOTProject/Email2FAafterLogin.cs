@@ -134,6 +134,7 @@ namespace WinFormIOTProject
             NewCode = CodeGenerator();
             StoredCode = NewCode;
             SendEmail(User.AccountEmail);
+            MessageBox.Show("New code has been sent to your email.");
 
         }
 

@@ -54,6 +54,7 @@
             // 
             // Registerbtn
             // 
+            this.Registerbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Registerbtn.Location = new System.Drawing.Point(247, 298);
             this.Registerbtn.Name = "Registerbtn";
             this.Registerbtn.Size = new System.Drawing.Size(75, 23);
@@ -64,7 +65,8 @@
             // 
             // NewUsertxt
             // 
-            this.NewUsertxt.Location = new System.Drawing.Point(205, 102);
+            this.NewUsertxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewUsertxt.Location = new System.Drawing.Point(205, 95);
             this.NewUsertxt.Name = "NewUsertxt";
             this.NewUsertxt.Size = new System.Drawing.Size(166, 20);
             this.NewUsertxt.TabIndex = 1;
@@ -73,8 +75,9 @@
             // 
             // NewUserlabel
             // 
+            this.NewUserlabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NewUserlabel.AutoSize = true;
-            this.NewUserlabel.Location = new System.Drawing.Point(104, 102);
+            this.NewUserlabel.Location = new System.Drawing.Point(105, 95);
             this.NewUserlabel.Name = "NewUserlabel";
             this.NewUserlabel.Size = new System.Drawing.Size(55, 13);
             this.NewUserlabel.TabIndex = 2;
@@ -83,6 +86,7 @@
             // 
             // EmailLabel
             // 
+            this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Location = new System.Drawing.Point(107, 136);
             this.EmailLabel.Name = "EmailLabel";
@@ -92,8 +96,9 @@
             // 
             // PasswordLabel
             // 
+            this.PasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(107, 214);
+            this.PasswordLabel.Location = new System.Drawing.Point(104, 214);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 4;
@@ -101,6 +106,7 @@
             // 
             // NewEmailTxt
             // 
+            this.NewEmailTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NewEmailTxt.Location = new System.Drawing.Point(205, 133);
             this.NewEmailTxt.Name = "NewEmailTxt";
             this.NewEmailTxt.Size = new System.Drawing.Size(166, 20);
@@ -109,6 +115,7 @@
             // 
             // NewPasswordTxt
             // 
+            this.NewPasswordTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NewPasswordTxt.Location = new System.Drawing.Point(205, 211);
             this.NewPasswordTxt.Name = "NewPasswordTxt";
             this.NewPasswordTxt.Size = new System.Drawing.Size(166, 20);
@@ -117,6 +124,7 @@
             // 
             // CfmpassReg
             // 
+            this.CfmpassReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CfmpassReg.AutoSize = true;
             this.CfmpassReg.Location = new System.Drawing.Point(104, 255);
             this.CfmpassReg.Name = "CfmpassReg";
@@ -126,7 +134,8 @@
             // 
             // CfmPassTxtBox
             // 
-            this.CfmPassTxtBox.Location = new System.Drawing.Point(205, 252);
+            this.CfmPassTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CfmPassTxtBox.Location = new System.Drawing.Point(205, 255);
             this.CfmPassTxtBox.Name = "CfmPassTxtBox";
             this.CfmPassTxtBox.Size = new System.Drawing.Size(166, 20);
             this.CfmPassTxtBox.TabIndex = 8;
@@ -150,6 +159,7 @@
             // 
             // SignupformLbl
             // 
+            this.SignupformLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SignupformLbl.AutoSize = true;
             this.SignupformLbl.Font = new System.Drawing.Font("Unispace", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignupformLbl.ForeColor = System.Drawing.Color.Cyan;
@@ -161,6 +171,7 @@
             // 
             // PhoneNumTxt
             // 
+            this.PhoneNumTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneNumTxt.Location = new System.Drawing.Point(205, 173);
             this.PhoneNumTxt.Name = "PhoneNumTxt";
             this.PhoneNumTxt.Size = new System.Drawing.Size(166, 20);
@@ -168,6 +179,7 @@
             // 
             // PhnNoLbl
             // 
+            this.PhnNoLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PhnNoLbl.AutoSize = true;
             this.PhnNoLbl.Location = new System.Drawing.Point(104, 176);
             this.PhnNoLbl.Name = "PhnNoLbl";
@@ -177,6 +189,7 @@
             // 
             // Loginformlbl
             // 
+            this.Loginformlbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Loginformlbl.AutoSize = true;
             this.Loginformlbl.Location = new System.Drawing.Point(205, 362);
             this.Loginformlbl.Name = "Loginformlbl";
@@ -190,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(125)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(569, 424);
             this.Controls.Add(this.Loginformlbl);
             this.Controls.Add(this.PhnNoLbl);

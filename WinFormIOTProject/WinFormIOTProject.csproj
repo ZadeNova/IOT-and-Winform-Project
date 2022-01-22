@@ -85,6 +85,12 @@
     <Compile Include="GraphData.Designer.cs">
       <DependentUpon>GraphData.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphDatass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphDatass.Designer.cs">
+      <DependentUpon>GraphDatass.cs</DependentUpon>
+    </Compile>
     <Compile Include="RFIDAsign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GraphData.resx">
       <DependentUpon>GraphData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphDatass.resx">
+      <DependentUpon>GraphDatass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RFIDAsign.resx">
       <DependentUpon>RFIDAsign.cs</DependentUpon>

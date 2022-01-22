@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
-
+using System.Net.Mail;
 
 
 namespace WinFormIOTProject
@@ -71,7 +71,7 @@ namespace WinFormIOTProject
                     {
                         myConnect.Close();
                         myConnect.Open();
-                        
+                        // check if email exist in database
                         string sqlcommand = "SELECT * FROM UserAccount WHERE Email = @Email";
                         SqlCommand cmd3 = new SqlCommand(sqlcommand, myConnect);
                         cmd3.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
@@ -79,95 +79,112 @@ namespace WinFormIOTProject
                         if (reader2.Read())
                         {
                             myConnect.Close();
-                            MessageBox.Show("Email address has been registered");
+                            MessageBox.Show("Email address has already been registered");
                         }
                         else
                         {
-                            myConnect.Close();
-                            myConnect.Open();
-                            var key = KeyGen();
-                            // key uses 32 bits
-
-                            AESOperation encryptt = new AESOperation();
-                            var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumTxt.Text);
-
-                            string Role = "User";
-                            string Status = "Active";
-
-                            
-                            string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
-
-                            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
 
-                            //Hash the password
 
-                            string hashedpass = Hash.ComputeHash(NewPasswordTxt.Text, "SHA512", null);
-                            Console.WriteLine(hashedpass);
+                            // Check if email is a valid email
+                            bool Flag = IsValidEmailAddress(NewEmailTxt.Text);
+                            if (Flag)
+                            {
+                                // Email exists
+                                myConnect.Close();
+                                myConnect.Open();
+                                var key = KeyGen();
+                                // key uses 32 bits
+
+                                AESOperation encryptt = new AESOperation();
+                                var encryptedPhoneNo = encryptt.EncryptString(key, PhoneNumTxt.Text);
+
+                                string Role = "User";
+                                string Status = "Active";
 
 
-                            cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                            cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
-                            cmd.Parameters.AddWithValue("@Password", hashedpass);
-                            cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
-                            cmd.Parameters.AddWithValue("@SymmetricKey", key);
-                            cmd.Parameters.AddWithValue("@Role", Role);
-                            cmd.Parameters.AddWithValue("@Status", Status);
+                                string strCommandText = "INSERT INTO UserAccount(Name,Password,Email,Phone_Number,Role,Status,SymmetricKey) VALUES (@Name,@Password,@Email,@Phone_Number,@Role,@Status,@SymmetricKey)";
+
+                                SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
 
 
-                            cmd.ExecuteNonQuery(); // It executes the sql command
+                                //Hash the password
 
-                            myConnect.Close();
+                                string hashedpass = Hash.ComputeHash(NewPasswordTxt.Text, "SHA512", null);
+                                Console.WriteLine(hashedpass);
 
-                            myConnect.Open();
 
-                            string strCommandText3 = "SELECT * FROM UserAccount WHERE Name=@Name";
-                            SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
-                            cmd33.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                            SqlDataReader dr = cmd33.ExecuteReader();
-                            dr.Read();
-                            int userrid = Convert.ToInt16(dr["Id"]);
-                            dr.Close();
-                            myConnect.Close();
+                                cmd.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                                cmd.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
+                                cmd.Parameters.AddWithValue("@Password", hashedpass);
+                                cmd.Parameters.AddWithValue("@Phone_Number", encryptedPhoneNo);
+                                cmd.Parameters.AddWithValue("@SymmetricKey", key);
+                                cmd.Parameters.AddWithValue("@Role", Role);
+                                cmd.Parameters.AddWithValue("@Status", Status);
 
-                            myConnect.Open();
-                            string anothercommand = "INSERT INTO TwoFactorAuthenticationTable (Name,Email) VALUES (@Name , @Email)";
-                            SqlCommand anothercommand2 = new SqlCommand(anothercommand, myConnect);
-                            anothercommand2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
-                            anothercommand2.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
-                            anothercommand2.ExecuteNonQuery();
-                            myConnect.Close();
 
+                                cmd.ExecuteNonQuery(); // It executes the sql command
+
+                                myConnect.Close();
+
+                                myConnect.Open();
+
+                                string strCommandText3 = "SELECT * FROM UserAccount WHERE Name=@Name";
+                                SqlCommand cmd33 = new SqlCommand(strCommandText3, myConnect);
+                                cmd33.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                                SqlDataReader dr = cmd33.ExecuteReader();
+                                dr.Read();
+                                int userrid = Convert.ToInt16(dr["Id"]);
+                                dr.Close();
+                                myConnect.Close();
+
+                                myConnect.Open();
+                                string anothercommand = "INSERT INTO TwoFactorAuthenticationTable (Name,Email) VALUES (@Name , @Email)";
+                                SqlCommand anothercommand2 = new SqlCommand(anothercommand, myConnect);
+                                anothercommand2.Parameters.AddWithValue("@Name", NewUsertxt.Text);
+                                anothercommand2.Parameters.AddWithValue("@Email", NewEmailTxt.Text);
+                                anothercommand2.ExecuteNonQuery();
+                                myConnect.Close();
+
+
+
+                                myConnect.Open();
+                                string strCommandText1 = "INSERT INTO WinformPieSetting (userid,avgsoundvalue,soundstatus,soundstatus1,watervalue,waterstatus,waterstatus1,lightvalue,ligtstatus,ligtstatus1,temvalue,temstatus,temstatus1,ultravalue,ultrastatus,ultrastatus1) VALUES (@userid,@avgsoundvalue,@soundstatus,@soundstatus1,@watervalue,@waterstatus,@waterstatus1,@lightvalue,@ligtstatus,@ligtstatus1,@temvalue,@temstatus,@temstatus1,@ultravalue,@ultrastatus,@ultrastatus1)";
+
+                                SqlCommand cmd1 = new SqlCommand(strCommandText1, myConnect);
+                                cmd1.Parameters.AddWithValue("@userid", userrid);
+                                cmd1.Parameters.AddWithValue("@avgsoundvalue", 100);
+                                cmd1.Parameters.AddWithValue("@soundstatus", "Environment noise level");
+                                cmd1.Parameters.AddWithValue("@soundstatus1", "Unusual noise level");
+                                cmd1.Parameters.AddWithValue("@watervalue", 250);
+                                cmd1.Parameters.AddWithValue("@waterstatus", "Moderately Wet");
+                                cmd1.Parameters.AddWithValue("@waterstatus1", "dry");
+                                cmd1.Parameters.AddWithValue("@lightvalue", 500);
+                                cmd1.Parameters.AddWithValue("@ligtstatus", "Dark");
+                                cmd1.Parameters.AddWithValue("@ligtstatus1", "Bright");
+                                cmd1.Parameters.AddWithValue("@temvalue", 30);
+                                cmd1.Parameters.AddWithValue("@temstatus", "too hot");
+                                cmd1.Parameters.AddWithValue("@temstatus1", "normal");
+                                cmd1.Parameters.AddWithValue("@ultravalue", 15);
+                                cmd1.Parameters.AddWithValue("@ultrastatus", "Something is close");
+                                cmd1.Parameters.AddWithValue("@ultrastatus1", "Nothing");
+
+                                cmd1.ExecuteNonQuery();
+                                myConnect.Close();
+                                User.AccountUsername = NewUsertxt.Text;
+                                // User session
+                                AdminDashboard AdminForm = new AdminDashboard();
+                                this.Hide();
+                                AdminForm.ShowDialog();
+
+
+                            }
+                            else
+                            {
+                                // Email does not exist
+                                MessageBox.Show("This is not a valid email");
+                            }
                            
-          
-                            myConnect.Open();
-                            string strCommandText1 = "INSERT INTO WinformPieSetting (userid,avgsoundvalue,soundstatus,soundstatus1,watervalue,waterstatus,waterstatus1,lightvalue,ligtstatus,ligtstatus1,temvalue,temstatus,temstatus1,ultravalue,ultrastatus,ultrastatus1) VALUES (@userid,@avgsoundvalue,@soundstatus,@soundstatus1,@watervalue,@waterstatus,@waterstatus1,@lightvalue,@ligtstatus,@ligtstatus1,@temvalue,@temstatus,@temstatus1,@ultravalue,@ultrastatus,@ultrastatus1)";
-
-                            SqlCommand cmd1 = new SqlCommand(strCommandText1, myConnect);
-                            cmd1.Parameters.AddWithValue("@userid", userrid);
-                            cmd1.Parameters.AddWithValue("@avgsoundvalue", 100);
-                            cmd1.Parameters.AddWithValue("@soundstatus", "Environment noise level");
-                            cmd1.Parameters.AddWithValue("@soundstatus1", "Unusual noise level");
-                            cmd1.Parameters.AddWithValue("@watervalue", 250);
-                            cmd1.Parameters.AddWithValue("@waterstatus", "Moderately Wet");
-                            cmd1.Parameters.AddWithValue("@waterstatus1", "dry");
-                            cmd1.Parameters.AddWithValue("@lightvalue", 500);
-                            cmd1.Parameters.AddWithValue("@ligtstatus", "Dark");
-                            cmd1.Parameters.AddWithValue("@ligtstatus1", "Bright");
-                            cmd1.Parameters.AddWithValue("@temvalue",30);
-                            cmd1.Parameters.AddWithValue("@temstatus", "too hot");
-                            cmd1.Parameters.AddWithValue("@temstatus1", "normal");
-                            cmd1.Parameters.AddWithValue("@ultravalue",15);
-                            cmd1.Parameters.AddWithValue("@ultrastatus", "Something is close");
-                            cmd1.Parameters.AddWithValue("@ultrastatus1", "Nothing");
-                           
-                            cmd1.ExecuteNonQuery();
-                            myConnect.Close();
-                            User.AccountUsername = NewUsertxt.Text;
-                            // User session
-                            AdminDashboard AdminForm = new AdminDashboard();
-                            this.Hide();
-                            AdminForm.ShowDialog();
                         }
 
 
@@ -187,6 +204,21 @@ namespace WinFormIOTProject
             
             
         }
+
+        public bool IsValidEmailAddress(string email)
+        {
+            try
+            {
+                MailAddress ma = new MailAddress(email);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         private void NewUsertxt_TextChanged(object sender, EventArgs e)
         {

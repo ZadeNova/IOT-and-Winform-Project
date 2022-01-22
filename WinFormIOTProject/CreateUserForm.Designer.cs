@@ -57,8 +57,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(458, 21);
@@ -69,9 +68,8 @@
             // 
             // Userpicicon
             // 
-            this.Userpicicon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Userpicicon.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Userpicicon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Userpicicon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.Userpicicon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Userpicicon.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             this.Userpicicon.IconColor = System.Drawing.SystemColors.ControlText;
@@ -109,7 +107,6 @@
             // AddUserbtn
             // 
             this.AddUserbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddUserbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.AddUserbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.AddUserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddUserbtn.FlatAppearance.BorderSize = 0;
@@ -126,9 +123,7 @@
             // 
             // GrpSetting
             // 
-            this.GrpSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GrpSetting.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.GrpSetting.Controls.Add(this.UserBtn);
             this.GrpSetting.Controls.Add(this.AdminBtn);
             this.GrpSetting.Location = new System.Drawing.Point(632, 69);
@@ -140,9 +135,7 @@
             // 
             // UserBtn
             // 
-            this.UserBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.UserBtn.AutoSize = true;
             this.UserBtn.Location = new System.Drawing.Point(69, 194);
             this.UserBtn.Name = "UserBtn";
@@ -154,9 +147,7 @@
             // 
             // AdminBtn
             // 
-            this.AdminBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdminBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AdminBtn.AutoSize = true;
             this.AdminBtn.Location = new System.Drawing.Point(69, 70);
             this.AdminBtn.Name = "AdminBtn";
@@ -343,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1064, 594);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.ProfileBtn);

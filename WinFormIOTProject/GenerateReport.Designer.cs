@@ -38,7 +38,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(335, 14);
@@ -50,6 +51,7 @@
             // 
             // Genreport
             // 
+            this.Genreport.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Genreport.Location = new System.Drawing.Point(354, 458);
             this.Genreport.Name = "Genreport";
             this.Genreport.Size = new System.Drawing.Size(197, 23);
@@ -74,6 +76,7 @@
             // 
             // UserSettingsbtn
             // 
+            this.UserSettingsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UserSettingsbtn.FlatAppearance.BorderSize = 0;
             this.UserSettingsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.UserSettingsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -90,6 +93,7 @@
             // 
             // ProfileBtn
             // 
+            this.ProfileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileBtn.FlatAppearance.BorderSize = 0;
             this.ProfileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.ProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -106,6 +110,7 @@
             // 
             // Logout
             // 
+            this.Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -124,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(896, 531);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.ProfileBtn);

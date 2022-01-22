@@ -41,6 +41,7 @@
             // 
             // RFIDLoginFormLabel
             // 
+            this.RFIDLoginFormLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RFIDLoginFormLabel.AutoSize = true;
             this.RFIDLoginFormLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RFIDLoginFormLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -53,7 +54,8 @@
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(125)))), ((int)(((byte)(152)))));
             this.iconPictureBox1.ForeColor = System.Drawing.Color.Aquamarine;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Aquamarine;
@@ -92,6 +94,7 @@
             // 
             // Testingbtn
             // 
+            this.Testingbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Testingbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Testingbtn.Location = new System.Drawing.Point(132, 292);
             this.Testingbtn.Name = "Testingbtn";
@@ -103,6 +106,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.Location = new System.Drawing.Point(371, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 39);
@@ -115,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(125)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(647, 440);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Testingbtn);

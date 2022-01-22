@@ -255,5 +255,11 @@ namespace WinFormIOTProject
         {
             openChildForm(new Ras_Pie_Setting());
         }
+
+        private void Graphsbtn_Click(object sender,EventArgs e)
+        {
+            openChildForm(new GraphData());
+        }
+        
     }
 }

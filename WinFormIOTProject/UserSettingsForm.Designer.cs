@@ -30,10 +30,10 @@
         {
             this.Homebtn = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Twofalbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DisableBtn = new System.Windows.Forms.Button();
             this.Enablebtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Twofalbl = new System.Windows.Forms.Label();
+            this.DisableBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +66,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Settings";
             // 
-            // Twofalbl
+            // Enablebtn
             // 
-            this.Twofalbl.AutoSize = true;
-            this.Twofalbl.Location = new System.Drawing.Point(567, 76);
-            this.Twofalbl.Name = "Twofalbl";
-            this.Twofalbl.Size = new System.Drawing.Size(214, 20);
-            this.Twofalbl.TabIndex = 0;
-            this.Twofalbl.Text = "Two factor Authentication";
+            this.Enablebtn.Location = new System.Drawing.Point(650, 130);
+            this.Enablebtn.Name = "Enablebtn";
+            this.Enablebtn.Size = new System.Drawing.Size(75, 23);
+            this.Enablebtn.TabIndex = 3;
+            this.Enablebtn.Text = "Enable";
+            this.Enablebtn.UseVisualStyleBackColor = true;
+            this.Enablebtn.Click += new System.EventHandler(this.Enablebtn_Click);
             // 
             // label2
             // 
@@ -83,6 +84,15 @@
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
+            // 
+            // Twofalbl
+            // 
+            this.Twofalbl.AutoSize = true;
+            this.Twofalbl.Location = new System.Drawing.Point(567, 76);
+            this.Twofalbl.Name = "Twofalbl";
+            this.Twofalbl.Size = new System.Drawing.Size(214, 20);
+            this.Twofalbl.TabIndex = 0;
+            this.Twofalbl.Text = "Two factor Authentication";
             // 
             // DisableBtn
             // 
@@ -94,21 +104,11 @@
             this.DisableBtn.UseVisualStyleBackColor = true;
             this.DisableBtn.Click += new System.EventHandler(this.DisableBtn_Click);
             // 
-            // Enablebtn
-            // 
-            this.Enablebtn.Location = new System.Drawing.Point(650, 130);
-            this.Enablebtn.Name = "Enablebtn";
-            this.Enablebtn.Size = new System.Drawing.Size(75, 23);
-            this.Enablebtn.TabIndex = 3;
-            this.Enablebtn.Text = "Enable";
-            this.Enablebtn.UseVisualStyleBackColor = true;
-            this.Enablebtn.Click += new System.EventHandler(this.Enablebtn_Click);
-            // 
             // UserSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1014, 583);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Homebtn);

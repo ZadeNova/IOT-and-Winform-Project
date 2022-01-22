@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
             this.Updateusergrp = new System.Windows.Forms.GroupBox();
+            this.Updatepassbtn = new System.Windows.Forms.Button();
             this.Updateusernametxt = new System.Windows.Forms.TextBox();
             this.UpdateBtn = new FontAwesome.Sharp.IconButton();
             this.PhoneNumupdatelbl = new System.Windows.Forms.Label();
@@ -49,13 +50,13 @@
             this.UpdateRoletxt = new System.Windows.Forms.TextBox();
             this.UpdateEmailTxt = new System.Windows.Forms.TextBox();
             this.updateuserlbl = new System.Windows.Forms.Label();
-            this.Updatepassbtn = new System.Windows.Forms.Button();
             this.UserProfile.SuspendLayout();
             this.Updateusergrp.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserProfile
             // 
+            this.UserProfile.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.UserProfile.Controls.Add(this.PhnNumberTxt);
             this.UserProfile.Controls.Add(this.PhnNoLbl);
             this.UserProfile.Controls.Add(this.RoleTxt);
@@ -164,6 +165,7 @@
             // 
             // Updateusergrp
             // 
+            this.Updateusergrp.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Updateusergrp.Controls.Add(this.Updatepassbtn);
             this.Updateusergrp.Controls.Add(this.Updateusernametxt);
             this.Updateusergrp.Controls.Add(this.UpdateBtn);
@@ -183,6 +185,17 @@
             this.Updateusergrp.TabStop = false;
             this.Updateusergrp.Text = "User settings";
             // 
+            // Updatepassbtn
+            // 
+            this.Updatepassbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Updatepassbtn.Location = new System.Drawing.Point(330, 398);
+            this.Updatepassbtn.Name = "Updatepassbtn";
+            this.Updatepassbtn.Size = new System.Drawing.Size(100, 46);
+            this.Updatepassbtn.TabIndex = 14;
+            this.Updatepassbtn.Text = "Update Password";
+            this.Updatepassbtn.UseVisualStyleBackColor = true;
+            this.Updatepassbtn.Click += new System.EventHandler(this.Updatepassbtn_Click);
+            // 
             // Updateusernametxt
             // 
             this.Updateusernametxt.Location = new System.Drawing.Point(193, 120);
@@ -192,6 +205,7 @@
             // 
             // UpdateBtn
             // 
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateBtn.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.UpdateBtn.IconColor = System.Drawing.Color.Black;
             this.UpdateBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
@@ -276,21 +290,11 @@
             this.updateuserlbl.TabIndex = 0;
             this.updateuserlbl.Text = "Update User information";
             // 
-            // Updatepassbtn
-            // 
-            this.Updatepassbtn.Location = new System.Drawing.Point(330, 398);
-            this.Updatepassbtn.Name = "Updatepassbtn";
-            this.Updatepassbtn.Size = new System.Drawing.Size(100, 46);
-            this.Updatepassbtn.TabIndex = 14;
-            this.Updatepassbtn.Text = "Update Password";
-            this.Updatepassbtn.UseVisualStyleBackColor = true;
-            this.Updatepassbtn.Click += new System.EventHandler(this.Updatepassbtn_Click);
-            // 
             // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1014, 583);
             this.Controls.Add(this.Updateusergrp);
             this.Controls.Add(this.Home);

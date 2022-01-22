@@ -50,12 +50,13 @@
             this.SoundChart.Size = new System.Drawing.Size(439, 249);
             this.SoundChart.TabIndex = 0;
             this.SoundChart.Text = "chart1";
+            this.SoundChart.Click += new System.EventHandler(this.SoundChart_Click);
             // 
             // GraphData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1064, 651);
             this.Controls.Add(this.SoundChart);
             this.Name = "GraphData";

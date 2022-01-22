@@ -33,6 +33,7 @@
             // 
             // Statslbl
             // 
+            this.Statslbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Statslbl.AutoSize = true;
             this.Statslbl.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Statslbl.Location = new System.Drawing.Point(456, 26);
@@ -45,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1064, 651);
             this.Controls.Add(this.Statslbl);
             this.Name = "Statistics";

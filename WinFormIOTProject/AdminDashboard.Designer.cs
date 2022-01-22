@@ -71,7 +71,7 @@
             // panelAdminMenu
             // 
             this.panelAdminMenu.AutoScroll = true;
-            this.panelAdminMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.panelAdminMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.panelAdminMenu.Controls.Add(this.iconButton1);
             this.panelAdminMenu.Controls.Add(this.Createuser);
             this.panelAdminMenu.Controls.Add(this.Notification);
@@ -92,7 +92,9 @@
             // 
             // iconButton1
             // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -103,19 +105,21 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 759);
+            this.iconButton1.Location = new System.Drawing.Point(0, 764);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(183, 38);
             this.iconButton1.TabIndex = 17;
             this.iconButton1.Text = "Generate Report";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // Createuser
             // 
+            this.Createuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Createuser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Createuser.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Createuser.FlatAppearance.BorderSize = 0;
             this.Createuser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.Createuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -126,19 +130,21 @@
             this.Createuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Createuser.IconSize = 40;
             this.Createuser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Createuser.Location = new System.Drawing.Point(0, 717);
+            this.Createuser.Location = new System.Drawing.Point(0, 722);
             this.Createuser.Name = "Createuser";
             this.Createuser.Size = new System.Drawing.Size(183, 42);
             this.Createuser.TabIndex = 18;
             this.Createuser.Text = "Create User";
             this.Createuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Createuser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Createuser.UseVisualStyleBackColor = true;
+            this.Createuser.UseVisualStyleBackColor = false;
             this.Createuser.Click += new System.EventHandler(this.Createuser_Click_1);
             // 
             // Notification
             // 
+            this.Notification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Notification.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Notification.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Notification.FlatAppearance.BorderSize = 0;
             this.Notification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.Notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -149,29 +155,30 @@
             this.Notification.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Notification.IconSize = 40;
             this.Notification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Notification.Location = new System.Drawing.Point(0, 664);
+            this.Notification.Location = new System.Drawing.Point(0, 669);
             this.Notification.Name = "Notification";
             this.Notification.Size = new System.Drawing.Size(183, 53);
             this.Notification.TabIndex = 16;
             this.Notification.Text = "Notification";
             this.Notification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Notification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Notification.UseVisualStyleBackColor = true;
+            this.Notification.UseVisualStyleBackColor = false;
             this.Notification.Click += new System.EventHandler(this.Notification_Click_1);
             // 
             // SubMenuManagement
             // 
-            this.SubMenuManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubMenuManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.SubMenuManagement.Controls.Add(this.button16);
             this.SubMenuManagement.Controls.Add(this.button9);
             this.SubMenuManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuManagement.Location = new System.Drawing.Point(0, 596);
+            this.SubMenuManagement.Location = new System.Drawing.Point(0, 601);
             this.SubMenuManagement.Name = "SubMenuManagement";
             this.SubMenuManagement.Size = new System.Drawing.Size(183, 68);
             this.SubMenuManagement.TabIndex = 23;
             // 
             // button16
             // 
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button16.Dock = System.Windows.Forms.DockStyle.Top;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -185,11 +192,12 @@
             this.button16.TabIndex = 1;
             this.button16.Text = "Users";
             this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.UseVisualStyleBackColor = true;
+            this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button9
             // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -203,12 +211,14 @@
             this.button9.TabIndex = 2;
             this.button9.Text = "RFID";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // ManageUserBtn
             // 
+            this.ManageUserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.ManageUserBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ManageUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ManageUserBtn.FlatAppearance.BorderSize = 0;
             this.ManageUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.ManageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -219,28 +229,29 @@
             this.ManageUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ManageUserBtn.IconSize = 40;
             this.ManageUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ManageUserBtn.Location = new System.Drawing.Point(0, 540);
+            this.ManageUserBtn.Location = new System.Drawing.Point(0, 545);
             this.ManageUserBtn.Name = "ManageUserBtn";
             this.ManageUserBtn.Size = new System.Drawing.Size(183, 56);
             this.ManageUserBtn.TabIndex = 19;
             this.ManageUserBtn.Text = "Management";
             this.ManageUserBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ManageUserBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ManageUserBtn.UseVisualStyleBackColor = true;
+            this.ManageUserBtn.UseVisualStyleBackColor = false;
             this.ManageUserBtn.Click += new System.EventHandler(this.ManageUserBtn_Click);
             // 
             // SubmenuSettings
             // 
-            this.SubmenuSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubmenuSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.SubmenuSettings.Controls.Add(this.button10);
             this.SubmenuSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuSettings.Location = new System.Drawing.Point(0, 495);
+            this.SubmenuSettings.Location = new System.Drawing.Point(0, 500);
             this.SubmenuSettings.Name = "SubmenuSettings";
             this.SubmenuSettings.Size = new System.Drawing.Size(183, 45);
             this.SubmenuSettings.TabIndex = 22;
             // 
             // button10
             // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -254,12 +265,14 @@
             this.button10.TabIndex = 0;
             this.button10.Text = "Winform Ras Pi";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Settings
             // 
+            this.Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Settings.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Settings.FlatAppearance.BorderSize = 0;
             this.Settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -270,29 +283,30 @@
             this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Settings.IconSize = 40;
             this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(0, 452);
+            this.Settings.Location = new System.Drawing.Point(0, 457);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(183, 43);
             this.Settings.TabIndex = 1;
             this.Settings.Text = "Settings";
             this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.UseVisualStyleBackColor = false;
             this.Settings.Click += new System.EventHandler(this.Settings_Click_1);
             // 
             // SubmenuDataGraphs
             // 
-            this.SubmenuDataGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubmenuDataGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.SubmenuDataGraphs.Controls.Add(this.Statistics);
             this.SubmenuDataGraphs.Controls.Add(this.Graphsbtn);
             this.SubmenuDataGraphs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuDataGraphs.Location = new System.Drawing.Point(0, 386);
+            this.SubmenuDataGraphs.Location = new System.Drawing.Point(0, 391);
             this.SubmenuDataGraphs.Name = "SubmenuDataGraphs";
             this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 66);
             this.SubmenuDataGraphs.TabIndex = 21;
             // 
             // Statistics
             // 
+            this.Statistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Statistics.Dock = System.Windows.Forms.DockStyle.Top;
             this.Statistics.FlatAppearance.BorderSize = 0;
             this.Statistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -306,11 +320,12 @@
             this.Statistics.TabIndex = 1;
             this.Statistics.Text = "Statistics";
             this.Statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Statistics.UseVisualStyleBackColor = true;
+            this.Statistics.UseVisualStyleBackColor = false;
             this.Statistics.Click += new System.EventHandler(this.Statistics_Click);
             // 
             // Graphsbtn
             // 
+            this.Graphsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Graphsbtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Graphsbtn.FlatAppearance.BorderSize = 0;
             this.Graphsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -324,13 +339,14 @@
             this.Graphsbtn.TabIndex = 0;
             this.Graphsbtn.Text = "Graphs/Data";
             this.Graphsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Graphsbtn.UseVisualStyleBackColor = true;
+            this.Graphsbtn.UseVisualStyleBackColor = false;
             this.Graphsbtn.Click += new System.EventHandler(this.Graphsbtn_Click);
             // 
             // ViewDataGraphbtn
             // 
+            this.ViewDataGraphbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.ViewDataGraphbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ViewDataGraphbtn.FlatAppearance.BorderSize = 0;
+            this.ViewDataGraphbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
             this.ViewDataGraphbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.ViewDataGraphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewDataGraphbtn.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
@@ -342,17 +358,17 @@
             this.ViewDataGraphbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ViewDataGraphbtn.Location = new System.Drawing.Point(0, 347);
             this.ViewDataGraphbtn.Name = "ViewDataGraphbtn";
-            this.ViewDataGraphbtn.Size = new System.Drawing.Size(183, 39);
+            this.ViewDataGraphbtn.Size = new System.Drawing.Size(183, 44);
             this.ViewDataGraphbtn.TabIndex = 18;
             this.ViewDataGraphbtn.Text = "View Data Graphs";
             this.ViewDataGraphbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ViewDataGraphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ViewDataGraphbtn.UseVisualStyleBackColor = true;
+            this.ViewDataGraphbtn.UseVisualStyleBackColor = false;
             this.ViewDataGraphbtn.Click += new System.EventHandler(this.ViewDataGraphbtn_Click);
             // 
             // SubmenuData
             // 
-            this.SubmenuData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(26)))), ((int)(((byte)(255)))));
+            this.SubmenuData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.SubmenuData.Controls.Add(this.AllData);
             this.SubmenuData.Controls.Add(this.button8);
             this.SubmenuData.Controls.Add(this.button7);
@@ -371,6 +387,7 @@
             // 
             // AllData
             // 
+            this.AllData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.AllData.Dock = System.Windows.Forms.DockStyle.Top;
             this.AllData.FlatAppearance.BorderSize = 0;
             this.AllData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -384,11 +401,12 @@
             this.AllData.TabIndex = 9;
             this.AllData.Text = "View All Data";
             this.AllData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AllData.UseVisualStyleBackColor = true;
+            this.AllData.UseVisualStyleBackColor = false;
             this.AllData.Click += new System.EventHandler(this.AllData_Click);
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -402,10 +420,11 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "Rotary Angle";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -419,10 +438,11 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "Relay";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -436,11 +456,12 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "Sound Sensor";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -454,10 +475,11 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Collision";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -471,11 +493,12 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Water_Sensor";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -489,11 +512,12 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "PRI";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -507,11 +531,12 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "UltraSonic";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -525,11 +550,12 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "RFID";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DataGraphBtn
             // 
+            this.DataGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.DataGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataGraphBtn.FlatAppearance.BorderSize = 0;
             this.DataGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
@@ -543,13 +569,14 @@
             this.DataGraphBtn.TabIndex = 0;
             this.DataGraphBtn.Text = "Light N Temp";
             this.DataGraphBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DataGraphBtn.UseVisualStyleBackColor = true;
+            this.DataGraphBtn.UseVisualStyleBackColor = false;
             this.DataGraphBtn.Click += new System.EventHandler(this.DataGraphBtn_Click);
             // 
             // Data
             // 
+            this.Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Data.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Data.FlatAppearance.BorderSize = 0;
+            this.Data.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
             this.Data.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Data.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -560,11 +587,12 @@
             this.Data.Size = new System.Drawing.Size(183, 44);
             this.Data.TabIndex = 6;
             this.Data.Text = "Sensors";
-            this.Data.UseVisualStyleBackColor = true;
+            this.Data.UseVisualStyleBackColor = false;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
             // AdminLogo
             // 
+            this.AdminLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.AdminLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.AdminLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.AdminLogo.Location = new System.Drawing.Point(0, 0);
@@ -577,7 +605,7 @@
             this.panelChildForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(80)))));
+            this.panelChildForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(96)))), ((int)(((byte)(109)))));
             this.panelChildForms.Controls.Add(this.UserSettingsbtn);
             this.panelChildForms.Controls.Add(this.Logout);
             this.panelChildForms.Controls.Add(this.ProfileBtn);
@@ -601,7 +629,7 @@
             this.UserSettingsbtn.Name = "UserSettingsbtn";
             this.UserSettingsbtn.Size = new System.Drawing.Size(47, 43);
             this.UserSettingsbtn.TabIndex = 3;
-            this.UserSettingsbtn.UseVisualStyleBackColor = true;
+            this.UserSettingsbtn.UseVisualStyleBackColor = false;
             this.UserSettingsbtn.Click += new System.EventHandler(this.UserSettingsbtn_Click);
             // 
             // Logout
@@ -618,7 +646,7 @@
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(46, 46);
             this.Logout.TabIndex = 2;
-            this.Logout.UseVisualStyleBackColor = true;
+            this.Logout.UseVisualStyleBackColor = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // ProfileBtn
@@ -635,7 +663,7 @@
             this.ProfileBtn.Name = "ProfileBtn";
             this.ProfileBtn.Size = new System.Drawing.Size(44, 46);
             this.ProfileBtn.TabIndex = 1;
-            this.ProfileBtn.UseVisualStyleBackColor = true;
+            this.ProfileBtn.UseVisualStyleBackColor = false;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
             // AdminDashboard
