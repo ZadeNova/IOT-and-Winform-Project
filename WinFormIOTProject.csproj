@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1D0C12C-ABC3-4571-B82A-E218C42A7FC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinFormIOTProject</RootNamespace>
+    <AssemblyName>WinFormIOTProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommsUtil">
+      <HintPath>..\..\..\..\..\OneDrive\Poly\Poly year 2 semester 2\IOT project\DataCommsStarters\DataCommsStarters\CommsUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AESOperation.cs" />
+    <Compile Include="GraphData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphData.Designer.cs">
+      <DependentUpon>GraphData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphDatass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphDatass.Designer.cs">
+      <DependentUpon>GraphDatass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDAsign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDAsign.Designer.cs">
+      <DependentUpon>RFIDAsign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUserForm.Designer.cs">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataVisualisationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataVisualisationForm.designer.cs">
+      <DependentUpon>DataVisualisationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Email2FAafterLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Email2FAafterLogin.Designer.cs">
+      <DependentUpon>Email2FAafterLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncryptionClass.cs" />
+    <Compile Include="ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateReport.Designer.cs">
+      <DependentUpon>GenerateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hash.cs" />
+    <Compile Include="Home[Admin].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home[Admin].Designer.cs">
+      <DependentUpon>Home[Admin].cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOTProjDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOTProjDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IOTProjDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOTProjDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageRFID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageRFID.Designer.cs">
+      <DependentUpon>ManageRFID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUserForm.Designer.cs">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRIMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRIMotion.designer.cs">
+      <DependentUpon>PRIMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilePage.Designer.cs">
+      <DependentUpon>ProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RFIDDisable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDDisable.Designer.cs">
+      <DependentUpon>RFIDDisable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDEnable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDEnable.Designer.cs">
+      <DependentUpon>RFIDEnable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDRemove.Designer.cs">
+      <DependentUpon>RFIDRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDLoginForm.Designer.cs">
+      <DependentUpon>RFIDLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RIFDCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RIFDCRUD.Designer.cs">
+      <DependentUpon>RIFDCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ras_Pie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ras_Pie.Designer.cs">
+      <DependentUpon>Ras_Pie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winform_Ras_Pie_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winform_Ras_Pie_Setting.Designer.cs">
+      <DependentUpon>Winform_Ras_Pie_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SoundSensor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundSensor.Designer.cs">
+      <DependentUpon>SoundSensor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UltraSonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UltraSonic.designer.cs">
+      <DependentUpon>UltraSonic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDUpdate.Designer.cs">
+      <DependentUpon>RFIDUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettingsForm.Designer.cs">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllData.Designer.cs">
+      <DependentUpon>ViewAllData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="watersensor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="watersensor.Designer.cs">
+      <DependentUpon>watersensor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphData.resx">
+      <DependentUpon>GraphData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphDatass.resx">
+      <DependentUpon>GraphDatass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDAsign.resx">
+      <DependentUpon>RFIDAsign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUserForm.resx">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataVisualisationForm.resx">
+      <DependentUpon>DataVisualisationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email2FAafterLogin.resx">
+      <DependentUpon>Email2FAafterLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateReport.resx">
+      <DependentUpon>GenerateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home[Admin].resx">
+      <DependentUpon>Home[Admin].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageRFID.resx">
+      <DependentUpon>ManageRFID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUserForm.resx">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRIMotion.resx">
+      <DependentUpon>PRIMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilePage.resx">
+      <DependentUpon>ProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RFIDDisable.resx">
+      <DependentUpon>RFIDDisable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDEnable.resx">
+      <DependentUpon>RFIDEnable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDRemove.resx">
+      <DependentUpon>RFIDRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDLoginForm.resx">
+      <DependentUpon>RFIDLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RIFDCRUD.resx">
+      <DependentUpon>RIFDCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ras_Pie.resx">
+      <DependentUpon>Ras_Pie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winform_Ras_Pie_Setting.resx">
+      <DependentUpon>Winform_Ras_Pie_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundSensor.resx">
+      <DependentUpon>SoundSensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UltraSonic.resx">
+      <DependentUpon>UltraSonic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDUpdate.resx">
+      <DependentUpon>RFIDUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettingsForm.resx">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllData.resx">
+      <DependentUpon>ViewAllData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="watersensor.resx">
+      <DependentUpon>watersensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="IOTProjDBDataSet.xsc">
+      <DependentUpon>IOTProjDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IOTProjDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOTProjDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOTProjDBDataSet.xss">
+      <DependentUpon>IOTProjDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IOTProjDBDataSet1.xsc">
+      <DependentUpon>IOTProjDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IOTProjDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IOTProjDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOTProjDBDataSet1.xss">
+      <DependentUpon>IOTProjDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SoundDataSet.xsc">
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SoundDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SoundDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SoundDataSet.xss">
+      <DependentUpon>SoundDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="webfonts\fa-brands-400.eot" />
+    <None Include="webfonts\fa-brands-400.ttf" />
+    <None Include="webfonts\fa-brands-400.woff" />
+    <None Include="webfonts\fa-brands-400.woff2" />
+    <None Include="webfonts\fa-regular-400.eot" />
+    <None Include="webfonts\fa-regular-400.ttf" />
+    <None Include="webfonts\fa-regular-400.woff" />
+    <None Include="webfonts\fa-regular-400.woff2" />
+    <None Include="webfonts\fa-solid-900.eot" />
+    <None Include="webfonts\fa-solid-900.ttf" />
+    <None Include="webfonts\fa-solid-900.woff" />
+    <None Include="webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <Content Include="IOTProjDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IOTProjDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>IOTProjDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
