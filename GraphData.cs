@@ -218,6 +218,36 @@ namespace WinFormIOTProject
             }
         }
 
+        private void Filterby_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void FilterBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show(dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"));
