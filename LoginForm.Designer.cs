@@ -57,6 +57,7 @@
             this.PasswordTxtBox.Name = "PasswordTxtBox";
             this.PasswordTxtBox.Size = new System.Drawing.Size(231, 20);
             this.PasswordTxtBox.TabIndex = 1;
+            this.PasswordTxtBox.UseSystemPasswordChar = true;
             this.PasswordTxtBox.TextChanged += new System.EventHandler(this.PasswordTxtBox_TextChanged);
             // 
             // UsernameLabel
@@ -159,6 +160,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.UsernameTxtbox);
             this.groupBox1.Controls.Add(this.SignupLbl);
             this.groupBox1.Controls.Add(this.ForgetPassBtn);

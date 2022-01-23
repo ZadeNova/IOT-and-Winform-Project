@@ -61,6 +61,7 @@
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
+            this.LightChart = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
             this.SubMenuManagement.SuspendLayout();
             this.SubmenuSettings.SuspendLayout();
@@ -106,7 +107,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 764);
+            this.iconButton1.Location = new System.Drawing.Point(0, 792);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(183, 38);
             this.iconButton1.TabIndex = 17;
@@ -131,7 +132,7 @@
             this.Createuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Createuser.IconSize = 40;
             this.Createuser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Createuser.Location = new System.Drawing.Point(0, 722);
+            this.Createuser.Location = new System.Drawing.Point(0, 750);
             this.Createuser.Name = "Createuser";
             this.Createuser.Size = new System.Drawing.Size(183, 42);
             this.Createuser.TabIndex = 18;
@@ -156,7 +157,7 @@
             this.Notification.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Notification.IconSize = 40;
             this.Notification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Notification.Location = new System.Drawing.Point(0, 669);
+            this.Notification.Location = new System.Drawing.Point(0, 697);
             this.Notification.Name = "Notification";
             this.Notification.Size = new System.Drawing.Size(183, 53);
             this.Notification.TabIndex = 16;
@@ -172,7 +173,7 @@
             this.SubMenuManagement.Controls.Add(this.button16);
             this.SubMenuManagement.Controls.Add(this.button9);
             this.SubMenuManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubMenuManagement.Location = new System.Drawing.Point(0, 601);
+            this.SubMenuManagement.Location = new System.Drawing.Point(0, 629);
             this.SubMenuManagement.Name = "SubMenuManagement";
             this.SubMenuManagement.Size = new System.Drawing.Size(183, 68);
             this.SubMenuManagement.TabIndex = 23;
@@ -230,7 +231,7 @@
             this.ManageUserBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ManageUserBtn.IconSize = 40;
             this.ManageUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ManageUserBtn.Location = new System.Drawing.Point(0, 545);
+            this.ManageUserBtn.Location = new System.Drawing.Point(0, 573);
             this.ManageUserBtn.Name = "ManageUserBtn";
             this.ManageUserBtn.Size = new System.Drawing.Size(183, 56);
             this.ManageUserBtn.TabIndex = 19;
@@ -246,7 +247,7 @@
             this.SubmenuSettings.Controls.Add(this.button11);
             this.SubmenuSettings.Controls.Add(this.button10);
             this.SubmenuSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuSettings.Location = new System.Drawing.Point(0, 500);
+            this.SubmenuSettings.Location = new System.Drawing.Point(0, 528);
             this.SubmenuSettings.Name = "SubmenuSettings";
             this.SubmenuSettings.Size = new System.Drawing.Size(183, 45);
             this.SubmenuSettings.TabIndex = 22;
@@ -304,7 +305,7 @@
             this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Settings.IconSize = 40;
             this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(0, 457);
+            this.Settings.Location = new System.Drawing.Point(0, 485);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(183, 43);
             this.Settings.TabIndex = 1;
@@ -317,12 +318,13 @@
             // SubmenuDataGraphs
             // 
             this.SubmenuDataGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
+            this.SubmenuDataGraphs.Controls.Add(this.LightChart);
             this.SubmenuDataGraphs.Controls.Add(this.Statistics);
             this.SubmenuDataGraphs.Controls.Add(this.Graphsbtn);
             this.SubmenuDataGraphs.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubmenuDataGraphs.Location = new System.Drawing.Point(0, 391);
             this.SubmenuDataGraphs.Name = "SubmenuDataGraphs";
-            this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 66);
+            this.SubmenuDataGraphs.Size = new System.Drawing.Size(183, 94);
             this.SubmenuDataGraphs.TabIndex = 21;
             // 
             // Statistics
@@ -689,6 +691,25 @@
             this.ProfileBtn.UseVisualStyleBackColor = false;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
+            // LightChart
+            // 
+            this.LightChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
+            this.LightChart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LightChart.FlatAppearance.BorderSize = 0;
+            this.LightChart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.LightChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LightChart.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LightChart.ForeColor = System.Drawing.Color.Aquamarine;
+            this.LightChart.Location = new System.Drawing.Point(0, 46);
+            this.LightChart.Name = "LightChart";
+            this.LightChart.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.LightChart.Size = new System.Drawing.Size(183, 23);
+            this.LightChart.TabIndex = 2;
+            this.LightChart.Text = "Light Chart";
+            this.LightChart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LightChart.UseVisualStyleBackColor = false;
+            this.LightChart.Click += new System.EventHandler(this.LightChart_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,5 +765,6 @@
         private System.Windows.Forms.Button Graphsbtn;
         private System.Windows.Forms.Button Statistics;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button LightChart;
     }
 }

@@ -104,8 +104,11 @@ namespace WinFormIOTProject
                                 //MessageBox.Show("Works1");
                                 Email2FAafterLogin emailfaform = new Email2FAafterLogin();
                                 emailfaform.Show();
+                                User.AccountUsername = UsernameTxtbox.Text;
+                                //User.AccountEmail = readerfa["Email"].ToString();
+                                //User.AccountRole = reader["Role"].ToString();
+                                //User.AccountID = Convert.ToInt16(readerfa["Id"]);
 
-                                
                             }
 
                             else

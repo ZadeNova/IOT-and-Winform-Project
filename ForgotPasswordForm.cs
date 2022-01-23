@@ -19,6 +19,7 @@ namespace WinFormIOTProject
     {
 
         string NewPass = "";
+        string Nothashedpass;
         string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         EncryptionClass EncryptionAlgo = new EncryptionClass();
 
@@ -133,7 +134,7 @@ namespace WinFormIOTProject
             //mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
 
             mail.Subject = "Password reset Email";
-            mail.Body = $"Hello it appears that you have asked for a password reset.Here is your new password: {NewPass}";
+            mail.Body = $"Hello it appears that you have asked for a password reset.Here is your new password: {Nothashedpass}";
             mail.IsBodyHtml = true;
 
             smtpClient.Send(mail);
@@ -157,6 +158,7 @@ namespace WinFormIOTProject
                 NewPass = NewPass + characterpool[rand.Next(0, 36)];
             }
             NewPass = NewPass + characterpool[rand.Next(36, 46)];
+            Nothashedpass = NewPass;
 
             NewPass = Hash.ComputeHash(NewPass, "SHA512", null);
 

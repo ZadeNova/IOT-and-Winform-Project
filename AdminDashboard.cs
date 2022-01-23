@@ -265,5 +265,10 @@ namespace WinFormIOTProject
         {
             openChildForm(new Ras_Pie_Setting());
         }
+
+        private void LightChart_Click(object sender, EventArgs e)
+        {
+            openChildForm(new LightChart());
+        }
     }
 }

@@ -22,8 +22,8 @@ namespace WinFormIOTProject
 
         // Form new variables for time filter here.
         string FromDatetime,ToDateTime,FilterByTime;
-
-
+        DateTime MinimumDate,MinimumDate2;
+        Double toOAdate;
         public GraphData()
         {
             InitializeComponent();
@@ -97,15 +97,17 @@ namespace WinFormIOTProject
             chartArea1.AxisX.LabelStyle.Font = labelFont;
             chartArea1.AxisX.LineColor = colorGridLines;
             chartArea1.AxisX.MajorGrid.LineColor = colorGridLines;
-            chartArea1.AxisX.LabelStyle.Format = "mm:ss";
+            chartArea1.AxisX.LabelStyle.Format = "MMM";
             chartArea1.AxisX.IsLabelAutoFit = true;
-            
+            chartArea1.AxisX.LabelStyle.Interval = 1;
             chartArea1.CursorX.IsUserSelectionEnabled = true;
 
-            chartArea1.AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chartArea1.AxisX.Interval = 1;
+            chartArea1.AxisX.IntervalType = DateTimeIntervalType.Months;
+            //chartArea1.AxisX.Interval = 1;
             chartArea1.AxisX.Title = "Time";
             //chartArea1.AxisX.Minimum = 0;
+            //chartArea1.AxisX.IsMarginVisible = false;
+
 
             // Y axis stuff
             chartArea1.AxisY.Title = "Sound";
@@ -163,12 +165,21 @@ namespace WinFormIOTProject
                     SoundChart.DataBind();
                     foreach(DataRow row in dt.Rows)
                     {
-                        Console.WriteLine(row);
+                        
                     }
+                    //SoundChart.ChartAreas[0].AxisX.Minimum = Convert.ToDouble(dt.Rows[0]["DATETIME"]);
+                    
+                    // Set Xaxis minimum
+                    //MinimumDate = Convert.ToDateTime(dt.Rows[0]["DATETIME"]);
+                    //MinimumDate2 = Convert.ToDateTime(String.Format("{0:dd/MM/yyyy}", MinimumDate));
+                    //Console.WriteLine(MinimumDate);
+                    
+
+                    
 
 
-
-
+                    //toOAdate = MinimumDate2.ToOADate();
+                    //SoundChart.ChartAreas[0].AxisX.Minimum = toOAdate;
 
                 }
             }
@@ -215,6 +226,8 @@ namespace WinFormIOTProject
             ChangeChartProperties();
             loadSoundData();
             
+            
+            
         }
 
 
@@ -230,6 +243,8 @@ namespace WinFormIOTProject
                 SoundChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
                 SoundChart.ChartAreas[0].AxisX.Interval = 5;
 
+               
+
             }
             else if (FilterByTime.Equals("Minute"))
             {
@@ -237,6 +252,9 @@ namespace WinFormIOTProject
                 SoundChart.ChartAreas[0].AxisX.LabelStyle.Format = "mm";
                 SoundChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Minutes;
                 SoundChart.ChartAreas[0].AxisX.Interval = 5;
+                
+
+                
             }
             else if (FilterByTime.Equals("Days"))
             {
@@ -244,12 +262,15 @@ namespace WinFormIOTProject
                 SoundChart.ChartAreas[0].AxisX.LabelStyle.Format = "dd";
                 SoundChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
 
+               
+
             }
             else if (FilterByTime.Equals("Month"))
             {
                 MessageBox.Show("Second3");
                 SoundChart.ChartAreas[0].AxisX.LabelStyle.Format = "MMM";
                 SoundChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
+               
 
             }
             else if (FilterByTime.Equals("Year"))
