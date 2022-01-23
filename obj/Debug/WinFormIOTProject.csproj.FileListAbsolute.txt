@@ -447,3 +447,7 @@ C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormI
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.ViewAllData.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.watersensor.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.csproj.GenerateResource.Cache
+C:\Users\hj\Desktop\raspi\WinFormIOTProject1\WinFormIOTProject\bin\Debug\WinFormIOTProject.exe.config
+C:\Users\hj\Desktop\raspi\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.exe
+C:\Users\hj\Desktop\raspi\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.pdb
+C:\Users\hj\Desktop\raspi\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.csprojResolveAssemblyReference.cache
