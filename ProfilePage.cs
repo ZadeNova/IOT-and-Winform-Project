@@ -131,6 +131,9 @@ namespace WinFormIOTProject
                 myConnect.Close();
                 MessageBox.Show("Your user profile has been updated!");
                 updateprofiletxtbox(Updateusernametxt.Text, UpdateEmailTxt.Text, UpdatePhoneTxt.Text);
+                User.AccountEmail = UpdateEmailTxt.Text;
+                User.AccountUsername = Updateusernametxt.Text;
+                
 
 
             }

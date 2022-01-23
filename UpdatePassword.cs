@@ -91,7 +91,10 @@ namespace WinFormIOTProject
 
 
                     }
-
+                    else
+                    {
+                        MessageBox.Show("Password is incorrect");
+                    }
 
 
 
@@ -99,7 +102,7 @@ namespace WinFormIOTProject
                 }
                 else
                 {
-                    MessageBox.Show("not found!");
+                    MessageBox.Show("An error has occured.");
                 }
 
                 

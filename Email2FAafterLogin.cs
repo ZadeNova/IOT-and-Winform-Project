@@ -39,7 +39,7 @@ namespace WinFormIOTProject
                 MessageBox.Show("Correct code entered! Go in!");
                 AdminDashboard adminform = new AdminDashboard();
                 adminform.ShowDialog();
-                this.Hide();
+                this.Close();
             }
             else
             {
