@@ -23,8 +23,9 @@ namespace WinFormIOTProject
             
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-           // Application.Run(new GraphData());
+            //Application.Run(new LoginForm());
+            Application.Run(new GraphData());
+            //Application.Run(new LightChart());
             //Application.Run(new SignUpForm());
             //Application.Run(new Home_Admin_());
             //Application.Run(new AdminDashboard());
@@ -36,7 +37,7 @@ namespace WinFormIOTProject
             //Application.Run(new RFIDLoginForm());
             //Application.Run(new CreateUserForm());
             //Application.Run(new UpdatePassword());
-           
+
         }
 
     }

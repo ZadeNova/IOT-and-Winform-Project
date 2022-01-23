@@ -37,6 +37,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.ManageUserBtn = new FontAwesome.Sharp.IconButton();
             this.SubmenuSettings = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.Settings = new FontAwesome.Sharp.IconButton();
             this.SubmenuDataGraphs = new System.Windows.Forms.Panel();
@@ -60,7 +61,6 @@
             this.UserSettingsbtn = new FontAwesome.Sharp.IconButton();
             this.Logout = new FontAwesome.Sharp.IconButton();
             this.ProfileBtn = new FontAwesome.Sharp.IconButton();
-            this.button11 = new System.Windows.Forms.Button();
             this.panelAdminMenu.SuspendLayout();
             this.SubMenuManagement.SuspendLayout();
             this.SubmenuSettings.SuspendLayout();
@@ -251,6 +251,25 @@
             this.SubmenuSettings.Size = new System.Drawing.Size(183, 45);
             this.SubmenuSettings.TabIndex = 22;
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
+            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button11.Location = new System.Drawing.Point(0, 23);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button11.Size = new System.Drawing.Size(183, 23);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Ras Pi";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
@@ -349,6 +368,7 @@
             this.ViewDataGraphbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.ViewDataGraphbtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ViewDataGraphbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
+            this.ViewDataGraphbtn.FlatAppearance.BorderSize = 0;
             this.ViewDataGraphbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.ViewDataGraphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewDataGraphbtn.Font = new System.Drawing.Font("Tempus Sans ITC", 13.5F, System.Drawing.FontStyle.Bold);
@@ -579,6 +599,7 @@
             this.Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
             this.Data.Dock = System.Windows.Forms.DockStyle.Top;
             this.Data.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
+            this.Data.FlatAppearance.BorderSize = 0;
             this.Data.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Data.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -667,25 +688,6 @@
             this.ProfileBtn.TabIndex = 1;
             this.ProfileBtn.UseVisualStyleBackColor = false;
             this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(59)))), ((int)(((byte)(83)))));
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button11.Location = new System.Drawing.Point(0, 23);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(183, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Ras Pi";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // AdminDashboard
             // 

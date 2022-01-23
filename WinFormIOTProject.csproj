@@ -85,11 +85,11 @@
     <Compile Include="GraphData.Designer.cs">
       <DependentUpon>GraphData.cs</DependentUpon>
     </Compile>
-    <Compile Include="GraphDatass.cs">
+    <Compile Include="LightChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GraphDatass.Designer.cs">
-      <DependentUpon>GraphDatass.cs</DependentUpon>
+    <Compile Include="LightChart.Designer.cs">
+      <DependentUpon>LightChart.cs</DependentUpon>
     </Compile>
     <Compile Include="RFIDAsign.cs">
       <SubType>Form</SubType>
@@ -290,8 +290,8 @@
     <EmbeddedResource Include="GraphData.resx">
       <DependentUpon>GraphData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GraphDatass.resx">
-      <DependentUpon>GraphDatass.cs</DependentUpon>
+    <EmbeddedResource Include="LightChart.resx">
+      <DependentUpon>LightChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RFIDAsign.resx">
       <DependentUpon>RFIDAsign.cs</DependentUpon>
