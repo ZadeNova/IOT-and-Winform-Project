@@ -415,7 +415,6 @@ C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\bin\Debug\FontAwes
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.csprojResolveAssemblyReference.cache
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.AdminDashboard.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.GraphData.resources
-C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.GraphDatass.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.RFIDAsign.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.CreateUserForm.resources
 C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.DataVisualisationForm.resources
@@ -490,3 +489,4 @@ C:\Users\Zade\Documents\Visual Studio 2015\Projects\WinFormIOTProject1\WinFormIO
 C:\Users\Zade\Documents\Visual Studio 2015\Projects\WinFormIOTProject1\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.csproj.GenerateResource.Cache
 C:\Users\Zade\Documents\Visual Studio 2015\Projects\WinFormIOTProject1\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.LightChart.resources
 C:\Users\Zade\Documents\Visual Studio 2015\Projects\WinFormIOTProject1\WinFormIOTProject1\WinFormIOTProject\obj\Debug\WinFormIOTProject.csprojResolveAssemblyReference.cache
+C:\Users\hj\Desktop\raspi\WinFormIOTProject\WinFormIOTProject\obj\Debug\WinFormIOTProject.LightChart.resources
