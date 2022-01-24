@@ -198,6 +198,7 @@ namespace WinFormIOTProject
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
+                        
                         // Enter into admin form
                         MessageBox.Show("Deleting");
                         string delete = "UPDATE UserAccount SET RFID_ID='NoRFID' WHERE RFID_ID=@idk";

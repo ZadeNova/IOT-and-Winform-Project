@@ -60,8 +60,7 @@ namespace WinFormIOTProject
             sdr2.Fill(dt2);
             dataGridView2.DataSource = dt2;
             myconnect.Close();
-
-           
+            
         }
        
         private void iconButton1_Click(object sender, EventArgs e)

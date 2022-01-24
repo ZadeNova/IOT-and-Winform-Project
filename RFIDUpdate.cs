@@ -76,6 +76,26 @@ namespace WinFormIOTProject
                             }
                             else
                             {
+                                string delete123 = "SELECT RFID_ID FROM UserAccount  WHERE Name=@uqqqName ";
+                                myConnect1.Close();
+                                myConnect1.Open();
+                                SqlCommand cmd1234 = new SqlCommand(delete123, myConnect1);
+                                cmd1234.Parameters.AddWithValue("@uqqqName", Userupdatetxt.Text);
+                                SqlDataReader reader123 = cmd1234.ExecuteReader();
+                                reader123.Read();
+                                string idk123 = reader123["RFID_ID"].ToString();
+                                reader123.Close();
+                              
+
+                                myConnect1.Close();
+                                myConnect1.Open();
+                                string update_MA_RFID = "UPDATE Manage_RFID SET RFID_STATUS='NotActive' WHERE RFID_ID=@idk";
+                                SqlCommand cmd2 = new SqlCommand(update_MA_RFID, myConnect1);
+                                cmd2.Parameters.AddWithValue("@idk", idk123);
+                                cmd2.ExecuteNonQuery();
+                             
+                               
+
                                 // Enter into admin form
                                 MessageBox.Show("Updating");
                                 string delete = "UPDATE UserAccount SET RFID_ID=@idk WHERE NAME=@uqqqName ";
@@ -89,10 +109,10 @@ namespace WinFormIOTProject
 
                                 myConnect1.Close();
                                 myConnect1.Open();
-                                string update_MA_RFID = "UPDATE Manage_RFID SET RFID_STATUS='Active' WHERE RFID_ID=@idk";
-                                SqlCommand cmd2 = new SqlCommand(update_MA_RFID, myConnect1);
-                                cmd2.Parameters.AddWithValue("@idk", RFIDupdatetxt.Text);
-                                cmd2.ExecuteNonQuery();
+                                string update_MA_RFID1 = "UPDATE Manage_RFID SET RFID_STATUS='Active' WHERE RFID_ID=@idk";
+                                SqlCommand cmd223 = new SqlCommand(update_MA_RFID1, myConnect1);
+                                cmd223.Parameters.AddWithValue("@idk", RFIDupdatetxt.Text);
+                                cmd223.ExecuteNonQuery();
                                 myConnect1.Close();
                                 MessageBox.Show("Updated ! ");
 
